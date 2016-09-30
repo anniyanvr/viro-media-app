@@ -1,0 +1,7 @@
+.DS_Store
+*.DS_Store
+node_modules/
+ViroMediaApp/Podfile.lock
+ViroMediaApp/Pods/
+ViroMediaApp.xcodeproj/project.xcworkspace/xcuserdata/
+ViroMediaApp.xcworkspace/

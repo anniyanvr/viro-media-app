@@ -1,0 +1,23 @@
+target 'ViroMediaApp' do
+  pod 'React', :path => '../node_modules/react-viro', :subspecs => [
+    'Viro',
+    'Core',
+    'RCTWebSocket',
+    'RCTActionSheet',
+    'RCTNetwork',
+  ]
+  pod 'GVRSDK', '1.0.0'
+  pod 'SWRevealViewController'
+
+  target 'ViroMediaAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'ViroMediaAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+

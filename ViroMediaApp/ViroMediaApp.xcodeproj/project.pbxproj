@@ -1,0 +1,881 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80EB778DD44B235898FDC985 /* libPods-ViroMediaAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */; };
+		8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */; };
+		8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */; };
+		8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */; };
+		8A3B192B1D99928B0041B72B /* SamplesTableViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B192A1D99928B0041B72B /* SamplesTableViewHeader.m */; };
+		8A3B192E1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B192C1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png */; };
+		8A3B192F1D99A52B0041B72B /* nativeapp_btn_leftpanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B192D1D99A52B0041B72B /* nativeapp_btn_leftpanel.png */; };
+		8A3B19311D99B6A40041B72B /* nativeapp_header_logo_color.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19301D99B6A40041B72B /* nativeapp_header_logo_color.png */; };
+		8A3B19341D99BD790041B72B /* nativeapp_btn_info_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19321D99BD790041B72B /* nativeapp_btn_info_hover.png */; };
+		8A3B19351D99BD790041B72B /* nativeapp_btn_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19331D99BD790041B72B /* nativeapp_btn_info.png */; };
+		8A3B193A1D99DC3B0041B72B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19381D99DC3B0041B72B /* Raleway-Regular.ttf */; };
+		8A3B193B1D99DC3B0041B72B /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19391D99DC3B0041B72B /* Raleway-SemiBold.ttf */; };
+		8A3B19431D99DC500041B72B /* nativeapp_btn_back_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B193D1D99DC500041B72B /* nativeapp_btn_back_press.png */; };
+		8A3B19441D99DC500041B72B /* nativeapp_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B193E1D99DC500041B72B /* nativeapp_btn_back.png */; };
+		8A3B19451D99DC500041B72B /* nativeapp_btn_no_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B193F1D99DC500041B72B /* nativeapp_btn_no_press.png */; };
+		8A3B19461D99DC500041B72B /* nativeapp_btn_no.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */; };
+		8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */; };
+		8A3B19481D99DC500041B72B /* nativeapp_btn_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */; };
+		8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */; };
+		8AAD94411D987287001DADB1 /* SamplesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD94401D987287001DADB1 /* SamplesTableViewController.m */; };
+		8AB6BB481D98639200425110 /* SamplesTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */; };
+		8AE4FD931D95AAA30043CF0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FD921D95AAA30043CF0B /* main.m */; };
+		8AE4FD961D95AAA30043CF0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FD951D95AAA30043CF0B /* AppDelegate.m */; };
+		8AE4FD991D95AAA30043CF0B /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FD981D95AAA30043CF0B /* LaunchViewController.m */; };
+		8AE4FD9C1D95AAA30043CF0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FD9A1D95AAA30043CF0B /* Main.storyboard */; };
+		8AE4FD9E1D95AAA30043CF0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FD9D1D95AAA30043CF0B /* Assets.xcassets */; };
+		8AE4FDAC1D95AAA30043CF0B /* ViroMediaAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FDAB1D95AAA30043CF0B /* ViroMediaAppTests.m */; };
+		8AE4FDB71D95AAA30043CF0B /* ViroMediaAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FDB61D95AAA30043CF0B /* ViroMediaAppUITests.m */; };
+		8AE4FDD01D95ABF90043CF0B /* nativeapp_btn_sign_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDC71D95ABF90043CF0B /* nativeapp_btn_sign_up.png */; };
+		8AE4FDD11D95ABF90043CF0B /* nativeapp_card_flickr.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDC81D95ABF90043CF0B /* nativeapp_card_flickr.png */; };
+		8AE4FDD21D95ABF90043CF0B /* nativeapp_card_human_body.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDC91D95ABF90043CF0B /* nativeapp_card_human_body.png */; };
+		8AE4FDD31D95ABF90043CF0B /* nativeapp_card_phototour.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCA1D95ABF90043CF0B /* nativeapp_card_phototour.png */; };
+		8AE4FDD41D95ABF90043CF0B /* nativeapp_card_video.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCB1D95ABF90043CF0B /* nativeapp_card_video.png */; };
+		8AE4FDD51D95ABF90043CF0B /* nativeapp_header_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCC1D95ABF90043CF0B /* nativeapp_header_logo.png */; };
+		8AE4FDD61D95ABF90043CF0B /* nativeapp_loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCD1D95ABF90043CF0B /* nativeapp_loading.png */; };
+		8AE4FDD71D95ABF90043CF0B /* nativeapp_logo_cardboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCE1D95ABF90043CF0B /* nativeapp_logo_cardboard.png */; };
+		8AE4FDD81D95ABF90043CF0B /* nativeapp_rotate_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDCF1D95ABF90043CF0B /* nativeapp_rotate_device.png */; };
+		8AE4FDDB1D95AC200043CF0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE4FDD91D95AC200043CF0B /* LaunchScreen.xib */; };
+		C86572191F08A9E5E6DE4777 /* libPods-ViroMediaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 296A90E76F37D0B5D4F992F2 /* libPods-ViroMediaApp.a */; };
+		F99B785319F9859345477132 /* libPods-ViroMediaAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC26D64C52D22B77339B480 /* libPods-ViroMediaAppTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8AE4FDA81D95AAA30043CF0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AE4FD861D95AAA30043CF0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AE4FD8D1D95AAA30043CF0B;
+			remoteInfo = ViroMediaApp;
+		};
+		8AE4FDB31D95AAA30043CF0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8AE4FD861D95AAA30043CF0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8AE4FD8D1D95AAA30043CF0B;
+			remoteInfo = ViroMediaApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1ECE82D23DB48A00548A83F4 /* Pods-ViroMediaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppTests/Pods-ViroMediaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		20628399A6DEC5C766FF802C /* Pods-ViroMediaAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppUITests/Pods-ViroMediaAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		296A90E76F37D0B5D4F992F2 /* libPods-ViroMediaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroMediaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FFB2910DE59850010A49E0 /* Pods-ViroMediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp.release.xcconfig"; sourceTree = "<group>"; };
+		4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroMediaAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5026CCC5960A7F0C8D20D186 /* Pods-ViroMediaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppUITests/Pods-ViroMediaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplesTableViewCell.xib; sourceTree = "<group>"; };
+		8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewCell.h; sourceTree = "<group>"; };
+		8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewCell.m; sourceTree = "<group>"; };
+		8A3B19231D998ECB0041B72B /* PortraitRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PortraitRevealViewController.h; sourceTree = "<group>"; };
+		8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PortraitRevealViewController.m; sourceTree = "<group>"; };
+		8A3B19291D99928B0041B72B /* SamplesTableViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewHeader.h; sourceTree = "<group>"; };
+		8A3B192A1D99928B0041B72B /* SamplesTableViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewHeader.m; sourceTree = "<group>"; };
+		8A3B192C1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_leftpanel_press.png; sourceTree = "<group>"; };
+		8A3B192D1D99A52B0041B72B /* nativeapp_btn_leftpanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_leftpanel.png; sourceTree = "<group>"; };
+		8A3B19301D99B6A40041B72B /* nativeapp_header_logo_color.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_header_logo_color.png; sourceTree = "<group>"; };
+		8A3B19321D99BD790041B72B /* nativeapp_btn_info_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_info_hover.png; sourceTree = "<group>"; };
+		8A3B19331D99BD790041B72B /* nativeapp_btn_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_info.png; sourceTree = "<group>"; };
+		8A3B19381D99DC3B0041B72B /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-Regular.ttf"; path = "Fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		8A3B19391D99DC3B0041B72B /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway-SemiBold.ttf"; path = "Fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		8A3B193D1D99DC500041B72B /* nativeapp_btn_back_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_back_press.png; sourceTree = "<group>"; };
+		8A3B193E1D99DC500041B72B /* nativeapp_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_back.png; sourceTree = "<group>"; };
+		8A3B193F1D99DC500041B72B /* nativeapp_btn_no_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_no_press.png; sourceTree = "<group>"; };
+		8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_no.png; sourceTree = "<group>"; };
+		8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes_press.png; sourceTree = "<group>"; };
+		8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes.png; sourceTree = "<group>"; };
+		8A7F85461D98AA3200B11423 /* ViroSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViroSceneViewController.h; sourceTree = "<group>"; };
+		8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViroSceneViewController.m; sourceTree = "<group>"; };
+		8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewController.h; sourceTree = "<group>"; };
+		8AAD94401D987287001DADB1 /* SamplesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewController.m; sourceTree = "<group>"; };
+		8AB6BB471D98639200425110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SamplesTableViewHeader.xib; sourceTree = "<group>"; };
+		8AE4FD8E1D95AAA30043CF0B /* Viro Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viro Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE4FD921D95AAA30043CF0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8AE4FD941D95AAA30043CF0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8AE4FD951D95AAA30043CF0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8AE4FD971D95AAA30043CF0B /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
+		8AE4FD981D95AAA30043CF0B /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		8AE4FD9B1D95AAA30043CF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8AE4FD9D1D95AAA30043CF0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8AE4FDA21D95AAA30043CF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE4FDA71D95AAA30043CF0B /* ViroMediaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViroMediaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE4FDAB1D95AAA30043CF0B /* ViroMediaAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViroMediaAppTests.m; sourceTree = "<group>"; };
+		8AE4FDAD1D95AAA30043CF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE4FDB21D95AAA30043CF0B /* ViroMediaAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViroMediaAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AE4FDB61D95AAA30043CF0B /* ViroMediaAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViroMediaAppUITests.m; sourceTree = "<group>"; };
+		8AE4FDB81D95AAA30043CF0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8AE4FDC71D95ABF90043CF0B /* nativeapp_btn_sign_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_sign_up.png; sourceTree = "<group>"; };
+		8AE4FDC81D95ABF90043CF0B /* nativeapp_card_flickr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_card_flickr.png; sourceTree = "<group>"; };
+		8AE4FDC91D95ABF90043CF0B /* nativeapp_card_human_body.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_card_human_body.png; sourceTree = "<group>"; };
+		8AE4FDCA1D95ABF90043CF0B /* nativeapp_card_phototour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_card_phototour.png; sourceTree = "<group>"; };
+		8AE4FDCB1D95ABF90043CF0B /* nativeapp_card_video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_card_video.png; sourceTree = "<group>"; };
+		8AE4FDCC1D95ABF90043CF0B /* nativeapp_header_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_header_logo.png; sourceTree = "<group>"; };
+		8AE4FDCD1D95ABF90043CF0B /* nativeapp_loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_loading.png; sourceTree = "<group>"; };
+		8AE4FDCE1D95ABF90043CF0B /* nativeapp_logo_cardboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_logo_cardboard.png; sourceTree = "<group>"; };
+		8AE4FDCF1D95ABF90043CF0B /* nativeapp_rotate_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_rotate_device.png; sourceTree = "<group>"; };
+		8AE4FDDA1D95AC200043CF0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B75A20264B2533974B73BF16 /* Pods-ViroMediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp.debug.xcconfig"; sourceTree = "<group>"; };
+		F15CBE7152DE6C203C61FE2B /* Pods-ViroMediaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppTests/Pods-ViroMediaAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		FBC26D64C52D22B77339B480 /* libPods-ViroMediaAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroMediaAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8AE4FD8B1D95AAA30043CF0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C86572191F08A9E5E6DE4777 /* libPods-ViroMediaApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDA41D95AAA30043CF0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F99B785319F9859345477132 /* libPods-ViroMediaAppTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDAF1D95AAA30043CF0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80EB778DD44B235898FDC985 /* libPods-ViroMediaAppUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2392C28E8CBD685F1AF63475 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B75A20264B2533974B73BF16 /* Pods-ViroMediaApp.debug.xcconfig */,
+				45FFB2910DE59850010A49E0 /* Pods-ViroMediaApp.release.xcconfig */,
+				1ECE82D23DB48A00548A83F4 /* Pods-ViroMediaAppTests.debug.xcconfig */,
+				F15CBE7152DE6C203C61FE2B /* Pods-ViroMediaAppTests.release.xcconfig */,
+				5026CCC5960A7F0C8D20D186 /* Pods-ViroMediaAppUITests.debug.xcconfig */,
+				20628399A6DEC5C766FF802C /* Pods-ViroMediaAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A3B19371D99DC2C0041B72B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8A3B19381D99DC3B0041B72B /* Raleway-Regular.ttf */,
+				8A3B19391D99DC3B0041B72B /* Raleway-SemiBold.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		8AB6BB451D98636200425110 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FD9A1D95AAA30043CF0B /* Main.storyboard */,
+				8AE4FDD91D95AC200043CF0B /* LaunchScreen.xib */,
+				8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */,
+				8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8AE4FD851D95AAA30043CF0B = {
+			isa = PBXGroup;
+			children = (
+				8AE4FD901D95AAA30043CF0B /* ViroMediaApp */,
+				8AE4FDAA1D95AAA30043CF0B /* ViroMediaAppTests */,
+				8AE4FDB51D95AAA30043CF0B /* ViroMediaAppUITests */,
+				8AE4FD8F1D95AAA30043CF0B /* Products */,
+				2392C28E8CBD685F1AF63475 /* Pods */,
+				ECFB1CA4058594AEE56835A4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8AE4FD8F1D95AAA30043CF0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FD8E1D95AAA30043CF0B /* Viro Media.app */,
+				8AE4FDA71D95AAA30043CF0B /* ViroMediaAppTests.xctest */,
+				8AE4FDB21D95AAA30043CF0B /* ViroMediaAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8AE4FD901D95AAA30043CF0B /* ViroMediaApp */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FD941D95AAA30043CF0B /* AppDelegate.h */,
+				8AE4FD951D95AAA30043CF0B /* AppDelegate.m */,
+				8AE4FD971D95AAA30043CF0B /* LaunchViewController.h */,
+				8AE4FD981D95AAA30043CF0B /* LaunchViewController.m */,
+				8A3B19231D998ECB0041B72B /* PortraitRevealViewController.h */,
+				8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */,
+				8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */,
+				8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */,
+				8A3B19291D99928B0041B72B /* SamplesTableViewHeader.h */,
+				8A3B192A1D99928B0041B72B /* SamplesTableViewHeader.m */,
+				8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */,
+				8AAD94401D987287001DADB1 /* SamplesTableViewController.m */,
+				8A7F85461D98AA3200B11423 /* ViroSceneViewController.h */,
+				8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */,
+				8AE4FD9D1D95AAA30043CF0B /* Assets.xcassets */,
+				8AE4FDA21D95AAA30043CF0B /* Info.plist */,
+				8AB6BB451D98636200425110 /* Views */,
+				8AE4FDC61D95ABC80043CF0B /* Resources */,
+				8AE4FD911D95AAA30043CF0B /* Supporting Files */,
+			);
+			path = ViroMediaApp;
+			sourceTree = "<group>";
+		};
+		8AE4FD911D95AAA30043CF0B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FD921D95AAA30043CF0B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8AE4FDAA1D95AAA30043CF0B /* ViroMediaAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FDAB1D95AAA30043CF0B /* ViroMediaAppTests.m */,
+				8AE4FDAD1D95AAA30043CF0B /* Info.plist */,
+			);
+			path = ViroMediaAppTests;
+			sourceTree = "<group>";
+		};
+		8AE4FDB51D95AAA30043CF0B /* ViroMediaAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8AE4FDB61D95AAA30043CF0B /* ViroMediaAppUITests.m */,
+				8AE4FDB81D95AAA30043CF0B /* Info.plist */,
+			);
+			path = ViroMediaAppUITests;
+			sourceTree = "<group>";
+		};
+		8AE4FDC61D95ABC80043CF0B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A3B19371D99DC2C0041B72B /* Fonts */,
+				8A3B193D1D99DC500041B72B /* nativeapp_btn_back_press.png */,
+				8A3B193E1D99DC500041B72B /* nativeapp_btn_back.png */,
+				8A3B19321D99BD790041B72B /* nativeapp_btn_info_hover.png */,
+				8A3B19331D99BD790041B72B /* nativeapp_btn_info.png */,
+				8A3B192C1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png */,
+				8A3B192D1D99A52B0041B72B /* nativeapp_btn_leftpanel.png */,
+				8A3B193F1D99DC500041B72B /* nativeapp_btn_no_press.png */,
+				8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */,
+				8AE4FDC71D95ABF90043CF0B /* nativeapp_btn_sign_up.png */,
+				8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */,
+				8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */,
+				8AE4FDC81D95ABF90043CF0B /* nativeapp_card_flickr.png */,
+				8AE4FDC91D95ABF90043CF0B /* nativeapp_card_human_body.png */,
+				8AE4FDCA1D95ABF90043CF0B /* nativeapp_card_phototour.png */,
+				8AE4FDCB1D95ABF90043CF0B /* nativeapp_card_video.png */,
+				8A3B19301D99B6A40041B72B /* nativeapp_header_logo_color.png */,
+				8AE4FDCC1D95ABF90043CF0B /* nativeapp_header_logo.png */,
+				8AE4FDCD1D95ABF90043CF0B /* nativeapp_loading.png */,
+				8AE4FDCE1D95ABF90043CF0B /* nativeapp_logo_cardboard.png */,
+				8AE4FDCF1D95ABF90043CF0B /* nativeapp_rotate_device.png */,
+			);
+			name = Resources;
+			path = "/Users/andychu/workspace/viro-media-app/ViroMediaApp/ViroMediaApp/Resources";
+			sourceTree = "<absolute>";
+		};
+		ECFB1CA4058594AEE56835A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				296A90E76F37D0B5D4F992F2 /* libPods-ViroMediaApp.a */,
+				FBC26D64C52D22B77339B480 /* libPods-ViroMediaAppTests.a */,
+				4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8AE4FD8D1D95AAA30043CF0B /* ViroMediaApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE4FDBB1D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaApp" */;
+			buildPhases = (
+				B61D1C3853980F1AC6C00CED /* [CP] Check Pods Manifest.lock */,
+				8AE4FD8A1D95AAA30043CF0B /* Sources */,
+				8AE4FD8B1D95AAA30043CF0B /* Frameworks */,
+				8AE4FD8C1D95AAA30043CF0B /* Resources */,
+				8AE4FDDF1D95B84C0043CF0B /* Bundle React Native Code and Changes */,
+				929C6487442E85B392D8B11D /* [CP] Embed Pods Frameworks */,
+				A92D70448F60BED40CA93A4C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViroMediaApp;
+			productName = ViroMediaApp;
+			productReference = 8AE4FD8E1D95AAA30043CF0B /* Viro Media.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8AE4FDA61D95AAA30043CF0B /* ViroMediaAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE4FDBE1D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaAppTests" */;
+			buildPhases = (
+				905AAF4EFE67E0561A9F57EF /* [CP] Check Pods Manifest.lock */,
+				8AE4FDA31D95AAA30043CF0B /* Sources */,
+				8AE4FDA41D95AAA30043CF0B /* Frameworks */,
+				8AE4FDA51D95AAA30043CF0B /* Resources */,
+				8F7EDFA7FE187772D4B7CF69 /* [CP] Embed Pods Frameworks */,
+				E3FC98392C106B07B21B8570 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AE4FDA91D95AAA30043CF0B /* PBXTargetDependency */,
+			);
+			name = ViroMediaAppTests;
+			productName = ViroMediaAppTests;
+			productReference = 8AE4FDA71D95AAA30043CF0B /* ViroMediaAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8AE4FDB11D95AAA30043CF0B /* ViroMediaAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8AE4FDC11D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaAppUITests" */;
+			buildPhases = (
+				8915190F3F0BD594C80249CC /* [CP] Check Pods Manifest.lock */,
+				8AE4FDAE1D95AAA30043CF0B /* Sources */,
+				8AE4FDAF1D95AAA30043CF0B /* Frameworks */,
+				8AE4FDB01D95AAA30043CF0B /* Resources */,
+				D3FCE4F459A2D6017731FC8D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8AE4FDB41D95AAA30043CF0B /* PBXTargetDependency */,
+			);
+			name = ViroMediaAppUITests;
+			productName = ViroMediaAppUITests;
+			productReference = 8AE4FDB21D95AAA30043CF0B /* ViroMediaAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8AE4FD861D95AAA30043CF0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Viro Media";
+				TargetAttributes = {
+					8AE4FD8D1D95AAA30043CF0B = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = ***REMOVED***;
+					};
+					8AE4FDA61D95AAA30043CF0B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8AE4FD8D1D95AAA30043CF0B;
+					};
+					8AE4FDB11D95AAA30043CF0B = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 8AE4FD8D1D95AAA30043CF0B;
+					};
+				};
+			};
+			buildConfigurationList = 8AE4FD891D95AAA30043CF0B /* Build configuration list for PBXProject "ViroMediaApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8AE4FD851D95AAA30043CF0B;
+			productRefGroup = 8AE4FD8F1D95AAA30043CF0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8AE4FD8D1D95AAA30043CF0B /* ViroMediaApp */,
+				8AE4FDA61D95AAA30043CF0B /* ViroMediaAppTests */,
+				8AE4FDB11D95AAA30043CF0B /* ViroMediaAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8AE4FD8C1D95AAA30043CF0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE4FDD31D95ABF90043CF0B /* nativeapp_card_phototour.png in Resources */,
+				8AE4FDD41D95ABF90043CF0B /* nativeapp_card_video.png in Resources */,
+				8AE4FDD11D95ABF90043CF0B /* nativeapp_card_flickr.png in Resources */,
+				8A3B192F1D99A52B0041B72B /* nativeapp_btn_leftpanel.png in Resources */,
+				8AE4FDD21D95ABF90043CF0B /* nativeapp_card_human_body.png in Resources */,
+				8A3B19351D99BD790041B72B /* nativeapp_btn_info.png in Resources */,
+				8A3B193B1D99DC3B0041B72B /* Raleway-SemiBold.ttf in Resources */,
+				8A3B19461D99DC500041B72B /* nativeapp_btn_no.png in Resources */,
+				8AE4FDDB1D95AC200043CF0B /* LaunchScreen.xib in Resources */,
+				8A3B19451D99DC500041B72B /* nativeapp_btn_no_press.png in Resources */,
+				8A3B19481D99DC500041B72B /* nativeapp_btn_yes.png in Resources */,
+				8AE4FDD51D95ABF90043CF0B /* nativeapp_header_logo.png in Resources */,
+				8AB6BB481D98639200425110 /* SamplesTableViewHeader.xib in Resources */,
+				8A3B19341D99BD790041B72B /* nativeapp_btn_info_hover.png in Resources */,
+				8AE4FD9E1D95AAA30043CF0B /* Assets.xcassets in Resources */,
+				8A3B19431D99DC500041B72B /* nativeapp_btn_back_press.png in Resources */,
+				8A3B193A1D99DC3B0041B72B /* Raleway-Regular.ttf in Resources */,
+				8AE4FDD71D95ABF90043CF0B /* nativeapp_logo_cardboard.png in Resources */,
+				8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */,
+				8AE4FD9C1D95AAA30043CF0B /* Main.storyboard in Resources */,
+				8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */,
+				8AE4FDD01D95ABF90043CF0B /* nativeapp_btn_sign_up.png in Resources */,
+				8AE4FDD61D95ABF90043CF0B /* nativeapp_loading.png in Resources */,
+				8A3B19441D99DC500041B72B /* nativeapp_btn_back.png in Resources */,
+				8AE4FDD81D95ABF90043CF0B /* nativeapp_rotate_device.png in Resources */,
+				8A3B19311D99B6A40041B72B /* nativeapp_header_logo_color.png in Resources */,
+				8A3B192E1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDA51D95AAA30043CF0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDB01D95AAA30043CF0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8915190F3F0BD594C80249CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8AE4FDDF1D95B84C0043CF0B /* Bundle React Native Code and Changes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code and Changes";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-viro/packager/react-native-xcode.sh";
+		};
+		8F7EDFA7FE187772D4B7CF69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaAppTests/Pods-ViroMediaAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		905AAF4EFE67E0561A9F57EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		929C6487442E85B392D8B11D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A92D70448F60BED40CA93A4C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B61D1C3853980F1AC6C00CED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3FCE4F459A2D6017731FC8D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaAppUITests/Pods-ViroMediaAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FC98392C106B07B21B8570 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaAppTests/Pods-ViroMediaAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8AE4FD8A1D95AAA30043CF0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A3B192B1D99928B0041B72B /* SamplesTableViewHeader.m in Sources */,
+				8AE4FD991D95AAA30043CF0B /* LaunchViewController.m in Sources */,
+				8AE4FD961D95AAA30043CF0B /* AppDelegate.m in Sources */,
+				8AAD94411D987287001DADB1 /* SamplesTableViewController.m in Sources */,
+				8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */,
+				8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */,
+				8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */,
+				8AE4FD931D95AAA30043CF0B /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDA31D95AAA30043CF0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE4FDAC1D95AAA30043CF0B /* ViroMediaAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8AE4FDAE1D95AAA30043CF0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AE4FDB71D95AAA30043CF0B /* ViroMediaAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8AE4FDA91D95AAA30043CF0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AE4FD8D1D95AAA30043CF0B /* ViroMediaApp */;
+			targetProxy = 8AE4FDA81D95AAA30043CF0B /* PBXContainerItemProxy */;
+		};
+		8AE4FDB41D95AAA30043CF0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8AE4FD8D1D95AAA30043CF0B /* ViroMediaApp */;
+			targetProxy = 8AE4FDB31D95AAA30043CF0B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AB6BB471D98639200425110 /* Base */,
+			);
+			name = SamplesTableViewHeader.xib;
+			sourceTree = "<group>";
+		};
+		8AE4FD9A1D95AAA30043CF0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AE4FD9B1D95AAA30043CF0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8AE4FDD91D95AC200043CF0B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AE4FDDA1D95AC200043CF0B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8AE4FDB91D95AAA30043CF0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8AE4FDBA1D95AAA30043CF0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8AE4FDBC1D95AAA30043CF0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B75A20264B2533974B73BF16 /* Pods-ViroMediaApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ViroMediaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaApp;
+				PRODUCT_NAME = "Viro Media";
+			};
+			name = Debug;
+		};
+		8AE4FDBD1D95AAA30043CF0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45FFB2910DE59850010A49E0 /* Pods-ViroMediaApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = ViroMediaApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaApp;
+				PRODUCT_NAME = "Viro Media";
+			};
+			name = Release;
+		};
+		8AE4FDBF1D95AAA30043CF0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECE82D23DB48A00548A83F4 /* Pods-ViroMediaAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ViroMediaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViroMediaApp.app/ViroMediaApp";
+			};
+			name = Debug;
+		};
+		8AE4FDC01D95AAA30043CF0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15CBE7152DE6C203C61FE2B /* Pods-ViroMediaAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ViroMediaAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViroMediaApp.app/ViroMediaApp";
+			};
+			name = Release;
+		};
+		8AE4FDC21D95AAA30043CF0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5026CCC5960A7F0C8D20D186 /* Pods-ViroMediaAppUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ViroMediaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ViroMediaApp;
+			};
+			name = Debug;
+		};
+		8AE4FDC31D95AAA30043CF0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20628399A6DEC5C766FF802C /* Pods-ViroMediaAppUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = ViroMediaAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMediaAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ViroMediaApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8AE4FD891D95AAA30043CF0B /* Build configuration list for PBXProject "ViroMediaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE4FDB91D95AAA30043CF0B /* Debug */,
+				8AE4FDBA1D95AAA30043CF0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE4FDBB1D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE4FDBC1D95AAA30043CF0B /* Debug */,
+				8AE4FDBD1D95AAA30043CF0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE4FDBE1D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE4FDBF1D95AAA30043CF0B /* Debug */,
+				8AE4FDC01D95AAA30043CF0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8AE4FDC11D95AAA30043CF0B /* Build configuration list for PBXNativeTarget "ViroMediaAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8AE4FDC21D95AAA30043CF0B /* Debug */,
+				8AE4FDC31D95AAA30043CF0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8AE4FD861D95AAA30043CF0B /* Project object */;
+}
