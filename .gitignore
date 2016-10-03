@@ -1,5 +1,6 @@
 .DS_Store
 *.DS_Store
+*npm-debug.log
 node_modules/
 ViroMediaApp/Podfile.lock
 ViroMediaApp/Pods/

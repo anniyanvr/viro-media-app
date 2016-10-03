@@ -289,8 +289,8 @@
 				8AE4FDCF1D95ABF90043CF0B /* nativeapp_rotate_device.png */,
 			);
 			name = Resources;
-			path = "/Users/andychu/workspace/viro-media-app/ViroMediaApp/ViroMediaApp/Resources";
-			sourceTree = "<absolute>";
+			path = ViroMediaApp/Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		ECFB1CA4058594AEE56835A4 /* Frameworks */ = {
 			isa = PBXGroup;
