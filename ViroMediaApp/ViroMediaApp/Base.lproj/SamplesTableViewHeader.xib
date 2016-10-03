@@ -25,7 +25,7 @@
                     <state key="focused" image="nativeapp_btn_info_hover.png"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.18823529411764706" alpha="0.40037715517241379" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.18823529411764706" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2fh-dr-J24"/>
                 <constraint firstItem="Xbd-E6-eZL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7cW-yH-jin"/>
