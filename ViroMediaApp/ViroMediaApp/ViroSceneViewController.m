@@ -65,7 +65,7 @@ static NSString *const kVRTUserRequestedExit = @"ViroUserRequestedExit";
 
 - (void)exitReact {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:NO completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     });
 }
 

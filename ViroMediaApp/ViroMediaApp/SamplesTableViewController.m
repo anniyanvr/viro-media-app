@@ -95,6 +95,11 @@ static NSString *const kViroSceneName = @"viroSceneName";
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    // if we ever go back to this view controller, we should make sure the overlay is hidden
+    self.overlayView.alpha = 0;
+}
+
 // TODO: VIRO-448, we removed left panel from V1
 //- (void)openLeftPanel {
 //    if (self.revealViewController.frontViewPosition == FrontViewPositionLeft) {
@@ -174,7 +179,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
 #warning this seems to take a while, so we should add a loading screen & deselect yes?
     NSString *sceneName = [[[self getCardContents] objectAtIndex:self.selectedRow] objectForKey:kViroSceneName];
     ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:vrMode previousVC:self];
-    [self hideOverlay];
     [self presentViewController:vc animated:YES completion:nil];
 }
 
