@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		80EB778DD44B235898FDC985 /* libPods-ViroMediaAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */; };
+		8A059CA51DA37EC80041460A /* TestbedEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A059CA41DA37EC80041460A /* TestbedEntryViewController.m */; };
 		8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */; };
 		8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */; };
 		8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */; };
@@ -73,6 +74,8 @@
 		45FFB2910DE59850010A49E0 /* Pods-ViroMediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp.release.xcconfig"; sourceTree = "<group>"; };
 		4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroMediaAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5026CCC5960A7F0C8D20D186 /* Pods-ViroMediaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppUITests/Pods-ViroMediaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A059CA31DA37EC80041460A /* TestbedEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestbedEntryViewController.h; sourceTree = "<group>"; };
+		8A059CA41DA37EC80041460A /* TestbedEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestbedEntryViewController.m; sourceTree = "<group>"; };
 		8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplesTableViewCell.xib; sourceTree = "<group>"; };
 		8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewCell.h; sourceTree = "<group>"; };
 		8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewCell.m; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				8A3B192A1D99928B0041B72B /* SamplesTableViewHeader.m */,
 				8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */,
 				8AAD94401D987287001DADB1 /* SamplesTableViewController.m */,
+				8A059CA31DA37EC80041460A /* TestbedEntryViewController.h */,
+				8A059CA41DA37EC80041460A /* TestbedEntryViewController.m */,
 				8A7F85461D98AA3200B11423 /* ViroSceneViewController.h */,
 				8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */,
 				8AE4FD9D1D95AAA30043CF0B /* Assets.xcassets */,
@@ -609,6 +614,7 @@
 				8AAD94411D987287001DADB1 /* SamplesTableViewController.m in Sources */,
 				8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */,
 				8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */,
+				8A059CA51DA37EC80041460A /* TestbedEntryViewController.m in Sources */,
 				8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */,
 				8AE4FD931D95AAA30043CF0B /* main.m in Sources */,
 			);

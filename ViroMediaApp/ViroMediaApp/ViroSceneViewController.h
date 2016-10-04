@@ -10,7 +10,14 @@
 
 @interface ViroSceneViewController : UIViewController
 
-//- (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode;
-- (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode previousVC:(UIViewController *)vc;
+/**
+ * Use this constructor to enter one of our sample apps.
+ */
+- (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode;
+
+/**
+ * Use this constructor to enter a user-created scene as part of the testbed.
+ */
+- (id)initForTestbed:(NSString *)ipAddress;
 
 @end

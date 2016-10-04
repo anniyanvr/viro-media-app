@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nativeapp_header_logo_color.png" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-D7-sV7">
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="nativeapp_header_logo_color.png" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-D7-sV7">
                     <rect key="frame" x="261" y="19" width="78" height="21"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-E6-eZL">
@@ -24,12 +24,25 @@
                     <state key="normal" image="nativeapp_btn_info.png"/>
                     <state key="focused" image="nativeapp_btn_info_hover.png"/>
                 </button>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SrX-Af-xuu">
+                    <rect key="frame" x="8" y="16" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="SrX-Af-xuu" secondAttribute="height" multiplier="1:1" id="cGN-BZ-h4Q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" image="nativeapp_btn_back.png"/>
+                    <state key="highlighted" image="nativeapp_btn_back_press.png"/>
+                    <state key="focused" image="nativeapp_btn_info_hover.png"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.18823529411764706" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2fh-dr-J24"/>
+                <constraint firstAttribute="bottom" secondItem="SrX-Af-xuu" secondAttribute="bottom" constant="16" id="5Aj-03-X5f"/>
                 <constraint firstItem="Xbd-E6-eZL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7cW-yH-jin"/>
                 <constraint firstAttribute="bottom" secondItem="Xbd-E6-eZL" secondAttribute="bottom" constant="16" id="B6L-CR-nMl"/>
+                <constraint firstItem="SrX-Af-xuu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="RVF-Sq-8xw"/>
+                <constraint firstItem="SrX-Af-xuu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Tt9-0y-8KJ"/>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="dvC-M5-YWo"/>
                 <constraint firstItem="Xbd-E6-eZL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ubA-8L-4ML"/>
                 <constraint firstAttribute="bottom" secondItem="aiu-D7-sV7" secondAttribute="bottom" constant="16" id="v9v-lQ-Ax4"/>
@@ -46,12 +59,16 @@
                 </mask>
             </variation>
             <connections>
+                <outlet property="backButton" destination="SrX-Af-xuu" id="JQL-A3-BYx"/>
                 <outlet property="infoButton" destination="Xbd-E6-eZL" id="yiQ-m7-B6T"/>
+                <outlet property="logoImage" destination="aiu-D7-sV7" id="75q-nt-8mJ"/>
             </connections>
             <point key="canvasLocation" x="481" y="440"/>
         </view>
     </objects>
     <resources>
+        <image name="nativeapp_btn_back.png" width="76" height="76"/>
+        <image name="nativeapp_btn_back_press.png" width="76" height="76"/>
         <image name="nativeapp_btn_info.png" width="76" height="76"/>
         <image name="nativeapp_btn_info_hover.png" width="76" height="76"/>
         <image name="nativeapp_header_logo_color.png" width="184" height="69"/>

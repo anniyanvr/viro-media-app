@@ -10,6 +10,14 @@
     <customFonts key="customFonts">
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+        </mutableArray>
+        <mutableArray key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -194,11 +202,101 @@
                         <outlet property="overlayView" destination="DeN-e1-NPg" id="Nip-xb-KaC"/>
                         <outlet property="overlayYesButton" destination="2c2-2F-Zdf" id="sjW-R0-7mu"/>
                         <outlet property="samplesTableView" destination="5WX-CX-bzo" id="vvv-7Z-m8j"/>
+                        <segue destination="uq9-dQ-ceh" kind="show" identifier="showTestbedEntry" id="i2j-rr-1Wd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSX-go-2na" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527" y="2015"/>
+        </scene>
+        <!--Testbed Entry View Controller-->
+        <scene sceneID="ZAE-ol-pe8">
+            <objects>
+                <viewController id="uq9-dQ-ceh" customClass="TestbedEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CSZ-om-Hse"/>
+                        <viewControllerLayoutGuide type="bottom" id="JGu-P4-PQx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LTT-U2-ChA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Vu-Krd">
+                                <rect key="frame" x="277" y="323" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                <state key="normal" title="Go"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add instructions here: ie. file names/structure, run npm start, get ip address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-dh-HV0">
+                                <rect key="frame" x="277" y="250" width="44" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="255.255.255.255" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-U0-cDP">
+                                <rect key="frame" x="250" y="285" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Viro Application Testbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2z-Ey-xgD">
+                                <rect key="frame" x="279" y="221" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.05624300158" blue="0.15750028090000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-qY-5Gi">
+                                <rect key="frame" x="278" y="361" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weU-Dz-sXe">
+                                <rect key="frame" x="279" y="559" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Previous IP Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEs-qg-mku">
+                                <rect key="frame" x="279" y="530" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="weU-Dz-sXe" firstAttribute="top" secondItem="nEs-qg-mku" secondAttribute="bottom" constant="8" id="1N4-KD-prd"/>
+                            <constraint firstItem="f2z-Ey-xgD" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8BR-K9-nPC"/>
+                            <constraint firstItem="QwW-U0-cDP" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8CQ-Go-L49"/>
+                            <constraint firstItem="weU-Dz-sXe" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Clz-9z-fKR"/>
+                            <constraint firstItem="X6W-Vu-Krd" firstAttribute="top" secondItem="QwW-U0-cDP" secondAttribute="bottom" constant="8" id="Fsm-5y-hiW"/>
+                            <constraint firstItem="jf9-qY-5Gi" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="GPo-ls-ioc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YHX-dh-HV0" secondAttribute="trailing" constant="30" id="ZJj-eb-MPn"/>
+                            <constraint firstItem="YHX-dh-HV0" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Zjs-TN-3ww"/>
+                            <constraint firstItem="QwW-U0-cDP" firstAttribute="top" secondItem="YHX-dh-HV0" secondAttribute="bottom" constant="10" id="cLM-bg-4Ku"/>
+                            <constraint firstItem="jf9-qY-5Gi" firstAttribute="top" secondItem="X6W-Vu-Krd" secondAttribute="bottom" constant="8" id="dL6-9t-OSo"/>
+                            <constraint firstItem="X6W-Vu-Krd" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="dlm-XT-j6W"/>
+                            <constraint firstItem="YHX-dh-HV0" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="liL-dc-sUJ"/>
+                            <constraint firstItem="YHX-dh-HV0" firstAttribute="top" secondItem="f2z-Ey-xgD" secondAttribute="bottom" constant="10" id="nx0-Ns-OMS"/>
+                            <constraint firstItem="nEs-qg-mku" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="qX2-7y-GSs"/>
+                            <constraint firstItem="QwW-U0-cDP" firstAttribute="centerY" secondItem="LTT-U2-ChA" secondAttribute="centerY" id="rCI-pi-1dz"/>
+                            <constraint firstItem="QwW-U0-cDP" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="wAy-xn-dY0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QwW-U0-cDP" secondAttribute="trailing" constant="30" id="ww9-2e-kBF"/>
+                            <constraint firstItem="jf9-qY-5Gi" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="xaE-Z6-46o"/>
+                            <constraint firstItem="JGu-P4-PQx" firstAttribute="top" secondItem="weU-Dz-sXe" secondAttribute="bottom" constant="20" id="zOY-gN-RdN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jf9-qY-5Gi" secondAttribute="trailing" constant="30" id="zeT-5H-QEd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="enterButton" destination="X6W-Vu-Krd" id="yhq-iI-QbV"/>
+                        <outlet property="errorText" destination="jf9-qY-5Gi" id="8sd-xA-km2"/>
+                        <outlet property="ipTextField" destination="QwW-U0-cDP" id="7lD-Wf-XRg"/>
+                        <outlet property="previousIpText" destination="weU-Dz-sXe" id="6si-Q2-VHW"/>
+                        <outlet property="previousIpTitle" destination="nEs-qg-mku" id="bVE-rA-cfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Md2-81-fsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="2016"/>
         </scene>
         <!--Portrait Reveal View Controller-->
         <scene sceneID="X1H-uY-LBN">

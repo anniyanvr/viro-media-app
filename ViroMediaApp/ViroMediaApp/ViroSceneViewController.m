@@ -13,23 +13,33 @@
 
 #warning once we use the latest react-viro build, import VRTNotifications.h.
 static NSString *const kVRTUserRequestedExit = @"ViroUserRequestedExit";
+static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle?platform=ios&dev=true";
 
 @interface ViroSceneViewController ()
 
+@property (nonatomic, assign) BOOL useTestbed;
+@property (nonatomic, copy, nonnull) NSString *userIpAddress;
 @property (nonatomic, copy, nonnull) NSString *sceneName;
 @property (nonatomic, assign) BOOL vrMode;
-@property (nonatomic, copy, nonnull) UIViewController *previousVC;
 
 @end
 
 @implementation ViroSceneViewController
 
-- (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode previousVC:(UIViewController *)vc {
+- (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode {
     self = [super init];
     if (self) {
         _sceneName = sceneName;
         _vrMode = vrMode;
-        _previousVC = vc;
+    }
+    return self;
+}
+
+- (id)initForTestbed:(NSString *)ipAddress {
+    self = [super init];
+    if (self) {
+        _useTestbed = YES;
+        _userIpAddress = ipAddress;
     }
     return self;
 }
@@ -37,12 +47,23 @@ static NSString *const kVRTUserRequestedExit = @"ViroUserRequestedExit";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSDictionary *initialProperties = @{
-        @"initialScene" : self.sceneName,
-        @"vrMode" : [NSNumber numberWithBool:self.vrMode],
-    };
-    
-    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+    NSDictionary *initialProperties = nil;
+    NSURL *jsCodeLocation = nil;
+  
+    if (!self.useTestbed) {
+        initialProperties =
+            @{
+                @"initialScene" : self.sceneName,
+                @"vrMode" : [NSNumber numberWithBool:self.vrMode],
+            };
+        //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+        jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.55:8081/index.ios.bundle?platform=ios&dev=true"];
+
+    } else {
+        NSString *urlString = [NSString stringWithFormat:kReactNativeManualURL, self.userIpAddress];
+        jsCodeLocation = [NSURL URLWithString:urlString];
+    }
+
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                         moduleName:@"ViroSample"
                                                  initialProperties:initialProperties

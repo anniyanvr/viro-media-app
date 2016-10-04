@@ -8,26 +8,8 @@
 
 #import "SamplesTableViewHeader.h"
 
-static NSString *const kViroSignUpURL = @"http://www.viromedia.com/";
-
 @implementation SamplesTableViewHeader
 
--(void)awakeFromNib {
-    [super awakeFromNib];
-
-    [self signupGestureRecognizers];
-}
-
--(void)signupGestureRecognizers {
-    // add onTap to the button
-    UITapGestureRecognizer *singleFingerTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(goToSignUpURL)];
-    [self.infoButton addGestureRecognizer:singleFingerTap];
-}
-
--(void)goToSignUpURL {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kViroSignUpURL]];
-}
+// nothing to see here since this header is being reused in multiple places...
 
 @end

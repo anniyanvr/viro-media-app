@@ -13,9 +13,9 @@
 #import "ViroSceneViewController.h"
 
 static NSString *const kSampleCellReuseIdentifier = @"sampleCell";
-static NSString *const kHeaderViewXibName = @"SamplesTableViewHeader";
-static float kHeaderViewHeight = 60.0f;
 static NSString *const kSamplesTableViewCellXib = @"SamplesTableViewCell";
+static NSString *const kTestbedEntrySegue = @"showTestbedEntry";
+static NSString *const kViroSignUpURL = @"http://www.viromedia.com/";
 
 // card content keys
 static NSString *const kTitleKey = @"title";
@@ -26,6 +26,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 @interface SamplesTableViewController ()
 
 @property (nonatomic, assign) NSInteger selectedRow;
+@property (nonatomic, assign) NSInteger numberLogoTaps;
 
 @end
 
@@ -50,8 +51,25 @@ static NSString *const kViroSceneName = @"viroSceneName";
     NSArray *viewsInHeaderXib = [[NSBundle mainBundle] loadNibNamed:kHeaderViewXibName owner:self options:nil];
     SamplesTableViewHeader *headerView = [viewsInHeaderXib objectAtIndex:0];
     // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
-    [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderViewHeight)];
+    [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
     [headerView layoutIfNeeded];
+
+    // Hide back button
+    headerView.backButton.hidden = YES;
+
+    // onTap for Header logo image
+    UITapGestureRecognizer *headerLogoTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleLogoTap)];
+    [headerView.logoImage addGestureRecognizer:headerLogoTap];
+    headerView.logoImage.userInteractionEnabled = YES;
+    
+    // onTap for the info button
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(goToSignUpURL)];
+    [headerView.infoButton addGestureRecognizer:singleFingerTap];
+
 
     // TODO: VIRO-448, we removed left panel from V1
 //    UITapGestureRecognizer *singleFingerTap =
@@ -60,7 +78,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 //    [headerView.infoImageView addGestureRecognizer:singleFingerTap];
     
     // "start" the tableview below the header view.
-    [self.samplesTableView setContentInset:UIEdgeInsetsMake(kHeaderViewHeight, 0, 0, 0)];
+    [self.samplesTableView setContentInset:UIEdgeInsetsMake(kHeaderRecommendedHeight, 0, 0, 0)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self.view addSubview:headerView];
@@ -89,15 +107,18 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // Overlay No Button
     UITapGestureRecognizer *overlayNoButtonTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(enterViroSceneIn360Mode)];
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(enterViroSceneIn360Mode)];
     [self.overlayNoButton addGestureRecognizer:overlayNoButtonTap];
-    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     // if we ever go back to this view controller, we should make sure the overlay is hidden
     self.overlayView.alpha = 0;
+
+    // reset the number of logo taps
+    self.numberLogoTaps = 0;
 }
 
 // TODO: VIRO-448, we removed left panel from V1
@@ -176,10 +197,25 @@ static NSString *const kViroSceneName = @"viroSceneName";
 }
 
 - (void)enterViroSceneInVRMode:(BOOL)vrMode {
-#warning this seems to take a while, so we should add a loading screen & deselect yes?
     NSString *sceneName = [[[self getCardContents] objectAtIndex:self.selectedRow] objectForKey:kViroSceneName];
-    ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:vrMode previousVC:self];
+    ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:vrMode];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+#pragma mark - Header Touch Responders
+- (void)handleLogoTap {
+    self.numberLogoTaps++;
+    if (self.numberLogoTaps % 7 == 0) {
+        NSLog(@"Entering the testbed now!");
+        // segue to TestBed view controller.
+        [self performSegueWithIdentifier:kTestbedEntrySegue sender:self];
+    } else {
+        NSLog(@"You are %ld taps away from the testbed!", (7 - self.numberLogoTaps % 7));
+    }
+}
+
+-(void)goToSignUpURL {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kViroSignUpURL]];
 }
 
 #pragma mark - UITableViewDelegate
