@@ -72,7 +72,6 @@ var ElevenFloorCommonScene = React.createClass({
 
           <PortalElement transformConstraint="billboard"  sceneLength={0.7} sceneText="East Side"
                          position={polarToCartesian([-5, 50, 0])} jumpToScene={ElevenFloorCommonEastScene} sceneNavigator={this.props.sceneNavigator}/>
-          <BackElement sceneNavigator={this.props.sceneNavigator}/>
                         </ViroView>
                     </ViroAnimatedComponent>
                 </ViroView>
