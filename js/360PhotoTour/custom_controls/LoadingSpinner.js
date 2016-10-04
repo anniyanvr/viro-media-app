@@ -22,7 +22,8 @@ import {
     ViroAnimatedComponent,
     ViroView,
     ViroSpinner,
-    ViroText
+    ViroText,
+    ViroSphere
 } from 'react-viro';
 import { polarToCartesian } from 'polarToCartesian';
 
@@ -30,46 +31,31 @@ var PropTypes = require('react/lib/ReactPropTypes');
 
 var LoadingSpinner = React.createClass({
     propTypes: {
-        spinnerOffsetX:PropTypes.number,
-        spinnerOffsetY:PropTypes.number,
-        spinnerOffsetZ:PropTypes.number,
         showLoadingText:PropTypes.BOOL,
     },
-    getInitialState() {
-        return {
-        };
-    },
     render: function() {
-        var spinnerPosition =polarToCartesian([0, 0, 0]);
-            spinnerPosition[2]=0;
+        var spinnerPosition = polarToCartesian([0, 0, 0]);
+        spinnerPosition[2]=0;
+        var textPosition = polarToCartesian([1, -25, -40]);
+        textPosition[2]=0.35;
         return (
-            <ViroView {...this.props} >
-                <ViroView position={polarToCartesian([0, 0, 0])}
+                <ViroView {...this.props} >
+                    <ViroView position={polarToCartesian([0, 0, 0])}
                           transformConstraint="billboard">
-                    <ViroSpinner position={spinnerPosition}
-                                 spinnerType='dark' />
-                    {this._getViews()}
+                        <ViroSpinner position={spinnerPosition}
+                                     scale={[.7,.7,.1]}
+                                     spinnerType='dark' />
+                        <ViroText
+                            position={textPosition}
+                            fontFamily='HelveticaNeue-Medium'
+                            fontSize={70}
+                            color={"#000000"}
+                            text="Loading ...."
+                        />
+                    </ViroView>
                 </ViroView>
-            </ViroView>
-
-            );
+        );
     },
-     _getViews() {
-            var views = [];
-            var position = polarToCartesian([1, -30, -50]);
-            position[2]=0.5;
-            views.push((
-                <ViroText
-                    position={position}
-                    fontFamily='HelveticaNeue-Medium'
-                fontSize={70}
-                color={"#000000"}
-                text="Loading ...."
-                />
-                ));
-                return views;
-     }
-
 });
 
 var styles = StyleSheet.create({

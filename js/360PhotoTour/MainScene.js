@@ -11,6 +11,7 @@
 
 import React, { Component } from 'react';
 var OfficeTourMainScene = require('./scenes/OfficeTourMcGrawScene');
+var LoadingSpinner = require('./custom_controls/LoadingSpinner');
 
 import {
   StyleSheet,
@@ -40,30 +41,13 @@ var OfficeTourSplashScene = React.createClass({
               <ViroLight type="omni" position={[0, 0, 0]} color="#ffffff"
                          direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50}
                          spotInnerAngle={0} spotOuterAngle={20} />
-              <ViroView visible={!this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
-                  <ViroSpinner position={[0, 0, -5]}
-                               spinnerType='dark'
-                               showLoadingText={true}/>
-                  <ViroText position={[-0.25, -1, -5]}
-                            fontFamily='HelveticaNeue-Medium'
-                            transformConstraint="billboard"
-                            fontSize={70}
-                            color="#000000"
-                            text="Loading ...."/>
-              </ViroView>
+              <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, -5]}/>
 
-              <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+              <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} >
                   <Viro360Photo source={require('./img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                   <ViroAnimatedComponent animation="showTitle" runOnMount={false} loop={false} ref={MAINCARD_REF}>
-                        <ViroImage material="wework_title"  position={[0, 0, -5]} scale={[.1, .1, .1]} opacity={0.0} onTap={this._onTapTourSplashScreen}/>
+                        <ViroImage material="wework_title"  position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onTap={this._onTapTourSplashScreen}/>
                   </ViroAnimatedComponent>
-                  <ViroText position={[-0.75, -1.60, -5]}
-                            fontFamily='HelveticaNeue-Medium'
-                            transformConstraint="billboard"
-                            spatialWidth={2}
-                            fontSize={60}
-                            color="#000000"
-                            text="Click To Start"/>
               </ViroView>
           </ViroScene>
       );
@@ -96,6 +80,6 @@ var styles = StyleSheet.create({
     },
 });
 ViroAnimations.registerAnimations({
-    showTitle: {properties:{scaleX:2, scaleY:2, scaleZ:2, opacity:1.0}, easing:"PowerDecel", duration:1000},
+    showTitle: {properties:{scaleX:2.714, scaleY:4, scaleZ:.1, opacity:1.0}, easing:"PowerDecel", duration:1000},
 });
 module.exports = OfficeTourSplashScene;
