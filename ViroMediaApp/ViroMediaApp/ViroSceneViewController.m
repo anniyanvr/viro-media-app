@@ -56,9 +56,7 @@ static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle
                 @"initialScene" : self.sceneName,
                 @"vrMode" : [NSNumber numberWithBool:self.vrMode],
             };
-        //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
-        jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.55:8081/index.ios.bundle?platform=ios&dev=true"];
-
+        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
     } else {
         NSString *urlString = [NSString stringWithFormat:kReactNativeManualURL, self.userIpAddress];
         jsCodeLocation = [NSURL URLWithString:urlString];

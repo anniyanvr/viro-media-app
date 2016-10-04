@@ -151,7 +151,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
                 kTitleKey: @"360 Photo Tour",
                 kImageKey: @"nativeapp_card_phototour.png",
                 kDescriptionKey: @"Taking 360 photos further with interactivity.",
-                kViroSceneName: @"HelloWorldScene"
+                kViroSceneName: @"360 Photo Tour"
             },
             @{
                 kTitleKey: @"Viro Media Player",

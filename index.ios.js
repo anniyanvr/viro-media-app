@@ -10,7 +10,7 @@ import {
 var scenes = {
   'HelloWorldScene' : require('./js/HelloWorld/HelloWorldScene'),
 //  'Flickr Photo Explorer': require('./js/FlickrPhotoExplorer/MainScene'),
-//  '360 Photo Tour': require('./js/360PhotoTour/MainScene'),
+  '360 Photo Tour': require('./js/360PhotoTour/MainScene'),
 //  'Viro Media Player': require('./js/ViroMediaPlayer/MainScene'),
 //  'Inside the Human Body': require('./js/HumanBody/MainScene'),
 }
