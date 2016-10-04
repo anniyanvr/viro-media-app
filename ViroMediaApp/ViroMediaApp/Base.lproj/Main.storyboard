@@ -13,7 +13,6 @@
             <string>Raleway</string>
             <string>Raleway</string>
             <string>Raleway</string>
-            <string>Raleway</string>
         </mutableArray>
         <mutableArray key="Raleway-SemiBold.ttf">
             <string>Raleway-SemiBold</string>
@@ -221,26 +220,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Vu-Krd">
-                                <rect key="frame" x="277" y="323" width="46" height="30"/>
-                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
-                                <state key="normal" title="Go"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Vu-Krd">
+                                <rect key="frame" x="250" y="330" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="X6W-Vu-Krd" secondAttribute="height" multiplier="1:1" id="cZD-oc-xVd"/>
+                                    <constraint firstAttribute="width" constant="100" id="ql6-Vq-uUC"/>
+                                </constraints>
+                                <state key="normal" image="nativeapp_btn_go.png"/>
+                                <state key="highlighted" image="nativeapp_btn_go_press.png"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add instructions here: ie. file names/structure, run npm start, get ip address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-dh-HV0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-dh-HV0">
                                 <rect key="frame" x="277" y="250" width="44" height="21"/>
-                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                <string key="text" base64-UTF8="YES">
+MS4gUnVuICducG0gc3RhcnQnIGF0IHlvdXIgcHJvamVjdCdzIHJvb3QgZGlyZWN0b3J5LhERERERERER
+DTIuIEVuc3VyZSB5b3VyIGRldmljZSBhbmQgZGV2ZWxvcG1lbnQgbWFjaGluZSBhcmUgb24gdGhlIHNh
+bWUgV2lGaSBuZXR3b3JrLuKAqDMuIEVudGVyIHlvdXIgZGV2ZWxvcG1lbnQgbWFjaGluZSdzIElQIGFk
+ZHJlc3MgYmVsb3cuA
+</string>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="255.255.255.255" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-U0-cDP">
-                                <rect key="frame" x="250" y="285" width="99" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Viro Application Testbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2z-Ey-xgD">
-                                <rect key="frame" x="279" y="221" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="1" green="0.05624300158" blue="0.15750028090000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Viro Media Application Testbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2z-Ey-xgD">
+                                <rect key="frame" x="279" y="185" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-qY-5Gi">
@@ -261,28 +265,34 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="255.255.255.255" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-U0-cDP">
+                                <rect key="frame" x="250" y="285" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="weU-Dz-sXe" firstAttribute="top" secondItem="nEs-qg-mku" secondAttribute="bottom" constant="8" id="1N4-KD-prd"/>
+                            <constraint firstItem="f2z-Ey-xgD" firstAttribute="top" secondItem="CSZ-om-Hse" secondAttribute="bottom" constant="150" id="44r-cZ-uXH"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8BR-K9-nPC"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8CQ-Go-L49"/>
+                            <constraint firstItem="f2z-Ey-xgD" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="8Mu-6v-ruj"/>
                             <constraint firstItem="weU-Dz-sXe" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Clz-9z-fKR"/>
-                            <constraint firstItem="X6W-Vu-Krd" firstAttribute="top" secondItem="QwW-U0-cDP" secondAttribute="bottom" constant="8" id="Fsm-5y-hiW"/>
+                            <constraint firstItem="X6W-Vu-Krd" firstAttribute="top" secondItem="QwW-U0-cDP" secondAttribute="bottom" constant="15" id="Fsm-5y-hiW"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="GPo-ls-ioc"/>
+                            <constraint firstItem="QwW-U0-cDP" firstAttribute="top" secondItem="YHX-dh-HV0" secondAttribute="bottom" constant="15" id="Uwj-Z1-avw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YHX-dh-HV0" secondAttribute="trailing" constant="30" id="ZJj-eb-MPn"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Zjs-TN-3ww"/>
-                            <constraint firstItem="QwW-U0-cDP" firstAttribute="top" secondItem="YHX-dh-HV0" secondAttribute="bottom" constant="10" id="cLM-bg-4Ku"/>
-                            <constraint firstItem="jf9-qY-5Gi" firstAttribute="top" secondItem="X6W-Vu-Krd" secondAttribute="bottom" constant="8" id="dL6-9t-OSo"/>
+                            <constraint firstItem="jf9-qY-5Gi" firstAttribute="top" secondItem="X6W-Vu-Krd" secondAttribute="bottom" constant="15" id="dL6-9t-OSo"/>
                             <constraint firstItem="X6W-Vu-Krd" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="dlm-XT-j6W"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="liL-dc-sUJ"/>
-                            <constraint firstItem="YHX-dh-HV0" firstAttribute="top" secondItem="f2z-Ey-xgD" secondAttribute="bottom" constant="10" id="nx0-Ns-OMS"/>
                             <constraint firstItem="nEs-qg-mku" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="qX2-7y-GSs"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerY" secondItem="LTT-U2-ChA" secondAttribute="centerY" id="rCI-pi-1dz"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="wAy-xn-dY0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QwW-U0-cDP" secondAttribute="trailing" constant="30" id="ww9-2e-kBF"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="xaE-Z6-46o"/>
-                            <constraint firstItem="JGu-P4-PQx" firstAttribute="top" secondItem="weU-Dz-sXe" secondAttribute="bottom" constant="20" id="zOY-gN-RdN"/>
+                            <constraint firstItem="JGu-P4-PQx" firstAttribute="top" secondItem="weU-Dz-sXe" secondAttribute="bottom" constant="50" id="zOY-gN-RdN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jf9-qY-5Gi" secondAttribute="trailing" constant="30" id="zeT-5H-QEd"/>
                         </constraints>
                     </view>
@@ -313,6 +323,7 @@
                     </view>
                     <connections>
                         <segue destination="ODk-JP-3j4" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="2OE-eD-ulM"/>
+                        <segue destination="OnR-GR-7Ok" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Fpv-p3-s1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7yJ-VK-qsX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,6 +334,8 @@
     <resources>
         <image name="nativeapp_btn_back.png" width="76" height="76"/>
         <image name="nativeapp_btn_back_press.png" width="76" height="76"/>
+        <image name="nativeapp_btn_go.png" width="244" height="244"/>
+        <image name="nativeapp_btn_go_press.png" width="244" height="244"/>
         <image name="nativeapp_btn_no.png" width="244" height="244"/>
         <image name="nativeapp_btn_no_press.png" width="244" height="244"/>
         <image name="nativeapp_btn_yes.png" width="244" height="244"/>

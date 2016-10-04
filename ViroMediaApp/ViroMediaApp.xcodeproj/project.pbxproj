@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		80EB778DD44B235898FDC985 /* libPods-ViroMediaAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB3A34C111C121890BC5074 /* libPods-ViroMediaAppUITests.a */; };
 		8A059CA51DA37EC80041460A /* TestbedEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A059CA41DA37EC80041460A /* TestbedEntryViewController.m */; };
+		8A059CA81DA432EA0041460A /* nativeapp_btn_go_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CA61DA432EA0041460A /* nativeapp_btn_go_press.png */; };
+		8A059CA91DA432EA0041460A /* nativeapp_btn_go.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CA71DA432EA0041460A /* nativeapp_btn_go.png */; };
+		8A059CAD1DA436220041460A /* nativeapp_btn_sign_up_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAA1DA436220041460A /* nativeapp_btn_sign_up_press.png */; };
+		8A059CAE1DA436220041460A /* nativeapp_btn_testbed_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAB1DA436220041460A /* nativeapp_btn_testbed_press.png */; };
+		8A059CAF1DA436220041460A /* nativeapp_btn_testbed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAC1DA436220041460A /* nativeapp_btn_testbed.png */; };
 		8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */; };
 		8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */; };
 		8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */; };
@@ -76,6 +81,11 @@
 		5026CCC5960A7F0C8D20D186 /* Pods-ViroMediaAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppUITests/Pods-ViroMediaAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A059CA31DA37EC80041460A /* TestbedEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestbedEntryViewController.h; sourceTree = "<group>"; };
 		8A059CA41DA37EC80041460A /* TestbedEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestbedEntryViewController.m; sourceTree = "<group>"; };
+		8A059CA61DA432EA0041460A /* nativeapp_btn_go_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_go_press.png; sourceTree = "<group>"; };
+		8A059CA71DA432EA0041460A /* nativeapp_btn_go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_go.png; sourceTree = "<group>"; };
+		8A059CAA1DA436220041460A /* nativeapp_btn_sign_up_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_sign_up_press.png; sourceTree = "<group>"; };
+		8A059CAB1DA436220041460A /* nativeapp_btn_testbed_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_testbed_press.png; sourceTree = "<group>"; };
+		8A059CAC1DA436220041460A /* nativeapp_btn_testbed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_testbed.png; sourceTree = "<group>"; };
 		8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplesTableViewCell.xib; sourceTree = "<group>"; };
 		8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewCell.h; sourceTree = "<group>"; };
 		8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewCell.m; sourceTree = "<group>"; };
@@ -274,13 +284,18 @@
 				8A3B19371D99DC2C0041B72B /* Fonts */,
 				8A3B193D1D99DC500041B72B /* nativeapp_btn_back_press.png */,
 				8A3B193E1D99DC500041B72B /* nativeapp_btn_back.png */,
+				8A059CA61DA432EA0041460A /* nativeapp_btn_go_press.png */,
+				8A059CA71DA432EA0041460A /* nativeapp_btn_go.png */,
 				8A3B19321D99BD790041B72B /* nativeapp_btn_info_hover.png */,
 				8A3B19331D99BD790041B72B /* nativeapp_btn_info.png */,
 				8A3B192C1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png */,
 				8A3B192D1D99A52B0041B72B /* nativeapp_btn_leftpanel.png */,
 				8A3B193F1D99DC500041B72B /* nativeapp_btn_no_press.png */,
 				8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */,
+				8A059CAA1DA436220041460A /* nativeapp_btn_sign_up_press.png */,
 				8AE4FDC71D95ABF90043CF0B /* nativeapp_btn_sign_up.png */,
+				8A059CAB1DA436220041460A /* nativeapp_btn_testbed_press.png */,
+				8A059CAC1DA436220041460A /* nativeapp_btn_testbed.png */,
 				8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */,
 				8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */,
 				8AE4FDC81D95ABF90043CF0B /* nativeapp_card_flickr.png */,
@@ -421,20 +436,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8AE4FDD31D95ABF90043CF0B /* nativeapp_card_phototour.png in Resources */,
+				8A059CAF1DA436220041460A /* nativeapp_btn_testbed.png in Resources */,
 				8AE4FDD41D95ABF90043CF0B /* nativeapp_card_video.png in Resources */,
 				8AE4FDD11D95ABF90043CF0B /* nativeapp_card_flickr.png in Resources */,
 				8A3B192F1D99A52B0041B72B /* nativeapp_btn_leftpanel.png in Resources */,
 				8AE4FDD21D95ABF90043CF0B /* nativeapp_card_human_body.png in Resources */,
 				8A3B19351D99BD790041B72B /* nativeapp_btn_info.png in Resources */,
 				8A3B193B1D99DC3B0041B72B /* Raleway-SemiBold.ttf in Resources */,
+				8A059CAE1DA436220041460A /* nativeapp_btn_testbed_press.png in Resources */,
 				8A3B19461D99DC500041B72B /* nativeapp_btn_no.png in Resources */,
 				8AE4FDDB1D95AC200043CF0B /* LaunchScreen.xib in Resources */,
+				8A059CA81DA432EA0041460A /* nativeapp_btn_go_press.png in Resources */,
 				8A3B19451D99DC500041B72B /* nativeapp_btn_no_press.png in Resources */,
 				8A3B19481D99DC500041B72B /* nativeapp_btn_yes.png in Resources */,
 				8AE4FDD51D95ABF90043CF0B /* nativeapp_header_logo.png in Resources */,
 				8AB6BB481D98639200425110 /* SamplesTableViewHeader.xib in Resources */,
 				8A3B19341D99BD790041B72B /* nativeapp_btn_info_hover.png in Resources */,
 				8AE4FD9E1D95AAA30043CF0B /* Assets.xcassets in Resources */,
+				8A059CA91DA432EA0041460A /* nativeapp_btn_go.png in Resources */,
 				8A3B19431D99DC500041B72B /* nativeapp_btn_back_press.png in Resources */,
 				8A3B193A1D99DC3B0041B72B /* Raleway-Regular.ttf in Resources */,
 				8AE4FDD71D95ABF90043CF0B /* nativeapp_logo_cardboard.png in Resources */,
@@ -443,6 +462,7 @@
 				8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */,
 				8AE4FDD01D95ABF90043CF0B /* nativeapp_btn_sign_up.png in Resources */,
 				8AE4FDD61D95ABF90043CF0B /* nativeapp_loading.png in Resources */,
+				8A059CAD1DA436220041460A /* nativeapp_btn_sign_up_press.png in Resources */,
 				8A3B19441D99DC500041B72B /* nativeapp_btn_back.png in Resources */,
 				8AE4FDD81D95ABF90043CF0B /* nativeapp_rotate_device.png in Resources */,
 				8A3B19311D99B6A40041B72B /* nativeapp_header_logo_color.png in Resources */,

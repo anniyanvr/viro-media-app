@@ -16,5 +16,10 @@ static NSString *const kHeaderViewXibName = @"SamplesTableViewHeader";
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+
+- (void)showMenuButton;
+- (void)showInfoButton;
+- (void)showBackButton;
 
 @end

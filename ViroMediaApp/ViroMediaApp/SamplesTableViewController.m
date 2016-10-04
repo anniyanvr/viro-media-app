@@ -36,9 +36,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
     [super viewDidLoad];
 #warning refactor this method to use some helper methods. Ideally splitting up setup into 3 helper funcs for: header, tableview and overlay.
 
-    // TODO: VIRO-448, we removed left panel from V1
     // Tell the revealViewController to add a panGestureRecognizer to this view
-//    [[self revealViewController] panGestureRecognizer];
+    [[self revealViewController] panGestureRecognizer];
 
     // Set self as the delegate and datasource for the tableview
     [self.samplesTableView setDelegate:self];
@@ -53,29 +52,21 @@ static NSString *const kViroSceneName = @"viroSceneName";
     // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
     [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
     [headerView layoutIfNeeded];
-
-    // Hide back button
-    headerView.backButton.hidden = YES;
-
+    
     // onTap for Header logo image
     UITapGestureRecognizer *headerLogoTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleLogoTap)];
     [headerView.logoImage addGestureRecognizer:headerLogoTap];
     headerView.logoImage.userInteractionEnabled = YES;
-    
-    // onTap for the info button
-    UITapGestureRecognizer *singleFingerTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(goToSignUpURL)];
-    [headerView.infoButton addGestureRecognizer:singleFingerTap];
 
+    // show only the menu button
+    [headerView showMenuButton];
 
-    // TODO: VIRO-448, we removed left panel from V1
-//    UITapGestureRecognizer *singleFingerTap =
-//            [[UITapGestureRecognizer alloc] initWithTarget:self
-//                                                    action:@selector(openLeftPanel)];
-//    [headerView.infoImageView addGestureRecognizer:singleFingerTap];
+    UITapGestureRecognizer *openLeftPanelTap =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(openLeftPanel)];
+    [headerView.menuButton addGestureRecognizer:openLeftPanelTap];
     
     // "start" the tableview below the header view.
     [self.samplesTableView setContentInset:UIEdgeInsetsMake(kHeaderRecommendedHeight, 0, 0, 0)];
@@ -121,16 +112,17 @@ static NSString *const kViroSceneName = @"viroSceneName";
     self.numberLogoTaps = 0;
 }
 
-// TODO: VIRO-448, we removed left panel from V1
-//- (void)openLeftPanel {
-//    if (self.revealViewController.frontViewPosition == FrontViewPositionLeft) {
-//        [self.revealViewController setFrontViewPosition:FrontViewPositionRight
-//                                               animated:YES];
-//    } else {
-//        [self.revealViewController setFrontViewPosition:FrontViewPositionLeft
-//                                               animated:YES];
-//    }
-//}
+- (void)openLeftPanel {
+    if (self.revealViewController.frontViewPosition == FrontViewPositionLeft) {
+        NSLog(@"kirby we're showing the back controller!");
+        [self.revealViewController setFrontViewPosition:FrontViewPositionRight
+                                               animated:YES];
+    } else {
+        NSLog(@"kirby we're showing the front controller!");
+        [self.revealViewController setFrontViewPosition:FrontViewPositionLeft
+                                               animated:YES];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

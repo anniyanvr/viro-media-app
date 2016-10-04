@@ -38,14 +38,22 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
     [super viewDidLoad];
     
     NSArray *viewsInHeaderXib = [[NSBundle mainBundle] loadNibNamed:kHeaderViewXibName owner:self options:nil];
+
+#warning we were originally using the header view, but now we're changing so much, we maybe should not reuse it?
     SamplesTableViewHeader *headerView = [viewsInHeaderXib objectAtIndex:0];
     // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
     [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
     [headerView layoutIfNeeded];
     
-    // Hide info button
-    headerView.infoButton.hidden = YES;
+    // Show back button
+    [headerView showBackButton];
+
+    // Hide logo, because that's what the comps show.
+    headerView.logoImage.hidden = YES;
     
+    // Set background to black...
+    [headerView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]];
+
     // onTap for back button
     UITapGestureRecognizer *backButtonTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -61,6 +69,14 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 
     // Add text field 'enter' callback
     [self.ipTextField addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventEditingDidEndOnExit];
+
+    // Change keyboard return key to 'Go'
+    self.ipTextField.returnKeyType = UIReturnKeyGo;
+
+    UITapGestureRecognizer *dismissKeyboardTap =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:dismissKeyboardTap];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -108,6 +124,10 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 
 - (void)dismissSelf {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 
 - (void)enterViroTestbed {

@@ -10,6 +10,21 @@
 
 @implementation SamplesTableViewHeader
 
-// nothing to see here since this header is being reused in multiple places...
+- (void)showMenuButton {
+    self.menuButton.hidden = NO;
+    self.infoButton.hidden = YES;
+    self.backButton.hidden = YES;
+}
+- (void)showInfoButton {
+    self.menuButton.hidden = YES;
+    self.infoButton.hidden = NO;
+    self.backButton.hidden = YES;
+}
+
+- (void)showBackButton {
+    self.menuButton.hidden = YES;
+    self.infoButton.hidden = YES;
+    self.backButton.hidden = NO;
+}
 
 @end

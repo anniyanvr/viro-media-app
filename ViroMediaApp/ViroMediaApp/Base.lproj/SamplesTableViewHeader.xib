@@ -34,6 +34,16 @@
                     <state key="highlighted" image="nativeapp_btn_back_press.png"/>
                     <state key="focused" image="nativeapp_btn_info_hover.png"/>
                 </button>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so5-HY-Ic8">
+                    <rect key="frame" x="8" y="16" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="so5-HY-Ic8" secondAttribute="height" multiplier="1:1" id="IAG-JF-LPE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" image="nativeapp_btn_leftpanel.png"/>
+                    <state key="highlighted" image="nativeapp_btn_leftpanel_press.png"/>
+                    <state key="focused" image="nativeapp_btn_info_hover.png"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.18823529411764706" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
             <constraints>
@@ -43,11 +53,14 @@
                 <constraint firstAttribute="bottom" secondItem="Xbd-E6-eZL" secondAttribute="bottom" constant="16" id="B6L-CR-nMl"/>
                 <constraint firstItem="SrX-Af-xuu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="RVF-Sq-8xw"/>
                 <constraint firstItem="SrX-Af-xuu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Tt9-0y-8KJ"/>
+                <constraint firstItem="so5-HY-Ic8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="akB-5h-L56"/>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="dvC-M5-YWo"/>
+                <constraint firstItem="so5-HY-Ic8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="qoE-Zs-txV"/>
                 <constraint firstItem="Xbd-E6-eZL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ubA-8L-4ML"/>
                 <constraint firstAttribute="bottom" secondItem="aiu-D7-sV7" secondAttribute="bottom" constant="16" id="v9v-lQ-Ax4"/>
                 <constraint firstAttribute="trailing" secondItem="aiu-D7-sV7" secondAttribute="trailing" constant="261" id="vHb-pt-7T0"/>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vdg-A5-83N"/>
+                <constraint firstAttribute="bottom" secondItem="so5-HY-Ic8" secondAttribute="bottom" constant="16" id="viW-We-k6E"/>
                 <constraint firstItem="Xbd-E6-eZL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="wb6-xN-2HQ"/>
                 <constraint firstItem="aiu-D7-sV7" firstAttribute="leading" secondItem="Xbd-E6-eZL" secondAttribute="trailing" constant="225" id="xti-0f-t4V"/>
             </constraints>
@@ -62,8 +75,9 @@
                 <outlet property="backButton" destination="SrX-Af-xuu" id="JQL-A3-BYx"/>
                 <outlet property="infoButton" destination="Xbd-E6-eZL" id="yiQ-m7-B6T"/>
                 <outlet property="logoImage" destination="aiu-D7-sV7" id="75q-nt-8mJ"/>
+                <outlet property="menuButton" destination="so5-HY-Ic8" id="NNh-4l-xlf"/>
             </connections>
-            <point key="canvasLocation" x="481" y="440"/>
+            <point key="canvasLocation" x="370" y="409"/>
         </view>
     </objects>
     <resources>
@@ -71,6 +85,8 @@
         <image name="nativeapp_btn_back_press.png" width="76" height="76"/>
         <image name="nativeapp_btn_info.png" width="76" height="76"/>
         <image name="nativeapp_btn_info_hover.png" width="76" height="76"/>
+        <image name="nativeapp_btn_leftpanel.png" width="76" height="76"/>
+        <image name="nativeapp_btn_leftpanel_press.png" width="76" height="76"/>
         <image name="nativeapp_header_logo_color.png" width="184" height="69"/>
     </resources>
 </document>
