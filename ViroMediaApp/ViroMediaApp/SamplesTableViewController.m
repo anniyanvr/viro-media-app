@@ -25,6 +25,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 @property (nonatomic, assign) NSInteger selectedRow;
 @property (nonatomic, assign) NSInteger numberLogoTaps;
+@property (nonatomic, weak, nullable) SamplesTableViewHeader *headerView;
 
 @end
 
@@ -47,25 +48,24 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // Load in the header xib and grab the first (and only) view and add it as the header.
     NSArray *viewsInHeaderXib = [[NSBundle mainBundle] loadNibNamed:kHeaderViewXibName owner:self options:nil];
-    SamplesTableViewHeader *headerView = [viewsInHeaderXib objectAtIndex:0];
-    // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
-    [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
-    [headerView layoutIfNeeded];
+    self.headerView = [viewsInHeaderXib objectAtIndex:0];
+    [self.headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
+    [self.headerView layoutIfNeeded];
 
     // show only the menu button
-    [headerView showMenuButton];
+    [self.headerView showMenuButton];
 
     UITapGestureRecognizer *openLeftPanelTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(openLeftPanel)];
-    [headerView.menuButton addGestureRecognizer:openLeftPanelTap];
+    [self.headerView.menuButton addGestureRecognizer:openLeftPanelTap];
     
     // "start" the tableview below the header view.
     [self.samplesTableView setContentInset:UIEdgeInsetsMake(kHeaderRecommendedHeight, 0, 0, 0)];
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    [self.view addSubview:headerView];
-    [self.view bringSubviewToFront:headerView];
+    [self.view addSubview:self.headerView];
+    [self.view bringSubviewToFront:self.headerView];
 
     // we want the overlay view to be at the very front
     [self.view bringSubviewToFront:self.overlayView];
@@ -95,6 +95,16 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // reset the number of logo taps
     self.numberLogoTaps = 0;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    // Sometimes when we come back from react/cardboard the device is still in landscape, so we need
+    // to resize this view because iOS seems to want to always resize views from xibs. If you remove
+    // the below coe, visually it'll look okay because the subview of this.headerView is the one you
+    // see, but the top-most view of the headerView is transparent and will actually resize after
+    // returning to this ViewController. It's wonky, I know.
+    [self.headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
+    [self.headerView layoutIfNeeded];
 }
 
 - (void)openLeftPanel {

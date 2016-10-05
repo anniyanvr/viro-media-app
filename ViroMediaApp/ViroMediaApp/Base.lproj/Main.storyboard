@@ -283,6 +283,15 @@ ZHJlc3MgYmVsb3cuA
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otG-VN-Val">
+                                <rect key="frame" x="11" y="9" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="otG-VN-Val" secondAttribute="height" multiplier="1:1" id="XSN-K3-abh"/>
+                                    <constraint firstAttribute="width" constant="28" id="mFT-Fh-ekh"/>
+                                </constraints>
+                                <state key="normal" image="nativeapp_btn_back.png"/>
+                                <state key="highlighted" image="nativeapp_btn_back_press.png"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -295,12 +304,14 @@ ZHJlc3MgYmVsb3cuA
                             <constraint firstItem="X6W-Vu-Krd" firstAttribute="top" secondItem="QwW-U0-cDP" secondAttribute="bottom" constant="15" id="Fsm-5y-hiW"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="GPo-ls-ioc"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="top" secondItem="YHX-dh-HV0" secondAttribute="bottom" constant="15" id="Uwj-Z1-avw"/>
+                            <constraint firstItem="otG-VN-Val" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" id="XK6-r7-JA4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YHX-dh-HV0" secondAttribute="trailing" constant="30" id="ZJj-eb-MPn"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Zjs-TN-3ww"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="top" secondItem="X6W-Vu-Krd" secondAttribute="bottom" constant="15" id="dL6-9t-OSo"/>
                             <constraint firstItem="X6W-Vu-Krd" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="dlm-XT-j6W"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="liL-dc-sUJ"/>
                             <constraint firstItem="nEs-qg-mku" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="qX2-7y-GSs"/>
+                            <constraint firstItem="otG-VN-Val" firstAttribute="top" secondItem="LTT-U2-ChA" secondAttribute="topMargin" constant="8" id="qtQ-DY-cH5"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerY" secondItem="LTT-U2-ChA" secondAttribute="centerY" id="rCI-pi-1dz"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="wAy-xn-dY0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QwW-U0-cDP" secondAttribute="trailing" constant="30" id="ww9-2e-kBF"/>
@@ -310,6 +321,7 @@ ZHJlc3MgYmVsb3cuA
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="otG-VN-Val" id="qpz-Kv-U5g"/>
                         <outlet property="enterButton" destination="X6W-Vu-Krd" id="yhq-iI-QbV"/>
                         <outlet property="errorText" destination="jf9-qY-5Gi" id="8sd-xA-km2"/>
                         <outlet property="ipTextField" destination="QwW-U0-cDP" id="7lD-Wf-XRg"/>

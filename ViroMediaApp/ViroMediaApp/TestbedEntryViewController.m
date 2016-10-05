@@ -36,33 +36,12 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSArray *viewsInHeaderXib = [[NSBundle mainBundle] loadNibNamed:kHeaderViewXibName owner:self options:nil];
-
-#warning we were originally using the header view, but now we're changing so much, we maybe should not reuse it?
-    SamplesTableViewHeader *headerView = [viewsInHeaderXib objectAtIndex:0];
-    // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
-    [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
-    [headerView layoutIfNeeded];
-    
-    // Show back button
-    [headerView showBackButton];
-
-    // Hide logo, because that's what the comps show.
-    headerView.logoImage.hidden = YES;
-    
-    // Set background to black...
-    [headerView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:1]];
 
     // onTap for back button
     UITapGestureRecognizer *backButtonTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(dismissSelf)];
-    [headerView.backButton addGestureRecognizer:backButtonTap];
-
-    // Add and bring header view to front
-    [self.view addSubview:headerView];
-    [self.view bringSubviewToFront:headerView];
+    [self.backButton addGestureRecognizer:backButtonTap];
 
     // Add button callback
     [self.enterButton addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventTouchUpInside];
