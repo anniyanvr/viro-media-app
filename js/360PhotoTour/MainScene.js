@@ -53,7 +53,6 @@ var OfficeTourSplashScene = React.createClass({
       );
   },
     _onLoadEnd(event:Event){
-        console.log("DanT onLoad END for splash loading screen!"+  event.nativeEvent.success);
         if (this.state.showSceneItems != true) {
             this.setState({
                 showSceneItems: true,

@@ -80,7 +80,6 @@ var ElevenFloorCommonScene = React.createClass({
   },
     _onLoadEnd(){
         if (this.state.showSceneItems != true) {
-            console.log("DanT setting show scene items to true");
             this.setState({
                 showSceneItems: true,
             });

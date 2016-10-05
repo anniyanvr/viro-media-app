@@ -72,8 +72,6 @@ var InfoElement = React.createClass({
     },
     _onCardTap(){
         var showCard = !this.state.onCardShow
-        console.log("DanT ON TAPPED show card: " + showCard);
-
 
         if (showCard == true){
             this._animateIconCard(!showCard);
@@ -86,7 +84,6 @@ var InfoElement = React.createClass({
     },
 
     _animateIconCard(isVisible){
-        console.log("DanT animate icon Card to visible: " + isVisible);
         this.setState({
             isIconCardShowing:isVisible,
             currentIconCardAnimation: isVisible? "showIcon": "hide",
@@ -95,7 +92,6 @@ var InfoElement = React.createClass({
     },
 
     _animateInfoCard(isVisible){
-        console.log("DanT animate INFO  Card to visible: " + isVisible);
         this.setState({
             isInfoCardShowing:isVisible,
             currentInfoCardAnimation: isVisible? "showInfo": "hide",
@@ -105,7 +101,6 @@ var InfoElement = React.createClass({
 
     _animateIconCardFinished(){
         // if we hid the icon card, we need to show the info card
-        console.log("DanT animate icon Card END to visible: " + this.state.isIconCardShowing);
         if (!this.state.isIconCardShowing){
             this._animateInfoCard(true);
         }
@@ -113,7 +108,6 @@ var InfoElement = React.createClass({
 
     _animateInfoCardFinished(){
         // If we hid the infocard, we need to show the icon card
-        console.log("DanT animate INFO Card END to visible: " + this.state.isInfoCardShowing);
         if (!this.state.isInfoCardShowing){
             this._animateIconCard(true);
         }
