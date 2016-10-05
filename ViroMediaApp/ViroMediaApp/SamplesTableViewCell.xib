@@ -11,6 +11,7 @@
         </mutableArray>
         <mutableArray key="Raleway-SemiBold.ttf">
             <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -35,9 +36,26 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-gv-MkS">
+                        <rect key="frame" x="0.0" y="0.0" width="464" height="151"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivc-sX-mGI">
+                                <rect key="frame" x="211" y="65" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ivc-sX-mGI" firstAttribute="centerY" secondItem="Z1Q-gv-MkS" secondAttribute="centerY" id="ipL-0L-auv"/>
+                            <constraint firstItem="Ivc-sX-mGI" firstAttribute="centerX" secondItem="Z1Q-gv-MkS" secondAttribute="centerX" id="lHc-UE-W8x"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottomMargin" secondItem="HgT-jy-nKP" secondAttribute="bottom" id="0WC-wC-RpR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Z1Q-gv-MkS" secondAttribute="bottom" constant="-8" id="1h1-5O-cuf"/>
                     <constraint firstItem="HgT-jy-nKP" firstAttribute="top" secondItem="uYz-A9-Jgd" secondAttribute="bottom" constant="1" id="6JV-6Y-iii"/>
                     <constraint firstAttribute="trailingMargin" secondItem="uYz-A9-Jgd" secondAttribute="trailing" id="7K9-eK-exQ"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HgT-jy-nKP" secondAttribute="trailing" constant="15" id="7fy-F3-1GM"/>
@@ -45,8 +63,11 @@
                     <constraint firstItem="uYz-A9-Jgd" firstAttribute="leading" secondItem="iuZ-Y9-ifd" secondAttribute="leadingMargin" constant="15" id="bBg-hj-hQT"/>
                     <constraint firstItem="HgT-jy-nKP" firstAttribute="leading" secondItem="iuZ-Y9-ifd" secondAttribute="leadingMargin" constant="15" id="bhO-l3-vMG"/>
                     <constraint firstAttribute="trailingMargin" secondItem="uYz-A9-Jgd" secondAttribute="trailing" constant="15" id="cJ6-fK-IgX"/>
+                    <constraint firstItem="Z1Q-gv-MkS" firstAttribute="top" secondItem="iuZ-Y9-ifd" secondAttribute="topMargin" constant="-8" id="cg4-PE-Dhn"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HgT-jy-nKP" secondAttribute="trailing" id="hMY-nF-9MO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Z1Q-gv-MkS" secondAttribute="trailing" constant="-8" id="htB-6t-aqT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="HgT-jy-nKP" secondAttribute="bottom" constant="15" id="sOi-yW-LGk"/>
+                    <constraint firstItem="Z1Q-gv-MkS" firstAttribute="leading" secondItem="iuZ-Y9-ifd" secondAttribute="leadingMargin" constant="-8" id="zEP-mf-D8R"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -58,6 +79,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="comingSoonView" destination="Z1Q-gv-MkS" id="K3F-1L-yNf"/>
                 <outlet property="descriptionLabel" destination="HgT-jy-nKP" id="4fZ-14-hSQ"/>
                 <outlet property="titleLabel" destination="uYz-A9-Jgd" id="rDD-5m-iMi"/>
             </connections>

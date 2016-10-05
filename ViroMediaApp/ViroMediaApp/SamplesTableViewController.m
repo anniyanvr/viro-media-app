@@ -14,8 +14,6 @@
 
 static NSString *const kSampleCellReuseIdentifier = @"sampleCell";
 static NSString *const kSamplesTableViewCellXib = @"SamplesTableViewCell";
-static NSString *const kTestbedEntrySegue = @"showTestbedEntry";
-static NSString *const kViroSignUpURL = @"http://www.viromedia.com/";
 
 // card content keys
 static NSString *const kTitleKey = @"title";
@@ -38,6 +36,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // Tell the revealViewController to add a panGestureRecognizer to this view
     [[self revealViewController] panGestureRecognizer];
+    [[self revealViewController] tapGestureRecognizer];
 
     // Set self as the delegate and datasource for the tableview
     [self.samplesTableView setDelegate:self];
@@ -52,13 +51,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
     // We want the header to be the same width as the parent view, but only kHeaderViewHeight tall.
     [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
     [headerView layoutIfNeeded];
-    
-    // onTap for Header logo image
-    UITapGestureRecognizer *headerLogoTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(handleLogoTap)];
-    [headerView.logoImage addGestureRecognizer:headerLogoTap];
-    headerView.logoImage.userInteractionEnabled = YES;
 
     // show only the menu button
     [headerView showMenuButton];
@@ -74,12 +66,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
     
     [self.view addSubview:headerView];
     [self.view bringSubviewToFront:headerView];
-
-    // set background color to #292930, and really Apple? only accepting color values from 0 -> 1?
-    self.samplesTableView.backgroundColor = [UIColor colorWithRed:(41.0 / 255)
-                                                            green:(41.0 / 255)
-                                                             blue:(48.0 / 255)
-                                                            alpha:1.0];
 
     // we want the overlay view to be at the very front
     [self.view bringSubviewToFront:self.overlayView];
@@ -101,7 +87,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(enterViroSceneIn360Mode)];
     [self.overlayNoButton addGestureRecognizer:overlayNoButtonTap];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -114,11 +99,9 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 - (void)openLeftPanel {
     if (self.revealViewController.frontViewPosition == FrontViewPositionLeft) {
-        NSLog(@"kirby we're showing the back controller!");
         [self.revealViewController setFrontViewPosition:FrontViewPositionRight
                                                animated:YES];
     } else {
-        NSLog(@"kirby we're showing the front controller!");
         [self.revealViewController setFrontViewPosition:FrontViewPositionLeft
                                                animated:YES];
     }
@@ -134,16 +117,16 @@ static NSString *const kViroSceneName = @"viroSceneName";
     return
         @[
             @{
+                kTitleKey: @"360 Photo Tour",
+                kImageKey: @"nativeapp_card_wework.png",
+                kDescriptionKey: @"Taking 360 photos further with interactivity.",
+                kViroSceneName: @"360 Photo Tour"
+            },
+            @{
                 kTitleKey: @"Flickr Photo Explorer",
                 kImageKey: @"nativeapp_card_flickr.png",
                 kDescriptionKey: @"Immerse yourself in both 360 and regular photos in this simple but powerful experience.",
                 kViroSceneName: @"HelloWorldScene"
-            },
-            @{
-                kTitleKey: @"360 Photo Tour",
-                kImageKey: @"nativeapp_card_phototour.png",
-                kDescriptionKey: @"Taking 360 photos further with interactivity.",
-                kViroSceneName: @"360 Photo Tour"
             },
             @{
                 kTitleKey: @"Viro Media Player",
@@ -194,25 +177,13 @@ static NSString *const kViroSceneName = @"viroSceneName";
     [self presentViewController:vc animated:YES completion:nil];
 }
 
-#pragma mark - Header Touch Responders
-- (void)handleLogoTap {
-    self.numberLogoTaps++;
-    if (self.numberLogoTaps % 7 == 0) {
-        NSLog(@"Entering the testbed now!");
-        // segue to TestBed view controller.
-        [self performSegueWithIdentifier:kTestbedEntrySegue sender:self];
-    } else {
-        NSLog(@"You are %ld taps away from the testbed!", (7 - self.numberLogoTaps % 7));
-    }
-}
-
--(void)goToSignUpURL {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kViroSignUpURL]];
-}
-
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+#warning as we add more sample apps, make them respond to touches
+    if (indexPath.row > 0) {
+        return;
+    }
     self.selectedRow = indexPath.row;
 
     // iOS's tableview selection logic leaves the row selected, so we want to deselect and then show
@@ -227,7 +198,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self getCardContents] count];
+#warning we're setting this to one because having the others with "Coming Soon" doesn't look as good.
+    return 1;//[[self getCardContents] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -245,7 +217,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
     // Create 2 background images 1 normal and 1 "selected" with a black image w/ 50% alpha
     cell.backgroundView = [[UIImageView alloc] initWithImage:image];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:image];
-    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.selectedBackgroundView.frame.size.width, cell.selectedBackgroundView.frame.size.height / 2)];
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
     [overlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
     [cell.selectedBackgroundView addSubview:overlay];
     
@@ -253,6 +225,15 @@ static NSString *const kViroSceneName = @"viroSceneName";
     cell.descriptionLabel.text = [cardContent valueForKey:kDescriptionKey];
     cell.descriptionLabel.numberOfLines = 0;
     cell.descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+
+#warning as we add more sample apps, make them interactive.
+    if (indexPath.row > 0) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.comingSoonView.hidden = NO;
+    } else {
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+        cell.comingSoonView.hidden = YES;
+    }
 
     return cell;
 }

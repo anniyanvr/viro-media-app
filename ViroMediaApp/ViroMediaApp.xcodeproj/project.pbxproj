@@ -14,6 +14,8 @@
 		8A059CAD1DA436220041460A /* nativeapp_btn_sign_up_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAA1DA436220041460A /* nativeapp_btn_sign_up_press.png */; };
 		8A059CAE1DA436220041460A /* nativeapp_btn_testbed_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAB1DA436220041460A /* nativeapp_btn_testbed_press.png */; };
 		8A059CAF1DA436220041460A /* nativeapp_btn_testbed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CAC1DA436220041460A /* nativeapp_btn_testbed.png */; };
+		8A059CB21DA44A760041460A /* LeftPanelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A059CB11DA44A760041460A /* LeftPanelViewController.m */; };
+		8A059CB51DA453770041460A /* LeftPanelHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A059CB31DA453770041460A /* LeftPanelHeader.xib */; };
 		8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */; };
 		8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */; };
 		8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */; };
@@ -33,6 +35,9 @@
 		8A3B19481D99DC500041B72B /* nativeapp_btn_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */; };
 		8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */; };
 		8AAD94411D987287001DADB1 /* SamplesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD94401D987287001DADB1 /* SamplesTableViewController.m */; };
+		8AAECCA91DA4684D0081214B /* LeftPanelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAECCA71DA4684D0081214B /* LeftPanelCell.xib */; };
+		8AAECCAC1DA469570081214B /* LeftPanelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAECCAB1DA469570081214B /* LeftPanelTableViewCell.m */; };
+		8AAECCAE1DA475160081214B /* nativeapp_card_wework.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AAECCAD1DA475160081214B /* nativeapp_card_wework.png */; };
 		8AB6BB481D98639200425110 /* SamplesTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */; };
 		8AE4FD931D95AAA30043CF0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FD921D95AAA30043CF0B /* main.m */; };
 		8AE4FD961D95AAA30043CF0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AE4FD951D95AAA30043CF0B /* AppDelegate.m */; };
@@ -86,6 +91,9 @@
 		8A059CAA1DA436220041460A /* nativeapp_btn_sign_up_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_sign_up_press.png; sourceTree = "<group>"; };
 		8A059CAB1DA436220041460A /* nativeapp_btn_testbed_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_testbed_press.png; sourceTree = "<group>"; };
 		8A059CAC1DA436220041460A /* nativeapp_btn_testbed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_testbed.png; sourceTree = "<group>"; };
+		8A059CB01DA44A760041460A /* LeftPanelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftPanelViewController.h; sourceTree = "<group>"; };
+		8A059CB11DA44A760041460A /* LeftPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftPanelViewController.m; sourceTree = "<group>"; };
+		8A059CB41DA453770041460A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LeftPanelHeader.xib; sourceTree = "<group>"; };
 		8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SamplesTableViewCell.xib; sourceTree = "<group>"; };
 		8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewCell.h; sourceTree = "<group>"; };
 		8A2D42BF1D98827A00D7C0AA /* SamplesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewCell.m; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 		8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViroSceneViewController.m; sourceTree = "<group>"; };
 		8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewController.h; sourceTree = "<group>"; };
 		8AAD94401D987287001DADB1 /* SamplesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewController.m; sourceTree = "<group>"; };
+		8AAECCA81DA4684D0081214B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LeftPanelCell.xib; sourceTree = "<group>"; };
+		8AAECCAA1DA469570081214B /* LeftPanelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftPanelTableViewCell.h; sourceTree = "<group>"; };
+		8AAECCAB1DA469570081214B /* LeftPanelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftPanelTableViewCell.m; sourceTree = "<group>"; };
+		8AAECCAD1DA475160081214B /* nativeapp_card_wework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_card_wework.png; sourceTree = "<group>"; };
 		8AB6BB471D98639200425110 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SamplesTableViewHeader.xib; sourceTree = "<group>"; };
 		8AE4FD8E1D95AAA30043CF0B /* Viro Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Viro Media.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE4FD921D95AAA30043CF0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +210,8 @@
 				8AE4FDD91D95AC200043CF0B /* LaunchScreen.xib */,
 				8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */,
 				8A2D42BC1D987F9700D7C0AA /* SamplesTableViewCell.xib */,
+				8A059CB31DA453770041460A /* LeftPanelHeader.xib */,
+				8AAECCA71DA4684D0081214B /* LeftPanelCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -231,6 +245,10 @@
 				8AE4FD951D95AAA30043CF0B /* AppDelegate.m */,
 				8AE4FD971D95AAA30043CF0B /* LaunchViewController.h */,
 				8AE4FD981D95AAA30043CF0B /* LaunchViewController.m */,
+				8AAECCAA1DA469570081214B /* LeftPanelTableViewCell.h */,
+				8AAECCAB1DA469570081214B /* LeftPanelTableViewCell.m */,
+				8A059CB01DA44A760041460A /* LeftPanelViewController.h */,
+				8A059CB11DA44A760041460A /* LeftPanelViewController.m */,
 				8A3B19231D998ECB0041B72B /* PortraitRevealViewController.h */,
 				8A3B19241D998ECB0041B72B /* PortraitRevealViewController.m */,
 				8A2D42BE1D98827A00D7C0AA /* SamplesTableViewCell.h */,
@@ -302,6 +320,7 @@
 				8AE4FDC91D95ABF90043CF0B /* nativeapp_card_human_body.png */,
 				8AE4FDCA1D95ABF90043CF0B /* nativeapp_card_phototour.png */,
 				8AE4FDCB1D95ABF90043CF0B /* nativeapp_card_video.png */,
+				8AAECCAD1DA475160081214B /* nativeapp_card_wework.png */,
 				8A3B19301D99B6A40041B72B /* nativeapp_header_logo_color.png */,
 				8AE4FDCC1D95ABF90043CF0B /* nativeapp_header_logo.png */,
 				8AE4FDCD1D95ABF90043CF0B /* nativeapp_loading.png */,
@@ -462,9 +481,12 @@
 				8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */,
 				8AE4FDD01D95ABF90043CF0B /* nativeapp_btn_sign_up.png in Resources */,
 				8AE4FDD61D95ABF90043CF0B /* nativeapp_loading.png in Resources */,
+				8AAECCAE1DA475160081214B /* nativeapp_card_wework.png in Resources */,
 				8A059CAD1DA436220041460A /* nativeapp_btn_sign_up_press.png in Resources */,
 				8A3B19441D99DC500041B72B /* nativeapp_btn_back.png in Resources */,
+				8AAECCA91DA4684D0081214B /* LeftPanelCell.xib in Resources */,
 				8AE4FDD81D95ABF90043CF0B /* nativeapp_rotate_device.png in Resources */,
+				8A059CB51DA453770041460A /* LeftPanelHeader.xib in Resources */,
 				8A3B19311D99B6A40041B72B /* nativeapp_header_logo_color.png in Resources */,
 				8A3B192E1D99A52B0041B72B /* nativeapp_btn_leftpanel_press.png in Resources */,
 			);
@@ -628,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AAECCAC1DA469570081214B /* LeftPanelTableViewCell.m in Sources */,
 				8A3B192B1D99928B0041B72B /* SamplesTableViewHeader.m in Sources */,
 				8AE4FD991D95AAA30043CF0B /* LaunchViewController.m in Sources */,
 				8AE4FD961D95AAA30043CF0B /* AppDelegate.m in Sources */,
@@ -635,6 +658,7 @@
 				8A3B19251D998ECB0041B72B /* PortraitRevealViewController.m in Sources */,
 				8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */,
 				8A059CA51DA37EC80041460A /* TestbedEntryViewController.m in Sources */,
+				8A059CB21DA44A760041460A /* LeftPanelViewController.m in Sources */,
 				8A2D42C01D98827A00D7C0AA /* SamplesTableViewCell.m in Sources */,
 				8AE4FD931D95AAA30043CF0B /* main.m in Sources */,
 			);
@@ -672,6 +696,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		8A059CB31DA453770041460A /* LeftPanelHeader.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A059CB41DA453770041460A /* Base */,
+			);
+			name = LeftPanelHeader.xib;
+			sourceTree = "<group>";
+		};
+		8AAECCA71DA4684D0081214B /* LeftPanelCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8AAECCA81DA4684D0081214B /* Base */,
+			);
+			name = LeftPanelCell.xib;
+			sourceTree = "<group>";
+		};
 		8AB6BB461D98639200425110 /* SamplesTableViewHeader.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

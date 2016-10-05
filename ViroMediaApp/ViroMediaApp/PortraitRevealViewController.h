@@ -10,4 +10,6 @@
 
 @interface PortraitRevealViewController : SWRevealViewController
 
+- (void)presentTestbed;
+
 @end

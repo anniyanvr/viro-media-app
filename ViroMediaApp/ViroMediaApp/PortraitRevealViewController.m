@@ -8,6 +8,8 @@
 
 #import "PortraitRevealViewController.h"
 
+static NSString *const kTestbedEntrySegue = @"showTestbedEntry";
+
 @interface PortraitRevealViewController ()
 
 @end
@@ -35,6 +37,10 @@
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait;
+}
+
+- (void)presentTestbed {
+    [self performSegueWithIdentifier:kTestbedEntrySegue sender:self];
 }
 
 /*
