@@ -15,7 +15,7 @@ import { polarToCartesian } from 'polarToCartesian';
 import {
     StyleSheet,
     ViroScene,
-    ViroLight,
+    ViroOmniLight,
     Viro360Photo,
     ViroImageCard,
     Materials,
@@ -38,7 +38,7 @@ var ElevenFloorCommonSouthScene = React.createClass({
   render: function() {
     return (
         <ViroScene style={styles.container} >
-          <ViroLight type="omni" position={[0, 0, 0]} color="#ffffff"
+          <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
                      attenuationStartDistance={40} attenuationEndDistance={50}
                      spotInnerAngle={0} spotOuterAngle={20} />
 

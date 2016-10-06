@@ -46,11 +46,11 @@ var PortalElement = React.createClass({
                 <ViroImage
                     position={[0,0,0]}
                     scale={[.33, .33, .33]}
-                    material="icon_scene"/>
+                    materials={["icon_scene"]} />
                 <ViroImage
                           position={[textOffset,0,0]}
                           scale={[this.props.sceneLength, 0.26, 0.1]}
-                          material="icon_label_background" />
+                          materials={["icon_label_background"]} />
                 <ViroText position={[0.275,-0.06, 0.15]}
                           style={styles.markerText}
                           text={this.props.sceneText}/>

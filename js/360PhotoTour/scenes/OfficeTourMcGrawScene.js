@@ -20,7 +20,7 @@ var LoadingSpinner = require('../custom_controls/LoadingSpinner');
 import {
   StyleSheet,
   ViroScene,
-  ViroLight,
+  ViroOmniLight,
   Viro360Photo,
   ViroImage,
   Materials,
@@ -45,7 +45,7 @@ var OfficeTourMcGrawScene = React.createClass({
       console.log("rendering _renderMainScreen screen");
       return (
           <ViroScene style={styles.container} >
-              <ViroLight type="omni" position={[0, 0, 0]} color="#ffffff"
+              <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
                          direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50}
                          spotInnerAngle={0} spotOuterAngle={20} />
 
@@ -60,25 +60,25 @@ var OfficeTourMcGrawScene = React.createClass({
                                   position={polarToCartesian([-5, 35, 0])}
                                   rotation={[0,0,180]}
                                   scale={[0.5, 0.5, 0.5]}
-                                  material="intro_arrow" />
+                                  materials={["intro_arrow"]} />
                               <ViroImage
                                   transformConstraint="billboard"
                                   position={polarToCartesian([-5, -35, 0])}
                                   rotation={[0,0,0]}
                                   scale={[0.5, 0.5, 0.5]}
-                                  material="intro_arrow" />
+                                  materials={["intro_arrow"]} />
                               <ViroImage
                                   transformConstraint="billboard"
                                   position={polarToCartesian([-5, 0, 40])}
                                   rotation={[0,0,90]}
                                   scale={[0.5, 0.5, 0.5]}
-                                  material="intro_arrow" />
+                                  materials={["intro_arrow"]} />
                               <ViroImage
                                   transformConstraint="billboard"
                                   position={polarToCartesian([-5, 0, -40])}
                                   rotation={[0,0,-90]}
                                   scale={[0.5, 0.5, 0.5]}
-                                  material="intro_arrow" />
+                                  materials={["intro_arrow"]} />
                             </ViroView>
                             </ViroAnimatedComponent>
                         <Viro360Photo source={require('../img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>

@@ -16,7 +16,7 @@ var LoadingSpinner = require('./custom_controls/LoadingSpinner');
 import {
   StyleSheet,
   ViroScene,
-  ViroLight,
+  ViroOmniLight,
   Viro360Photo,
   ViroImage,
   Materials,
@@ -38,15 +38,14 @@ var OfficeTourSplashScene = React.createClass({
   render: function() {
       return (
           <ViroScene style={styles.container} >
-              <ViroLight type="omni" position={[0, 0, 0]} color="#ffffff"
-                         direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50}
-                         spotInnerAngle={0} spotOuterAngle={20} />
+              <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
+                         direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50}/>
               <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, -5]}/>
 
               <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} >
                   <Viro360Photo source={require('./img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                   <ViroAnimatedComponent animation="showTitle" runOnMount={false} loop={false} ref={MAINCARD_REF}>
-                        <ViroImage material="wework_title"  position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onTap={this._onTapTourSplashScreen}/>
+                        <ViroImage materials={["wework_title"]}  position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onTap={this._onTapTourSplashScreen}/>
                   </ViroAnimatedComponent>
               </ViroView>
           </ViroScene>

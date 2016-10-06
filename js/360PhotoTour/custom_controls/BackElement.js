@@ -34,7 +34,7 @@ var BackElement = React.createClass({
                 scale={[1, 1, 1]}
                 position={[0, -3.5, 0]}
                 rotation={[-90, 0, 0]}
-                material="icon_back"
+                materials={["icon_back"]}
                 onTap={this._onCardTap}
             />
         );

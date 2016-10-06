@@ -18,13 +18,13 @@ import {
   Viro360Photo,
   ViroImage,
   Materials,
-    ViroFlexView,
-    ViroText,
-    ViroView,
-
-    ViroAnimations,
-    ViroAnimatedComponent,
+  ViroFlexView,
+  ViroText,
+  ViroView,
+  ViroAnimations,
+  ViroAnimatedComponent,
 } from 'react-viro';
+
 var PropTypes = require('react/lib/ReactPropTypes');
 var INFOCARD_REF = 'infoCard';
 var ICONCARD_REF = 'iconCard';
@@ -54,7 +54,7 @@ var InfoElement = React.createClass({
                             <ViroImage
                                 opacity={0.0}
                                 scale={[.1,.1,.1]}
-                                material={this.props.windowContent}
+                                materials={[this.props.windowContent]}
                                 onTap={this._onCardTap}
                                 onGaze={this._onFocused} />
 
@@ -65,7 +65,7 @@ var InfoElement = React.createClass({
                             transformConstraint="billboard"
                             opacity={1.0}
                             scale={[0.5, 0.5, 0.5]}
-                            material="icon_info" />
+                            materials={["icon_info"]} />
                     </ViroAnimatedComponent>
                 </ViroView>
         );
