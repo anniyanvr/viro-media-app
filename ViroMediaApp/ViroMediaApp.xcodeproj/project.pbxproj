@@ -115,7 +115,7 @@
 		8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes_press.png; sourceTree = "<group>"; };
 		8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes.png; sourceTree = "<group>"; };
 		8A7F85461D98AA3200B11423 /* ViroSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViroSceneViewController.h; sourceTree = "<group>"; };
-		8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViroSceneViewController.m; sourceTree = "<group>"; };
+		8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ViroSceneViewController.m; sourceTree = "<group>"; };
 		8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewController.h; sourceTree = "<group>"; };
 		8AAD94401D987287001DADB1 /* SamplesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplesTableViewController.m; sourceTree = "<group>"; };
 		8AAECCA81DA4684D0081214B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LeftPanelCell.xib; sourceTree = "<group>"; };

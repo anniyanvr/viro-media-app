@@ -6,8 +6,8 @@
 //  Copyright © 2016 Viro Media. All rights reserved.
 //
 
-#import "RCTBundleURLProvider.h"
-#import "RCTRootView.h"
+#import <ReactViro/RCTBundleURLProvider.h>
+#import <ReactViro/RCTRootView.h>
 #import "ViroSceneViewController.h"
 #import "AppDelegate.h"
 

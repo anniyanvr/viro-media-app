@@ -4,12 +4,13 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
-  ViroLight,
+  ViroOmniLight,
   ViroScene,
   ViroText,
   ViroCard,
   NativeModules,
   Materials,
+  Viro360Photo
 } from 'react-viro';
 
 var HelloWorldScene = React.createClass({
@@ -20,10 +21,12 @@ var HelloWorldScene = React.createClass({
   },
   render: function() {
     return (
-     <ViroScene backgroundSphere={require('./res/guadalupe_360.jpg')}>
+     <ViroScene>
 
-      <ViroLight type="omni" position={[0, 0, 0]} color="#ffffff"
+      <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
         direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50} />
+
+      <Viro360Photo source={require('./res/guadalupe_360.jpg')} />
 
       <ViroText text="Hello World!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
 

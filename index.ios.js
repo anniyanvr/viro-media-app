@@ -7,6 +7,8 @@ import {
   ViroSceneNavigator,
 } from 'react-viro';
 
+var apiKey = "5E2B76C0-E75B-44BB-93FE-AD7AE0A918A6";
+
 var scenes = {
   'HelloWorldScene' : require('./js/HelloWorld/HelloWorldScene'),
 //  'Flickr Photo Explorer': require('./js/FlickrPhotoExplorer/MainScene'),
@@ -25,6 +27,7 @@ var ViroSampleApp = React.createClass({
           scene,
         }}
         vrModeEnabled={this.props.vrMode}
+        apiKey={apiKey}
       />
     );
   }

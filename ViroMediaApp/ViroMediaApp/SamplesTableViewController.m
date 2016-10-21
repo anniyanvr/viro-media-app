@@ -227,7 +227,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
     // Create 2 background images 1 normal and 1 "selected" with a black image w/ 50% alpha
     cell.backgroundView = [[UIImageView alloc] initWithImage:image];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:image];
-    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.height)];
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, self.view.frame.size.height)];
     [overlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
     [cell.selectedBackgroundView addSubview:overlay];
     
