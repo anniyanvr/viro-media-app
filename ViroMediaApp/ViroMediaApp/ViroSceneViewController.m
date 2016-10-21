@@ -74,7 +74,7 @@ static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle
                                                object:nil];
 
 
-    [self.view addSubview:rootView];
+    self.view = rootView;
 }
 
 - (void)didReceiveMemoryWarning {
