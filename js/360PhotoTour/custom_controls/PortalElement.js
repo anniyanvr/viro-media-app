@@ -29,11 +29,11 @@ var PropTypes = require('react/lib/ReactPropTypes');
 
 var PortalElement = React.createClass({
     propTypes: {
-        jumpToScene: PropTypes.object,
+        jumpToScene: PropTypes.func,
         sceneText:PropTypes.string,
         sceneLength:PropTypes.number,
         iconOffset:PropTypes.number,
-        backPortal:PropTypes.BOOL
+        backPortal:PropTypes.bool
     },
     render:function(){
         var photoSceneText = this.props.scenText;

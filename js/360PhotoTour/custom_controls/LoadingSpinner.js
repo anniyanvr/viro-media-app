@@ -31,7 +31,7 @@ var PropTypes = require('react/lib/ReactPropTypes');
 
 var LoadingSpinner = React.createClass({
     propTypes: {
-        showLoadingText:PropTypes.BOOL,
+        showLoadingText:PropTypes.bool,
     },
     render: function() {
         var spinnerPosition = polarToCartesian([0, 0, 0]);
