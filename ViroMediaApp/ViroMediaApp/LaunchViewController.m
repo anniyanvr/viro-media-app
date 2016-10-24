@@ -20,7 +20,7 @@ static NSString *const kGoToExperiencesTwoSegue = @"goToExperiencesTwo";
     [super viewDidLoad];
 
     // load the next screen after 1 second.
-    [self performSelector:@selector(goNextScene) withObject:nil afterDelay:2];
+    [self performSelector:@selector(goNextScene) withObject:nil afterDelay:1.5];
 }
 
 - (void)didReceiveMemoryWarning {

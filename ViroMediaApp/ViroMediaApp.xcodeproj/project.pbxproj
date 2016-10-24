@@ -33,6 +33,8 @@
 		8A3B19461D99DC500041B72B /* nativeapp_btn_no.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */; };
 		8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */; };
 		8A3B19481D99DC500041B72B /* nativeapp_btn_yes.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */; };
+		8A5701141DBE95F3004BE54B /* nativeapp_360_btn_back_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5701121DBE95F3004BE54B /* nativeapp_360_btn_back_press.png */; };
+		8A5701151DBE95F3004BE54B /* nativeapp_360_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A5701131DBE95F3004BE54B /* nativeapp_360_btn_back.png */; };
 		8A7F85481D98AA3200B11423 /* ViroSceneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */; };
 		8AAD94411D987287001DADB1 /* SamplesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AAD94401D987287001DADB1 /* SamplesTableViewController.m */; };
 		8AAECCA91DA4684D0081214B /* LeftPanelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AAECCA71DA4684D0081214B /* LeftPanelCell.xib */; };
@@ -114,6 +116,8 @@
 		8A3B19401D99DC500041B72B /* nativeapp_btn_no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_no.png; sourceTree = "<group>"; };
 		8A3B19411D99DC500041B72B /* nativeapp_btn_yes_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes_press.png; sourceTree = "<group>"; };
 		8A3B19421D99DC500041B72B /* nativeapp_btn_yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_btn_yes.png; sourceTree = "<group>"; };
+		8A5701121DBE95F3004BE54B /* nativeapp_360_btn_back_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_360_btn_back_press.png; sourceTree = "<group>"; };
+		8A5701131DBE95F3004BE54B /* nativeapp_360_btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_360_btn_back.png; sourceTree = "<group>"; };
 		8A7F85461D98AA3200B11423 /* ViroSceneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViroSceneViewController.h; sourceTree = "<group>"; };
 		8A7F85471D98AA3200B11423 /* ViroSceneViewController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = ViroSceneViewController.m; sourceTree = "<group>"; };
 		8AAD943F1D987287001DADB1 /* SamplesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplesTableViewController.h; sourceTree = "<group>"; };
@@ -300,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				8A3B19371D99DC2C0041B72B /* Fonts */,
+				8A5701121DBE95F3004BE54B /* nativeapp_360_btn_back_press.png */,
+				8A5701131DBE95F3004BE54B /* nativeapp_360_btn_back.png */,
 				8A3B193D1D99DC500041B72B /* nativeapp_btn_back_press.png */,
 				8A3B193E1D99DC500041B72B /* nativeapp_btn_back.png */,
 				8A059CA61DA432EA0041460A /* nativeapp_btn_go_press.png */,
@@ -471,6 +477,7 @@
 				8AE4FDD51D95ABF90043CF0B /* nativeapp_header_logo.png in Resources */,
 				8AB6BB481D98639200425110 /* SamplesTableViewHeader.xib in Resources */,
 				8A3B19341D99BD790041B72B /* nativeapp_btn_info_hover.png in Resources */,
+				8A5701151DBE95F3004BE54B /* nativeapp_360_btn_back.png in Resources */,
 				8AE4FD9E1D95AAA30043CF0B /* Assets.xcassets in Resources */,
 				8A059CA91DA432EA0041460A /* nativeapp_btn_go.png in Resources */,
 				8A3B19431D99DC500041B72B /* nativeapp_btn_back_press.png in Resources */,
@@ -478,6 +485,7 @@
 				8AE4FDD71D95ABF90043CF0B /* nativeapp_logo_cardboard.png in Resources */,
 				8A2D42BD1D987F9700D7C0AA /* SamplesTableViewCell.xib in Resources */,
 				8AE4FD9C1D95AAA30043CF0B /* Main.storyboard in Resources */,
+				8A5701141DBE95F3004BE54B /* nativeapp_360_btn_back_press.png in Resources */,
 				8A3B19471D99DC500041B72B /* nativeapp_btn_yes_press.png in Resources */,
 				8AE4FDD01D95ABF90043CF0B /* nativeapp_btn_sign_up.png in Resources */,
 				8AE4FDD61D95ABF90043CF0B /* nativeapp_loading.png in Resources */,

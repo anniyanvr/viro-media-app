@@ -14,6 +14,9 @@
 #warning once we use the latest react-viro build, import VRTNotifications.h.
 static NSString *const kVRTUserRequestedExit = @"ViroUserRequestedExit";
 static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle?platform=ios&dev=true";
+static NSInteger const kBackButtonSize = 38;
+static NSInteger const kBackButtonInsetTop = 8;
+static NSInteger const kBackButtonInsetLeft = 12;
 
 @interface ViroSceneViewController ()
 
@@ -21,6 +24,7 @@ static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle
 @property (nonatomic, copy, nonnull) NSString *userIpAddress;
 @property (nonatomic, copy, nonnull) NSString *sceneName;
 @property (nonatomic, assign) BOOL vrMode;
+@property (nonatomic, strong) UIButton *exit360Button;
 
 @end
 
@@ -67,9 +71,26 @@ static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle
                                                  initialProperties:initialProperties
                                                      launchOptions:nil];
 
+
+    // Add an exit button only if we're in 360 Mode, cardboard comes with its own exit button.
+    if (!self.vrMode) {
+        UIImage *defaultImage = [UIImage imageNamed:@"nativeapp_360_btn_back.png"];
+        UIImage *highlightedImage = [UIImage imageNamed:@"nativeapp_360_btn_back_press.png"];
+        self.exit360Button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kBackButtonSize, kBackButtonSize)];
+        self.exit360Button.imageEdgeInsets = UIEdgeInsetsMake(kBackButtonInsetTop, kBackButtonInsetLeft, 0, 0);
+        [self.exit360Button addTarget:self
+                       action:@selector(exitReactViro)
+             forControlEvents:UIControlEventTouchUpInside];
+        [self.exit360Button setImage:defaultImage forState:UIControlStateNormal];
+        [self.exit360Button setImage:highlightedImage forState:UIControlStateHighlighted];
+        self.exit360Button.userInteractionEnabled = YES;
+        [rootView addSubview:self.exit360Button];
+        [rootView bringSubviewToFront:self.exit360Button];
+    }
+
     // register for the exit notification
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(exitReact)
+                                             selector:@selector(exitReactViro)
                                                  name:kVRTUserRequestedExit
                                                object:nil];
 
@@ -82,7 +103,7 @@ static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle
     // Dispose of any resources that can be recreated.
 }
 
-- (void)exitReact {
+- (void)exitReactViro {
     dispatch_async(dispatch_get_main_queue(), ^{
         [self dismissViewControllerAnimated:YES completion:nil];
     });
