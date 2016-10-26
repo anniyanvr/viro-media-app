@@ -22,7 +22,7 @@ import {
   ViroAnimatedComponent,
   ViroFlexView,
   ViroText,
-  ViroView
+  ViroNode
 } from 'react-viro';
 
 var PropTypes = require('react/lib/ReactPropTypes');
@@ -42,7 +42,7 @@ var PortalElement = React.createClass({
             textOffset=this.props.iconOffset;
         }
         return(
-            <ViroView {...this.props} transformConstraint="billboard" onTap={this._onCardTap} >
+            <ViroNode {...this.props} transformConstraint="billboard" onTap={this._onCardTap} >
                 <ViroImage
                     position={[0,0,0]}
                     scale={[.33, .33, .33]}
@@ -54,7 +54,7 @@ var PortalElement = React.createClass({
                 <ViroText position={[0.275,-0.06, 0.15]}
                           style={styles.markerText}
                           text={this.props.sceneText}/>
-            </ViroView>
+            </ViroNode>
         );
     },
 

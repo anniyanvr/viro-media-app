@@ -18,7 +18,7 @@ import {
     Viro360Photo,
     ViroImageCard,
     Materials,
-    ViroView,
+    ViroNode,
     ViroAnimations,
     ViroAnimatedComponent,
 } from 'react-viro';
@@ -39,15 +39,15 @@ var ElevenFloorMeetingScene = React.createClass({
                      attenuationStartDistance={40} attenuationEndDistance={50}
                      spotInnerAngle={0} spotOuterAngle={20} />
           <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, -5]}/>
-           <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+           <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
             <ViroAnimatedComponent animation="fadeIn" runOnMount={false} loop={false} ref={MAINCARD_REF}>
-                <ViroView opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+                <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                 <Viro360Photo source={require('../img/wework_11th_meeting.jpg')} onTap={this._onTapBack}  onLoadEnd={this._onLoadEnd} />
                 <PortalElement  backPortal={true} iconOffset={0.67} sceneLength={0.95}
                                 sceneText="Waiting Area" position={[0,0,5]} jumpToScene={ElevenFloorWaitingScene} sceneNavigator={this.props.sceneNavigator}/>
-                </ViroView>
+                </ViroNode>
             </ViroAnimatedComponent>
-           </ViroView>
+           </ViroNode>
         </ViroScene>
     );
   }, _onLoadEnd(){

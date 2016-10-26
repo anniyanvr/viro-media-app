@@ -29,9 +29,7 @@ import {
     ViroImage,
     Materials,
     ViroText,
-
-
-    ViroView,
+    ViroNode,
     ViroAnimations,
     ViroAnimatedComponent,
 } from 'react-viro';
@@ -53,28 +51,26 @@ var ElevenFloorCommonScene = React.createClass({
             <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, 5]}/>
 
 
-            <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+            <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                 <ViroAnimatedComponent animation="fadeIn" runOnMount={false} loop={false} ref={MAINCARD_REF}>
+                    <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
 
 
-                    <ViroView opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+                        <Viro360Photo source={require('../img/wework_11th_commons.jpg')} onLoadEnd={this._onLoadEnd}  />
+                        <InfoElement windowContent="infocard_receptionist" cardScale={[3.65,4,1]} position={polarToCartesian([-5, 10, 10])} />
+                        <InfoElement windowContent="infocard_kitchen" cardScale={[3.65,4,1]} position={polarToCartesian([-5, -100, 0])}/>
 
+                        <PortalElement transformConstraint="billboard" backPortal={true} iconOffset={0.67} sceneLength={0.95} sceneText="Waiting Area"
+                                       position={polarToCartesian([-5, -40, 0])} jumpToScene={ElevenFloorWaitingScene} sceneNavigator={this.props.sceneNavigator}/>
 
-          <Viro360Photo source={require('../img/wework_11th_commons.jpg')} onLoadEnd={this._onLoadEnd}  />
-          <InfoElement windowContent="infocard_receptionist" cardScale={[3.65,4,1]} position={polarToCartesian([-5, 10, 10])} />
-          <InfoElement windowContent="infocard_kitchen" cardScale={[3.65,4,1]} position={polarToCartesian([-5, -100, 0])}/>
+                        <PortalElement transformConstraint="billboard" iconOffset={0.57} sceneLength={0.78} sceneText="South Side"
+                                       position={polarToCartesian([-5, 190, 0])} jumpToScene={ElevenFloorCommonSouthScene} sceneNavigator={this.props.sceneNavigator}/>
 
-          <PortalElement transformConstraint="billboard" backPortal={true} iconOffset={0.67} sceneLength={0.95} sceneText="Waiting Area"
-                         position={polarToCartesian([-5, -40, 0])} jumpToScene={ElevenFloorWaitingScene} sceneNavigator={this.props.sceneNavigator}/>
-
-          <PortalElement transformConstraint="billboard" iconOffset={0.57} sceneLength={0.78} sceneText="South Side"
-                         position={polarToCartesian([-5, 190, 0])} jumpToScene={ElevenFloorCommonSouthScene} sceneNavigator={this.props.sceneNavigator}/>
-
-          <PortalElement transformConstraint="billboard"  sceneLength={0.7} sceneText="East Side"
-                         position={polarToCartesian([-5, 50, 0])} jumpToScene={ElevenFloorCommonEastScene} sceneNavigator={this.props.sceneNavigator}/>
-                        </ViroView>
-                    </ViroAnimatedComponent>
-                </ViroView>
+                        <PortalElement transformConstraint="billboard"  sceneLength={0.7} sceneText="East Side"
+                                       position={polarToCartesian([-5, 50, 0])} jumpToScene={ElevenFloorCommonEastScene} sceneNavigator={this.props.sceneNavigator}/>
+                    </ViroNode>
+                </ViroAnimatedComponent>
+            </ViroNode>
         </ViroScene>
     );
   },

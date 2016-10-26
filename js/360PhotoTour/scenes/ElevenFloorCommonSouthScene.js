@@ -19,7 +19,7 @@ import {
     Viro360Photo,
     ViroImageCard,
     Materials,
-    ViroView,
+    ViroNode,
     ViroAnimations,
     ViroAnimatedComponent,
 } from 'react-viro';
@@ -44,15 +44,15 @@ var ElevenFloorCommonSouthScene = React.createClass({
 
             <LoadingSpinner visible={!this.state.showSceneItems} position={polarToCartesian([-5, 190, 0])} />
 
-            <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+            <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                 <ViroAnimatedComponent animation="fadeIn" runOnMount={false} loop={false} ref={MAINCARD_REF}>
-                    <ViroView opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+                    <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                         <Viro360Photo source={require('../img/wework_11th_commons_south.jpg')} onTap={this._onTapBack} onLoadEnd={this._onLoadEnd} />
                         <PortalElement  backPortal={true}  iconOffset={0.72} sceneLength={1}  sceneText="Main Commons"
                                         position={polarToCartesian([-5, -130, 0])} jumpToScene={ElevenFloorCommonScene} sceneNavigator={this.props.sceneNavigator}/>
-                    </ViroView>
+                    </ViroNode>
                 </ViroAnimatedComponent>
-            </ViroView>
+            </ViroNode>
         </ViroScene>
     );
   },

@@ -26,7 +26,7 @@ import {
   Materials,
   ViroAnimations,
   ViroAnimatedComponent,
-  ViroView,
+  ViroNode,
   ViroSpinner,
   ViroText
 } from 'react-viro';
@@ -50,11 +50,11 @@ var OfficeTourMcGrawScene = React.createClass({
                          spotInnerAngle={0} spotOuterAngle={20} />
 
               <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, -5]}/>
-              <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+              <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                   <ViroAnimatedComponent animation="fadeIn" runOnMount={false} loop={false} ref={MAINCARD_REF} onFinish={this._onIconsAppear}>
-                      <ViroView opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+                      <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                           <ViroAnimatedComponent animation="fadeArrowChain" runOnMount={false} loop={false} ref={TUT_REF} onFinish={this._onIconsAppear}>
-                          <ViroView opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
+                          <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                              <ViroImage
                                   transformConstraint="billboard"
                                   position={polarToCartesian([-5, 35, 0])}
@@ -79,7 +79,7 @@ var OfficeTourMcGrawScene = React.createClass({
                                   rotation={[0,0,-90]}
                                   scale={[0.5, 0.5, 0.5]}
                                   materials={["intro_arrow"]} />
-                            </ViroView>
+                            </ViroNode>
                             </ViroAnimatedComponent>
                         <Viro360Photo source={require('../img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                         <InfoElement windowContent="infocard_slut" position={polarToCartesian([-5, 0, 0])} cardScale={[3.67,4,1]}/>
@@ -92,9 +92,9 @@ var OfficeTourMcGrawScene = React.createClass({
                             position={polarToCartesian([-5.5, 93, -3])}
                             jumpToScene={ElevenFloorScene}
                             sceneNavigator={this.props.sceneNavigator}/>
-                      </ViroView>
+                      </ViroNode>
                   </ViroAnimatedComponent>
-              </ViroView>
+              </ViroNode>
           </ViroScene>
       );
   },

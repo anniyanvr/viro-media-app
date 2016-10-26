@@ -23,7 +23,7 @@ import {
   ViroAnimations,
   ViroAnimatedComponent,
 
-  ViroView,
+  ViroNode,
   ViroSpinner,
   ViroText
 } from 'react-viro';
@@ -42,12 +42,12 @@ var OfficeTourSplashScene = React.createClass({
                          direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50}/>
               <LoadingSpinner visible={!this.state.showSceneItems} position={[0, 0, -5]}/>
 
-              <ViroView visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} >
+              <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} >
                   <Viro360Photo source={require('./img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                   <ViroAnimatedComponent animation="showTitle" runOnMount={false} loop={false} ref={MAINCARD_REF}>
                         <ViroImage materials={["wework_title"]}  position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onTap={this._onTapTourSplashScreen}/>
                   </ViroAnimatedComponent>
-              </ViroView>
+              </ViroNode>
           </ViroScene>
       );
   },

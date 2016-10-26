@@ -20,7 +20,7 @@ import {
     Materials,
     ViroAnimations,
     ViroAnimatedComponent,
-    ViroView,
+    ViroNode,
     ViroSpinner,
     ViroText,
     ViroSphere
@@ -39,8 +39,8 @@ var LoadingSpinner = React.createClass({
         var textPosition = polarToCartesian([1, -25, -40]);
         textPosition[2]=0.35;
         return (
-                <ViroView {...this.props} >
-                    <ViroView position={polarToCartesian([0, 0, 0])}
+                <ViroNode {...this.props} >
+                    <ViroNode position={polarToCartesian([0, 0, 0])}
                           transformConstraint="billboard">
                         <ViroSpinner position={spinnerPosition}
                                      scale={[.7,.7,.1]}
@@ -52,8 +52,8 @@ var LoadingSpinner = React.createClass({
                             color={"#000000"}
                             text="Loading ...."
                         />
-                    </ViroView>
-                </ViroView>
+                    </ViroNode>
+                </ViroNode>
         );
     },
 });
