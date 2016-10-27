@@ -51,6 +51,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
     self.headerView = [viewsInHeaderXib objectAtIndex:0];
     [self.headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
     [self.headerView layoutIfNeeded];
+    // We don't want the header view to ever resize (because it should only ever be in portrait mode)
+    self.headerView.autoresizingMask = UIViewAutoresizingNone;
 
     // show only the menu button
     [self.headerView showMenuButton];
@@ -95,16 +97,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // reset the number of logo taps
     self.numberLogoTaps = 0;
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    // Sometimes when we come back from react/cardboard the device is still in landscape, so we need
-    // to resize this view because iOS seems to want to always resize views from xibs. If you remove
-    // the below coe, visually it'll look okay because the subview of this.headerView is the one you
-    // see, but the top-most view of the headerView is transparent and will actually resize after
-    // returning to this ViewController. It's wonky, I know.
-    [self.headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, kHeaderRecommendedHeight)];
-    [self.headerView layoutIfNeeded];
 }
 
 - (void)openLeftPanel {

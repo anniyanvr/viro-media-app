@@ -22,8 +22,8 @@ import {
     ViroAnimations,
     ViroAnimatedComponent,
 } from 'react-viro';
+
 var PortalElement = require('../custom_controls/PortalElement');
-var ElevenFloorWaitingScene = require('../scenes/ElevenFloorWaitingScene');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
 var MAINCARD_REF = 'maincard';
 
@@ -33,8 +33,9 @@ var ElevenFloorMeetingScene = React.createClass({
     };
   },
   render: function() {
+    var ElevenFloorWaitingScene = require('../scenes/ElevenFloorWaitingScene');
     return (
-        <ViroScene style={styles.container} >
+        <ViroScene style={styles.container} onTap={this._onTapBack}>
           <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
                      attenuationStartDistance={40} attenuationEndDistance={50}
                      spotInnerAngle={0} spotOuterAngle={20} />
@@ -42,7 +43,7 @@ var ElevenFloorMeetingScene = React.createClass({
            <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
             <ViroAnimatedComponent animation="fadeIn" runOnMount={false} loop={false} ref={MAINCARD_REF}>
                 <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
-                <Viro360Photo source={require('../img/wework_11th_meeting.jpg')} onTap={this._onTapBack}  onLoadEnd={this._onLoadEnd} />
+                <Viro360Photo source={require('../img/wework_11th_meeting.jpg')} onLoadEnd={this._onLoadEnd} />
                 <PortalElement  backPortal={true} iconOffset={0.67} sceneLength={0.95}
                                 sceneText="Waiting Area" position={[0,0,5]} jumpToScene={ElevenFloorWaitingScene} sceneNavigator={this.props.sceneNavigator}/>
                 </ViroNode>

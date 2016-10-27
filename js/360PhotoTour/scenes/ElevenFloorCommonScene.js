@@ -13,7 +13,6 @@ import React, { Component } from 'react';
 import { polarToCartesian } from 'polarToCartesian';
 
 
-var ElevenFloorWaitingScene = require('../scenes/ElevenFloorWaitingScene');
 var ElevenFloorCommonEastScene = require('../scenes/ElevenFloorCommonEastScene');
 var ElevenFloorCommonSouthScene = require('../scenes/ElevenFloorCommonSouthScene');
 var BackElement = require('../custom_controls/BackElement');
@@ -42,6 +41,7 @@ var ElevenFloorCommonScene = React.createClass({
     };
   },
   render: function() {
+    var ElevenFloorWaitingScene = require('../scenes/ElevenFloorWaitingScene');
     return (
         <ViroScene style={styles.container} >
           <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
