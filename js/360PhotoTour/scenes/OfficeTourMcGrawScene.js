@@ -56,25 +56,25 @@ var OfficeTourMcGrawScene = React.createClass({
                           <ViroAnimatedComponent animation="fadeArrowChain" runOnMount={false} loop={false} ref={TUT_REF} onFinish={this._onIconsAppear}>
                           <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                              <ViroImage
-                                  transformConstraint="billboard"
+                                  transformBehaviors={["billboard"]}
                                   position={polarToCartesian([-5, 35, 0])}
                                   rotation={[0,0,180]}
                                   scale={[0.5, 0.5, 0.5]}
                                   materials={["intro_arrow"]} />
                               <ViroImage
-                                  transformConstraint="billboard"
+                                  transformBehaviors={["billboard"]}
                                   position={polarToCartesian([-5, -35, 0])}
                                   rotation={[0,0,0]}
                                   scale={[0.5, 0.5, 0.5]}
                                   materials={["intro_arrow"]} />
                               <ViroImage
-                                  transformConstraint="billboard"
+                                  transformBehaviors={["billboard"]}
                                   position={polarToCartesian([-5, 0, 40])}
                                   rotation={[0,0,90]}
                                   scale={[0.5, 0.5, 0.5]}
                                   materials={["intro_arrow"]} />
                               <ViroImage
-                                  transformConstraint="billboard"
+                                  transformBehaviors={["billboard"]}
                                   position={polarToCartesian([-5, 0, -40])}
                                   rotation={[0,0,-90]}
                                   scale={[0.5, 0.5, 0.5]}

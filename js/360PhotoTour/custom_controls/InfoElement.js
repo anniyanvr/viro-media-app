@@ -49,7 +49,7 @@ var InfoElement = React.createClass({
     render:function(){
             return (
                 <ViroNode onTap={this._onCardTap} {...this.props}>
-                    <ViroNode scale={[this.props.cardScale[0],this.props.cardScale[1],this.props.cardScale[2]]} transformConstraint="billboard">
+                    <ViroNode scale={[this.props.cardScale[0],this.props.cardScale[1],this.props.cardScale[2]]} transformBehaviors={["billboard"]}>
                         <ViroAnimatedComponent animation={this.state.currentInfoCardAnimation} runOnMount={false} loop={false} ref={INFOCARD_REF} onFinish={this._animateInfoCardFinished}>
                             <ViroImage
                                 opacity={0.0}
@@ -62,7 +62,7 @@ var InfoElement = React.createClass({
                     </ViroNode>
                     <ViroAnimatedComponent animation={this.state.currentIconCardAnimation} runOnMount={false} loop={false} ref={ICONCARD_REF} onFinish={this._animateIconCardFinished}>
                         <ViroImage
-                            transformConstraint="billboard"
+                            transformBehaviors={["billboard"]}
                             opacity={1.0}
                             scale={[0.5, 0.5, 0.5]}
                             materials={["icon_info"]} />

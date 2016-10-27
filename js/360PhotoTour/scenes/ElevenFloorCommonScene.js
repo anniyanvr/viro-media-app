@@ -60,13 +60,13 @@ var ElevenFloorCommonScene = React.createClass({
                         <InfoElement windowContent="infocard_receptionist" cardScale={[3.65,4,1]} position={polarToCartesian([-5, 10, 10])} />
                         <InfoElement windowContent="infocard_kitchen" cardScale={[3.65,4,1]} position={polarToCartesian([-5, -100, 0])}/>
 
-                        <PortalElement transformConstraint="billboard" backPortal={true} iconOffset={0.67} sceneLength={0.95} sceneText="Waiting Area"
+                        <PortalElement transformBehaviors={["billboard"]} backPortal={true} iconOffset={0.67} sceneLength={0.95} sceneText="Waiting Area"
                                        position={polarToCartesian([-5, -40, 0])} jumpToScene={ElevenFloorWaitingScene} sceneNavigator={this.props.sceneNavigator}/>
 
-                        <PortalElement transformConstraint="billboard" iconOffset={0.57} sceneLength={0.78} sceneText="South Side"
+                        <PortalElement transformBehaviors={["billboard"]} iconOffset={0.57} sceneLength={0.78} sceneText="South Side"
                                        position={polarToCartesian([-5, 190, 0])} jumpToScene={ElevenFloorCommonSouthScene} sceneNavigator={this.props.sceneNavigator}/>
 
-                        <PortalElement transformConstraint="billboard"  sceneLength={0.7} sceneText="East Side"
+                        <PortalElement transformBehaviors={["billboard"]}  sceneLength={0.7} sceneText="East Side"
                                        position={polarToCartesian([-5, 50, 0])} jumpToScene={ElevenFloorCommonEastScene} sceneNavigator={this.props.sceneNavigator}/>
                     </ViroNode>
                 </ViroAnimatedComponent>

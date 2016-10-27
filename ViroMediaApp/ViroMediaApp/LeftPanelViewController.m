@@ -13,7 +13,7 @@
 
 static NSString *const kSignUpCellIdentifier = @"signUpCellIdentifier";
 static NSString *const kTestbedCellIdentifier = @"testbedCellIdentifier";
-static NSString *const kViroSignUpURL = @"http://www.viromedia.com/";
+static NSString *const kViroSignUpURL = @"http://www.viromedia.com/#signupnow";
 static NSString *const kLeftPanelHeaderXibName = @"LeftPanelHeader";
 static NSString *const kLeftPanelCellXibName = @"LeftPanelCell";
 

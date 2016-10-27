@@ -41,7 +41,7 @@ var LoadingSpinner = React.createClass({
         return (
                 <ViroNode {...this.props} >
                     <ViroNode position={polarToCartesian([0, 0, 0])}
-                          transformConstraint="billboard">
+                          transformBehaviors={["billboard"]}>
                         <ViroSpinner position={spinnerPosition}
                                      scale={[.7,.7,.1]}
                                      spinnerType='dark' />

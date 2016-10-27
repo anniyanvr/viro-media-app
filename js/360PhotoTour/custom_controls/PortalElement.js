@@ -42,7 +42,7 @@ var PortalElement = React.createClass({
             textOffset=this.props.iconOffset;
         }
         return(
-            <ViroNode {...this.props} transformConstraint="billboard" onTap={this._onCardTap} >
+            <ViroNode {...this.props} transformBehaviors={["billboard"]} onTap={this._onCardTap} >
                 <ViroImage
                     position={[0,0,0]}
                     scale={[.33, .33, .33]}
@@ -51,7 +51,7 @@ var PortalElement = React.createClass({
                           position={[textOffset,0,0]}
                           scale={[this.props.sceneLength, 0.26, 0.1]}
                           materials={["icon_label_background"]} />
-                <ViroText position={[0.275,-0.06, 0.15]}
+                <ViroText position={[textOffset, 0, 0.1]}
                           style={styles.markerText}
                           text={this.props.sceneText}/>
             </ViroNode>
