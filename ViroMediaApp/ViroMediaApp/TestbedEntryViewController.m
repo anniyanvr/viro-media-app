@@ -12,6 +12,8 @@
 
 static NSString *const kInvalidIpMessage = @"[%@] is an invalid IP Address! Please enter an IP Address between 0.0.0.0 and 255.255.255.255.";
 
+static NSString *const kVersionText = @"React-Viro v0.0.44";
+
 // Key used to store the last IP in NSUserDefaults.
 static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 
@@ -52,6 +54,9 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
     // Change keyboard return key to 'Go'
     self.ipTextField.returnKeyType = UIReturnKeyGo;
 
+    // Set the version text
+    self.versionText.text = kVersionText;
+  
     UITapGestureRecognizer *dismissKeyboardTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(dismissKeyboard)];

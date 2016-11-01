@@ -271,11 +271,19 @@ ZHJlc3MgYmVsb3cuA
                                 <state key="normal" image="nativeapp_btn_back.png"/>
                                 <state key="highlighted" image="nativeapp_btn_back_press.png"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqd-NO-TUp">
+                                <frame key="frameInset" minX="166" minY="560" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="weU-Dz-sXe" firstAttribute="top" secondItem="nEs-qg-mku" secondAttribute="bottom" constant="8" id="1N4-KD-prd"/>
+                            <constraint firstItem="Dqd-NO-TUp" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="2U9-Bo-Mxg"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="top" secondItem="CSZ-om-Hse" secondAttribute="bottom" constant="150" id="44r-cZ-uXH"/>
+                            <constraint firstItem="nEs-qg-mku" firstAttribute="top" secondItem="Dqd-NO-TUp" secondAttribute="bottom" constant="8" id="5kh-M6-Grj"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8BR-K9-nPC"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8CQ-Go-L49"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="8Mu-6v-ruj"/>
@@ -306,6 +314,7 @@ ZHJlc3MgYmVsb3cuA
                         <outlet property="ipTextField" destination="QwW-U0-cDP" id="7lD-Wf-XRg"/>
                         <outlet property="previousIpText" destination="weU-Dz-sXe" id="6si-Q2-VHW"/>
                         <outlet property="previousIpTitle" destination="nEs-qg-mku" id="bVE-rA-cfK"/>
+                        <outlet property="versionText" destination="Dqd-NO-TUp" id="mYh-zV-Zf4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Md2-81-fsg" userLabel="First Responder" sceneMemberID="firstResponder"/>
