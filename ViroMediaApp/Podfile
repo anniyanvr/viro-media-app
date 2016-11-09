@@ -5,6 +5,7 @@ target 'ViroMediaApp' do
     'RCTWebSocket',
     'RCTActionSheet',
     'RCTNetwork',
+    'RCTText',
   ]
   pod 'GVRSDK', '1.0.0'
   pod 'SWRevealViewController'

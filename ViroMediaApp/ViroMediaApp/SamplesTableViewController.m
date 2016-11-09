@@ -89,6 +89,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(enterViroSceneIn360Mode)];
     [self.overlayNoButton addGestureRecognizer:overlayNoButtonTap];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -125,12 +126,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
                 kViroSceneName: @"360 Photo Tour"
             },
             @{
-                kTitleKey: @"Flickr Photo Explorer",
-                kImageKey: @"nativeapp_card_flickr.png",
-                kDescriptionKey: @"Immerse yourself in both 360 and regular photos in this simple but powerful experience.",
-                kViroSceneName: @"HelloWorldScene"
-            },
-            @{
                 kTitleKey: @"Viro Media Player",
                 kImageKey: @"nativeapp_card_video.png",
                 kDescriptionKey: @"Viro Media Player is a sample app that represents 4 unique immersive viewing experiences in VR.",
@@ -138,10 +133,16 @@ static NSString *const kViroSceneName = @"viroSceneName";
             },
             @{
                 kTitleKey: @"Inside the Human Body",
-                kImageKey: @"nativeapp_card_human_body.png",
+                kImageKey: @"nativeapp_card_heart.png",
                 kDescriptionKey: @"Go inside the human body and up close to the heart and brain in this power 3D experience.",
-                kViroSceneName: @"HelloWorldScene"
-            }
+                kViroSceneName: @"Inside the Human Body"
+            },
+            @{
+              kTitleKey: @"Flickr Photo Explorer",
+              kImageKey: @"nativeapp_card_flickr.png",
+              kDescriptionKey: @"Immerse yourself in both 360 and regular photos in this simple but powerful experience.",
+              kViroSceneName: @"HelloWorldScene"
+            },
         ];
 }
 
@@ -182,10 +183,6 @@ static NSString *const kViroSceneName = @"viroSceneName";
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-#warning as we add more sample apps, make them respond to touches
-    if (indexPath.row > 0) {
-        return;
-    }
     self.selectedRow = indexPath.row;
 
     // iOS's tableview selection logic leaves the row selected, so we want to deselect and then show
@@ -200,8 +197,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning we're setting this to one because having the others with "Coming Soon" doesn't look as good.
-    return 1;//[[self getCardContents] count];
+#warning we're using a fixed number because the "Coming Soon" overlay doesn't look as good, so just hide the ones that aren't active
+    return 3;//[[self getCardContents] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -228,8 +225,9 @@ static NSString *const kViroSceneName = @"viroSceneName";
     cell.descriptionLabel.numberOfLines = 0;
     cell.descriptionLabel.lineBreakMode = NSLineBreakByWordWrapping;
 
-#warning as we add more sample apps, make them interactive.
-    if (indexPath.row > 0) {
+#warning the "Coming Soon" overlay doesn't look as good, so we've decided to just hide them by simply fixing tableView:numberOfRowsInSection:, so we may want to just remove the "Coming Soon" overlay and this logic altogether.
+    // if the sample isn't ready, make it not interactable and add a Coming Soon overlay
+    if (indexPath.row > 2) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.comingSoonView.hidden = NO;
     } else {
@@ -241,7 +239,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return self.view.frame.size.width / 2; // 360 photos usually have a 2:1 aspect ratio (width:height)
+    return self.view.frame.size.width / 2; // 360 photos have a 2:1 aspect ratio (width:height)
 }
 
 /*

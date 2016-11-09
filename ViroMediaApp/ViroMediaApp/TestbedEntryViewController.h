@@ -10,13 +10,13 @@
 
 @interface TestbedEntryViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *ipTextField;
+@property (weak, nonatomic) IBOutlet UITextField *endpointTextField;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
 @property (weak, nonatomic) IBOutlet UILabel *errorText;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionText;
 
-@property (weak, nonatomic) IBOutlet UILabel *previousIpTitle;
-@property (weak, nonatomic) IBOutlet UILabel *previousIpText;
+@property (weak, nonatomic) IBOutlet UILabel *previousEndpointTitle;
+@property (weak, nonatomic) IBOutlet UILabel *previousEndpointText;
 
 @end

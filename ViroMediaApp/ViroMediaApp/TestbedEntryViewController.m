@@ -10,12 +10,17 @@
 #import "SamplesTableViewHeader.h"
 #import "ViroSceneViewController.h"
 
-static NSString *const kInvalidIpMessage = @"[%@] is an invalid IP Address! Please enter an IP Address between 0.0.0.0 and 255.255.255.255.";
+static NSString *const kInvalidEndpointMessage = @"[%@] is an invalid endpoint! Please enter an IP Address between 0.0.0.0 and 255.255.255.255 or a ngrok endpoint of the form 'xxxxx.ngrok.io'";
 
 static NSString *const kVersionText = @"React-Viro v0.0.44";
 
-// Key used to store the last IP in NSUserDefaults.
-static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
+// a valid ngrok endpoint starts with `https://` and ends with `.ngrok.io` or `.ngrok.io/`, if its the latter, then we need to trim the extra slash
+static NSString *const kNgrokEndpointPrefix = @"https://";
+static NSString *const kNgrokEndpointSuffix = @".ngrok.io";
+static NSString *const kNgrokEndpointSuffixNeedsTrim = @".ngrok.io/";
+
+// Key used to store the last endpoint in NSUserDefaults.
+static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 
 @interface TestbedEntryViewController ()
 
@@ -49,10 +54,10 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
     [self.enterButton addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventTouchUpInside];
 
     // Add text field 'enter' callback
-    [self.ipTextField addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [self.endpointTextField addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventEditingDidEndOnExit];
 
     // Change keyboard return key to 'Go'
-    self.ipTextField.returnKeyType = UIReturnKeyGo;
+    self.endpointTextField.returnKeyType = UIReturnKeyGo;
 
     // Set the version text
     self.versionText.text = kVersionText;
@@ -64,11 +69,11 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    NSString *lastIpAddress = [[NSUserDefaults standardUserDefaults] stringForKey:kLastIpAddressKey];
-    if (lastIpAddress) {
-        [self showPreviousIp:lastIpAddress];
+    NSString *previousEndpoint = [[NSUserDefaults standardUserDefaults] stringForKey:kLastEndpointKey];
+    if (previousEndpoint) {
+        [self showPreviousEndpoint:previousEndpoint];
     } else {
-        [self hidePreviousIpViews];
+        [self hidePreviousEndpointViews];
     }
 }
 
@@ -77,32 +82,32 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)showPreviousIp:(NSString *)ipAddress {
-    self.previousIpTitle.hidden = NO;
-    self.previousIpText.hidden = NO;
-    self.previousIpText.text = ipAddress;
+- (void)showPreviousEndpoint:(NSString *)previousEndpoint {
+    self.previousEndpointTitle.hidden = NO;
+    self.previousEndpointText.hidden = NO;
+    self.previousEndpointText.text = previousEndpoint;
 
-    UITapGestureRecognizer *previousIpTitleTap =
+    UITapGestureRecognizer *previousEndpointTitleTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                    action:@selector(goToPreviousIp)];
-    [self.previousIpTitle addGestureRecognizer:previousIpTitleTap];
+                                                    action:@selector(goToPreviousEndpoint)];
+    [self.previousEndpointTitle addGestureRecognizer:previousEndpointTitleTap];
 
-    UITapGestureRecognizer *previousIpTextTap =
+    UITapGestureRecognizer *previousEndpointTextTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(goToPreviousIp)];
-    [self.previousIpText addGestureRecognizer:previousIpTextTap];
+                                            action:@selector(goToPreviousEndpoint)];
+    [self.previousEndpointText addGestureRecognizer:previousEndpointTextTap];
 
-    self.previousIpTitle.userInteractionEnabled = YES;
-    self.previousIpText.userInteractionEnabled = YES;
+    self.previousEndpointTitle.userInteractionEnabled = YES;
+    self.previousEndpointText.userInteractionEnabled = YES;
 }
 
-- (void)hidePreviousIpViews {
-    self.previousIpTitle.hidden = YES;
-    self.previousIpText.hidden = YES;
+- (void)hidePreviousEndpointViews {
+    self.previousEndpointTitle.hidden = YES;
+    self.previousEndpointText.hidden = YES;
 }
 
-- (void)goToPreviousIp {
-    self.ipTextField.text = self.previousIpText.text;
+- (void)goToPreviousEndpoint {
+    self.endpointTextField.text = self.previousEndpointText.text;
     [self enterViroTestbed];
 }
 
@@ -117,34 +122,75 @@ static NSString *const kLastIpAddressKey = @"TEST_BED_LAST_IP";
 - (void)enterViroTestbed {
     // dismiss keyboard
     [self.view endEditing:YES];
-    if ([self isValidIp:self.ipTextField.text]) {
-        // clear out the error text since the ip address was valid
-        self.errorText.text = @"";
-        // store the last ip address in NSUserDefaults
-        [[NSUserDefaults standardUserDefaults] setValue:self.ipTextField.text forKey:kLastIpAddressKey];
 
-        ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbed:self.ipTextField.text];
+    // If endpoint is a valid IP, then store it and enter the Viro scene.
+    NSString *endpoint = [self getValidIp:self.endpointTextField.text];
+    if (endpoint) {
+        // clear out the error text since the endpoint was valid
+        self.errorText.text = @"";
+        // store the last endpoint in NSUserDefaults
+        [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
+
+        ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithIp:endpoint];
         [self presentViewController:vc animated:YES completion:nil];
-    } else {
-        self.errorText.text = [NSString stringWithFormat:kInvalidIpMessage, self.ipTextField.text];
+        return;
     }
+
+    // If endpoint is a valid ngrok endpoint, then store and enter the Viro scene.
+    endpoint = [self getValidNgrokEndpoint:self.endpointTextField.text];
+    if (endpoint) {
+        // clear out the error text since the endpoint was valid
+        self.errorText.text = @"";
+        // store the last endpoint in NSUserDefaults
+        [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
+      
+        ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
+
+    self.errorText.text = [NSString stringWithFormat:kInvalidEndpointMessage, self.endpointTextField.text];
+
 }
 
-- (BOOL)isValidIp:(NSString *)candidate {
+/*
+ Returns a valid IP or nil depending on whether or not the given candidate string is a valid IP.
+ */
+- (NSString *)getValidIp:(NSString *)candidate {
     NSArray *octets = [candidate componentsSeparatedByString:@"."];
-    if (octets.count != 4) {
-        return NO;
-    }
-    // seriously iOS needs a better way to do this...
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    for (NSString *octet in octets) {
-        NSNumber *numOctet = [formatter numberFromString:octet];
-        // NSNumberFormatter returns nil if the given string isn't a number.
-        if (!numOctet || [numOctet integerValue] < 0 || [numOctet integerValue] > 255) {
-            return NO;
+    if (octets.count == 4) {
+        // seriously iOS needs a better way to do this...
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        for (NSString *octet in octets) {
+            NSNumber *numOctet = [formatter numberFromString:octet];
+            // NSNumberFormatter returns nil if the given string isn't a number.
+            if (!numOctet || [numOctet integerValue] < 0 || [numOctet integerValue] > 255) {
+                return candidate;
+            }
         }
     }
-    return YES;
+    return nil;
+}
+
+/*
+ Returns a valid ngrok endpoint or nil depending on whether or not the given
+ candidate string is a valid ngrok endpoint or not. If it is, it'll format it
+ to match: `https://xxxxx.ngrok.io`
+ */
+
+- (NSString *)getValidNgrokEndpoint:(NSString *)candidate {
+    // since 'https://' isn't a requirement, we should just add the prefix for the user if not given
+    if (![candidate hasPrefix:kNgrokEndpointPrefix]) {
+        candidate = [NSString stringWithFormat:@"%@%@", kNgrokEndpointPrefix, candidate];
+    }
+
+    // now we check if the suffix is correct...
+    if ([candidate hasSuffix:kNgrokEndpointSuffix]) {
+        return candidate;
+    } else if ([candidate hasSuffix:kNgrokEndpointSuffixNeedsTrim]) {
+        return [candidate substringToIndex:candidate.length - 1];
+    }
+    return nil;
 }
 
 /*

@@ -8,12 +8,12 @@
 
 #import <ReactViro/RCTBundleURLProvider.h>
 #import <ReactViro/RCTRootView.h>
+#import <ReactViro/VRTNotifications.h>
 #import "ViroSceneViewController.h"
 #import "AppDelegate.h"
 
-#warning once we use the latest react-viro build, import VRTNotifications.h.
-static NSString *const kVRTUserRequestedExit = @"ViroUserRequestedExit";
-static NSString *const kReactNativeManualURL = @"http://%@:8081/index.ios.bundle?platform=ios&dev=true";
+static NSString *const kPackagerUrlPrefixForIp = @"http://%@:8081";
+static NSString *const kPackagerUrlSuffix = @"/index.ios.bundle?platform=ios&dev=true";
 static NSInteger const kBackButtonSize = 38;
 static NSInteger const kBackButtonInsetTop = 8;
 static NSInteger const kBackButtonInsetLeft = 12;
@@ -21,7 +21,8 @@ static NSInteger const kBackButtonInsetLeft = 12;
 @interface ViroSceneViewController ()
 
 @property (nonatomic, assign) BOOL useTestbed;
-@property (nonatomic, copy, nonnull) NSString *userIpAddress;
+@property (nonatomic, assign) BOOL isEndpointIpAddress;
+@property (nonatomic, copy, nonnull) NSString *packagerServerEndpoint;
 @property (nonatomic, copy, nonnull) NSString *sceneName;
 @property (nonatomic, assign) BOOL vrMode;
 @property (nonatomic, strong) UIButton *exit360Button;
@@ -39,11 +40,23 @@ static NSInteger const kBackButtonInsetLeft = 12;
     return self;
 }
 
-- (id)initForTestbed:(NSString *)ipAddress {
+- (id)initForTestbedWithIp:(NSString *)ipAddress {
     self = [super init];
     if (self) {
         _useTestbed = YES;
-        _userIpAddress = ipAddress;
+        _packagerServerEndpoint = ipAddress;
+        _isEndpointIpAddress = YES;
+    }
+    return self;
+}
+
+- (id)initForTestbedWithNgrok:(NSString *)endpoint {
+    self = [super init];
+    if (self) {
+        _useTestbed = YES;
+        // we're assuming this endpoint is of the form `https://xxxxx.ngrok.io`
+        _packagerServerEndpoint = endpoint;
+        _isEndpointIpAddress = NO;
     }
     return self;
 }
@@ -60,12 +73,14 @@ static NSInteger const kBackButtonInsetLeft = 12;
                 @"initialScene" : self.sceneName,
                 @"vrMode" : [NSNumber numberWithBool:self.vrMode],
             };
-        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil useWifiOnly:NO];
     } else {
-        NSString *urlString = [NSString stringWithFormat:kReactNativeManualURL, self.userIpAddress];
+        NSString *prefix = self.isEndpointIpAddress ? [NSString stringWithFormat:kPackagerUrlPrefixForIp, self.packagerServerEndpoint] : self.packagerServerEndpoint;
+        NSString *urlString = [NSString stringWithFormat:@"%@%@", prefix, kPackagerUrlSuffix];
         jsCodeLocation = [NSURL URLWithString:urlString];
     }
 
+    NSLog(@"kirby, the jsCodeLocation is: %@", jsCodeLocation);
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                         moduleName:@"ViroSample"
                                                  initialProperties:initialProperties

@@ -16,8 +16,16 @@
 - (id)initWithSceneName:(NSString *)sceneName vrMode:(BOOL)vrMode;
 
 /**
- * Use this constructor to enter a user-created scene as part of the testbed.
+ * Use this constructor to enter a user-created scene as part of the testbed
+ * if given an IP address.
  */
-- (id)initForTestbed:(NSString *)ipAddress;
+- (id)initForTestbedWithIp:(NSString *)ipAddress;
+
+/**
+ * Use this constructor to enter a user-created scene as part of the testbed
+ * if given a ngrok endpoint
+ */
+- (id)initForTestbedWithNgrok:(NSString *)endpoint;
+
 
 @end

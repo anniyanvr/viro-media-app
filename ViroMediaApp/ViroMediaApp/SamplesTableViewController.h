@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *overlayNoButton;
 @property (weak, nonatomic) IBOutlet UIImageView *cardboardImage;
 @property (weak, nonatomic) IBOutlet UIButton *overlayBackButton;
+@property (weak, nonatomic) IBOutlet UILabel *moreAppsComingLabel;
 
 @end
