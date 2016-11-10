@@ -164,7 +164,7 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         for (NSString *octet in octets) {
             NSNumber *numOctet = [formatter numberFromString:octet];
             // NSNumberFormatter returns nil if the given string isn't a number.
-            if (!numOctet || [numOctet integerValue] < 0 || [numOctet integerValue] > 255) {
+            if (!numOctet || [numOctet integerValue] >= 0 || [numOctet integerValue] <= 255) {
                 return candidate;
             }
         }

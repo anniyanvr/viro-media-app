@@ -80,7 +80,6 @@ static NSInteger const kBackButtonInsetLeft = 12;
         jsCodeLocation = [NSURL URLWithString:urlString];
     }
 
-    NSLog(@"kirby, the jsCodeLocation is: %@", jsCodeLocation);
     RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                         moduleName:@"ViroSample"
                                                  initialProperties:initialProperties
