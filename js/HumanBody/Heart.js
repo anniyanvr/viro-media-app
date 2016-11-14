@@ -52,13 +52,13 @@ var HeartScene = React.createClass({
                       materials={["heart"]} />
 
 
-      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", left, 1, 1)}
-      {this._getLabel([ 0.098, 0.115, -0.738], "left_common_carotid", left, 1.3, 1)}
-      {this._getLabel([ 0.143, 0.070, -0.741], "aorta", right, 1, 1)}
-      {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", right, 1, 1)}
-      {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", right, 1, 1)}
-      {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", left, 1, 1)}
-      {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", left, 1, 1)}
+      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", left, 1.55, 1)}
+      {this._getLabel([ 0.085, 0.155, -0.738], "left_common_carotid", left, 1.9, 1)}
+      {this._getLabel([ 0.143, 0.070, -0.741], "aorta", right, 1.7, 1)}
+      {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", right, 1.5, 1)}
+      {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", right, 1.25, 1)}
+      {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", left, 1.3, 1)}
+      {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", left, 1.5, 1)}
 
      </ViroScene>
     );
