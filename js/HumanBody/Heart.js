@@ -20,7 +20,11 @@ import {
   Materials,
   ViroAnimations,
   ViroAnimatedComponent,
+  Viro360Photo,
 } from 'react-viro';
+
+var left = "left";
+var right = "right";
 
 var HeartScene = React.createClass({
   getInitialState() {
@@ -32,80 +36,57 @@ var HeartScene = React.createClass({
   render: function() {
     return (
      <ViroScene style={styles.container}>
-        <ViroSkybox source={{nx:require('./res/grid_bg.jpg'),
-                             px:require('./res/grid_bg.jpg'),
-                             ny:require('./res/grid_bg.jpg'),
-                             py:require('./res/grid_bg.jpg'),
-                             nz:require('./res/grid_bg.jpg'),
-                             pz:require('./res/grid_bg.jpg')}} />
-        <ViroOrbitCamera position={[0, 0, -0]} focalPoint={[0, 0, -1.15]} />
-        <ViroSpotLight
-                   position={[0, -0.25, 0]}
-                   color="#777777"
-                   direction={[0, 0, -1]}
-                   attenuationStartDistance={5}
-                   attenuationEndDistance={10}
-                   innerAngle={5}
-                   outerAngle={20}/>
 
-                   <ViroAmbientLight
-                              color="#555555"
-                              />
+        <Viro360Photo source={require("./res/heart_bg.jpg")} />
+
+        <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -.85]} />
+
+        <ViroOmniLight position={[0, 0, 5]} color="#ffffff"
+          attenuationStartDistance={40} attenuationEndDistance={50} />
+
+        <ViroAmbientLight color="#aaaaaa" />
+
 
         <Viro3DObject source={require('./res/heart.obj')}
                       position={[-0.0, -5.5, -1.15]}
-                      materials={["heart"]}
-                      transformBehaviors={["billboardY"]} />
+                      materials={["heart"]} />
 
-        <ViroAnimatedComponent animation="fadeSkeleton" runOnMount={true}>
-            <Viro3DObject source={require('./res/skeleton.obj')}
-                          position={[-0.0, -5.5, -1.15]}
-                          materials={["skeleton"]} />
-        </ViroAnimatedComponent>
 
-        <ViroAnimatedComponent animation="fadeBody" runOnMount={true}>
-            <Viro3DObject source={require('./res/outer_skin.obj')}
-                          position={[-0.0, -5.5, -1.15]}
-                          materials={["body"]} />
-        </ViroAnimatedComponent>
-
-        <ViroNode position={[-0.0, -5.5, -1.15]}>
-          {this._getLabel([-0.039, 5.615, 0.371], "superior_vena_cava")}
-          {this._getLabel([ 0.098, 5.615, 0.412], "left_common_carotid")}
-          {this._getLabel([ 0.143, 5.570, 0.409], "aorta")}
-          {this._getLabel([ 0.195, 5.490, 0.474], "left_pulmonary")}
-          {this._getLabel([ 0.113, 5.370, 0.560], "left_atrium")}
-          {this._getLabel([-0.060, 5.280, 0.538], "right_atrium")}
-          {this._getLabel([ 0.018, 5.209, 0.596], "right_ventricle")}
-         </ViroNode>
+      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", left, 1, 1)}
+      {this._getLabel([ 0.098, 0.115, -0.738], "left_common_carotid", left, 1.3, 1)}
+      {this._getLabel([ 0.143, 0.070, -0.741], "aorta", right, 1, 1)}
+      {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", right, 1, 1)}
+      {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", right, 1, 1)}
+      {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", left, 1, 1)}
+      {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", left, 1, 1)}
 
      </ViroScene>
     );
   },
 
-  _getLabel(position, material) {
+  _getLabel(position, material, side, widthScale, heightScale) {
     let views = [];
-    var crossWidth = 128;
-    var crossHeight = 128;
 
     var labelPosition = position.slice(0);
-    labelPosition[0] -= 0.1;
-    labelPosition[1] += 0.1;
+    var xShiftAmount = (0.06 + (widthScale - 1) * .1 / 2);
+    var yShiftamount = (.05 + (heightScale - 1) * .1 / 2);
+    if (side == left) {
+      labelPosition[0] -= xShiftAmount;
+    } else {
+      labelPosition[0] += xShiftAmount;
+    }
+    labelPosition[1] += 0.05;
 
     views.push(
       <ViroImage materials={["crosshair"]}
                  position={position}
-                 scale={[0.10, 0.10, 0.10]}
-                 transformBehaviors={["billboard"]}/>
+                 scale={[0.10, 0.10, 0.10]}/>
     );
-
-
 
     views.push(
       <ViroImage materials={[material]}
                  position={labelPosition}
-                 scale={[0.10, 0.10, 0.10]}
-                 transformBehaviors={["billboard"]}/>
+                 scale={[0.10 * widthScale, 0.10 * heightScale, 0.10]}/>
     );
     return views;
   },
@@ -113,7 +94,7 @@ var HeartScene = React.createClass({
 
 var materials = Materials.createMaterials({
    heart: {
-     lightingModel: "Blinn",
+     lightingModel: "Lambert",
      diffuseTexture: require('./res/Heart_D3.jpg'),
      specularTexture: require('./res/Heart_S2.jpg'),
      writesToDepthBuffer: true,
@@ -213,12 +194,12 @@ var styles = StyleSheet.create({
 var animations = ViroAnimations.registerAnimations({
     fadeSkeleton: {
       duration: 10000,
-      properties:{opacity:0.0},
+      properties:{opacity:0.1},
       easing:"Linear"
     },
     fadeBody: {
       duration: 10000,
-      properties:{opacity:0.0},
+      properties:{opacity:0.1},
       easing:"Linear"
     },
 });
