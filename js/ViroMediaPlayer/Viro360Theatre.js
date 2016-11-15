@@ -44,14 +44,14 @@ var VideoControlRef = "VideoControlRef";
  */
 var videos = [
   {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo360_1.mp4'},
-  {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo360_1.mp4'}
+  {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo360_2.mp4'}
 ];
 
 var Viro360Theatre = React.createClass({
   getInitialState() {
     return {
       videoControlsAnimation:"fadeIn",
-      videoPaused: true,
+      videoPaused: false,
       loopVideo: true,
       videoIndex: 0,
     }
@@ -95,15 +95,15 @@ var Viro360Theatre = React.createClass({
             <ViroImage
                 scale={[1.4, 1.2, 1]}
                 position={[0, -0.27,-2.1]}
-                source={require("./immg/player_controls_container.png")}/>
+                source={require("./res/player_controls_container.png")}/>
 
             <ViroButton
                 position={[-buttonSize-0.1,0,-2]}
                 width={buttonSize}
                 height={buttonSize}
-                source={require("./immg/previous.png")}
-                gazeSource={require("./immg/previous_hover.png")}
-                tapSource={require("./immg/previous_hover.png")}
+                source={require("./res/previous.png")}
+                gazeSource={require("./res/previous_hover.png")}
+                tapSource={require("./res/previous_hover.png")}
                 onTap={this._playPreviousVideo}/>
 
             {this._renderPlayControl()}
@@ -112,18 +112,18 @@ var Viro360Theatre = React.createClass({
                 position={[buttonSize+0.1, 0,-2]}
                 width={buttonSize}
                 height={buttonSize}
-                source={require("./immg/skip.png")}
-                gazeSource={require("./immg/skip_hover.png")}
-                tapSource={require("./immg/skip_hover.png")}
+                source={require("./res/skip.png")}
+                gazeSource={require("./res/skip_hover.png")}
+                tapSource={require("./res/skip_hover.png")}
                 onTap={this._playNextVideo}/>
 
           <ViroButton
               position={[-0.3, -0.4 ,-2]}
               width={0.5}
               height={0.5}
-              source={require("./immg/icon_2D.png")}
-              gazeSource={require("./immg/icon_2D_hover.png")}
-              tapSource={require("./immg/icon_2D_hover.png")}
+              source={require("./res/icon_2D.png")}
+              gazeSource={require("./res/icon_2D_hover.png")}
+              tapSource={require("./res/icon_2D_hover.png")}
               onTap={this._launchTheatreScene}
               />
 
@@ -131,9 +131,9 @@ var Viro360Theatre = React.createClass({
               position={[0.3, -0.4 ,-2]}
               width={0.5}
               height={0.5}
-              source={require("./immg/icon_360_hover.png")}
-              gazeSource={require("./immg/icon_360_hover.png")}
-              tapSource={require("./immg/icon_360_hover.png")}
+              source={require("./res/icon_360_hover.png")}
+              gazeSource={require("./res/icon_360_hover.png")}
+              tapSource={require("./res/icon_360_hover.png")}
               />
         </ViroNode>
     );
@@ -149,9 +149,9 @@ var Viro360Theatre = React.createClass({
               position={[0,0,-2]}
               width={buttonSize}
               height={buttonSize}
-              source={require("./immg/play.png")}
-              gazeSource={require("./immg/play_hover.png")}
-              tapSource={require("./immg/play_hover.png")}
+              source={require("./res/play.png")}
+              gazeSource={require("./res/play_hover.png")}
+              tapSource={require("./res/play_hover.png")}
               transformBehaviors={["billboard"]}
               onTap={this._togglePauseVideo}/>
       );
@@ -161,9 +161,9 @@ var Viro360Theatre = React.createClass({
               position={[0,0,-2]}
               width={buttonSize}
               height={buttonSize}
-              source={require("./immg/pause.png")}
-              gazeSource={require("./immg/pause_hover.png")}
-              tapSource={require("./immg/pause_hover.png")}
+              source={require("./res/pause.png")}
+              gazeSource={require("./res/pause_hover.png")}
+              tapSource={require("./res/pause_hover.png")}
               transformBehaviors={["billboard"]}
               onTap={this._togglePauseVideo}/>
       );
