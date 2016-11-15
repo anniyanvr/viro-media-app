@@ -37,7 +37,6 @@ import {
  */
 var buttonSize = 0.25;
 var VIDEO_REF = "videoref";
-var surfingVideo = require('./immg/360_surf.mp4');
 var VideoControlRef = "VideoControlRef";
 
 /**
