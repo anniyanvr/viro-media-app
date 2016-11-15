@@ -129,7 +129,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
                 kTitleKey: @"Viro Media Player",
                 kImageKey: @"nativeapp_card_video.png",
                 kDescriptionKey: @"Viro Media Player is a sample app that represents 4 unique immersive viewing experiences in VR.",
-                kViroSceneName: @"HelloWorldScene"
+                kViroSceneName: @"Viro Media Player"
             },
             @{
                 kTitleKey: @"Inside the Human Body",
