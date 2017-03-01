@@ -83,11 +83,11 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
-        applicationId "com.viromediaappbeta"
+        applicationId "com.viromedia.viromedia"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
