@@ -9,7 +9,6 @@ public class ViroSceneActivity extends ReactActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viro_scene);
     }
     /**
      * Returns the name of the main component registered from JavaScript.
