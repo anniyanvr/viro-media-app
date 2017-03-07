@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2017 Viro Media. All rights reserved.
+ */
 package com.viromedia.viromedia.adapter;
 
 import android.content.Context;
@@ -7,18 +10,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.viromedia.viromedia.EnterViroSceneActivity;
 import com.viromedia.viromedia.R;
-import com.viromedia.viromedia.ViroSceneActivity;
-
-/**
- * Created by manish on 3/2/17.
- */
 
 public class ViroSceneListAdapter extends BaseAdapter {
     public final static String EXTRA_SCENE_NAME = "com.viromedia.EXTRA_SCENE_NAME";

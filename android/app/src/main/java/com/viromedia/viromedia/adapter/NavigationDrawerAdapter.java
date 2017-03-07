@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2017 Viro Media. All rights reserved.
+ */
 package com.viromedia.viromedia.adapter;
 
 import android.content.Context;
@@ -15,10 +18,6 @@ import android.widget.Toast;
 import com.viromedia.viromedia.EnterTestbedActivity;
 import com.viromedia.viromedia.R;
 import com.viromedia.viromedia.ViroSceneActivity;
-
-/**
- * Created by manish on 3/2/17.
- */
 
 public class NavigationDrawerAdapter extends BaseAdapter {
     private Context mContext;

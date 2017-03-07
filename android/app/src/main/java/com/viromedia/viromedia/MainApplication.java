@@ -1,3 +1,6 @@
+/*
+ * Copyright © 2017 Viro Media. All rights reserved.
+ */
 package com.viromedia.viromedia;
 
 import android.app.Application;
