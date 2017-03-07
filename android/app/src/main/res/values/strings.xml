@@ -1,1 +1,17 @@
-<resources></resources>
+<resources>
+    <string name="photo_tour_title">360 Photo Tour</string>
+    <string name="photo_tour_subtitle">Taking 360 photos further with interactivity.</string>
+    <string name="media_player_title">Viro Media Player</string>
+    <string name="media_player_subtitle">Two unique immersive viewing experiences in VR.</string>
+    <string name="human_heart_title">The Human Heart</string>
+    <string name="human_heart_subtitle">View the heart up close in this powerful 3D experience.</string>
+    <string name="support">Support</string>
+    <string name="enter_testbed">Enter Testbed</string>
+    <string name="viro_media">Viro Media</string>
+    <string name="viro_media_application_testbed">Viro Media Application Testbed</string>
+    <string name="viro_media_testbed_steps">"1. Run 'npm start' at your project's root directory.\n2. Ensure your device and development machine are on the same WiFi network.\n3. Enter your development machine's IP address or ngrok endpoint below."</string>
+    <string name="edit_testbed_message">0.0.0.0 or xxxxxx.ngrok.io</string>
+    <string name="viro_version">React-Viro v0.0.1</string>
+    <string name="previous_endpoint">Previous Endpoint:</string>
+    <string name="vr_enable_mode">Do you have a VR Headset?</string>
+</resources>

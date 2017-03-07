@@ -1,6 +1,5 @@
 package com.viromedia.viromedia;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -8,24 +7,29 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.viromedia.viromedia.adapter.NavigationDrawerAdapter;
+import com.viromedia.viromedia.adapter.ViroSceneListAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
     private String[] mDrawerTitles;
+    private int[] mDrawerImages;
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private Toolbar mToolbar;
     private String[] mSceneListTitles;
+    private String[] mSceneListSubTitles;
+    private int[] mSceneListBackgroundImages;
+    private String[] mSceneNames;
     private ListView mSceneListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -35,26 +39,51 @@ public class MainActivity extends AppCompatActivity {
         setupSceneListView();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        getWindow().getDecorView().setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
+
     private void setupSceneListView() {
-        // TODO Move to strings
-        mSceneListTitles = new String[]{"360 Photo Tour", "Viro Media Player", "The Human Heart"};
+        // TODO send a list of object instead of 3 different lists
+        mSceneListTitles = new String[]{getString(R.string.photo_tour_title),
+                getString(R.string.media_player_title),
+                getString(R.string.human_heart_title)};
+        mSceneListSubTitles = new String[]{getString(R.string.photo_tour_subtitle),
+                getString(R.string.media_player_subtitle),
+                getString(R.string.human_heart_subtitle)};
+        mSceneListBackgroundImages = new int[]{R.drawable.card_360phototour,
+                R.drawable.card_mediaplayer,
+                R.drawable.card_humanheart};
+        mSceneNames = new String[]{"360 Photo Tour", "Viro Media Player", "Inside the Human Body"};
         mSceneListView = (ListView) findViewById(R.id.viro_scene_list);
-        mSceneListView.setAdapter(new ArrayAdapter<>(this, R.layout.scene_list_item, mSceneListTitles));
-        mSceneListView.setOnItemClickListener(new SceneListItemClickListener());
+        mSceneListView.setAdapter(new ViroSceneListAdapter(this, mSceneListTitles,
+                mSceneListSubTitles,
+                mSceneListBackgroundImages, mSceneNames));
+        mSceneListView.setOverScrollMode(View.OVER_SCROLL_ALWAYS);
     }
 
     private void setupDrawer() {
-        // TODO Move to strings
-        mDrawerTitles = new String[]{"Support", "Enter Testbed"};
+        mDrawerTitles = new String[]{getString(R.string.support),
+                getString(R.string.enter_testbed)};
+        mDrawerImages = new int[]{R.drawable.icon_support, R.drawable.icon_testbed};
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
         // Set the adapter for the list view
-        mDrawerList.setAdapter(new ArrayAdapter<>(this, R.layout.drawer_list_item, mDrawerTitles));
-        // Set the list's click listener
-        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+        mDrawerList.setAdapter(new NavigationDrawerAdapter(this, getString(R.string.viro_media),
+                mDrawerTitles, mDrawerImages));
+
         mDrawerToggle = new ActionBarDrawerToggle(this,
-                mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
+                mDrawerLayout, mToolbar, R.string.viro_media, R.string.viro_media);
 
         mDrawerToggle.setDrawerIndicatorEnabled(false);
         if (getSupportActionBar() != null) {
@@ -72,37 +101,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private class SceneListItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectSceneItem(position);
-        }
-    }
-    /**
-     * The click listener for ListView in the navigation drawer
-     */
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectDrawerItem(position);
-        }
-    }
-
-    /**
-     * Select drawer item, take action depending on what was clicked
-     * @param position
-     */
-    private void selectDrawerItem(int position) {
-
-        Toast.makeText(this, "Position selected - " + position, Toast.LENGTH_LONG).show();
-    }
-
-    private void selectSceneItem(int position) {
-        Toast.makeText(this, "Position selected - " + position, Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(this, ViroSceneActivity.class);
-        startActivity(intent);
-
     }
 }
