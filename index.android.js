@@ -15,7 +15,7 @@ import {
   ViroSceneNavigator,
 } from 'react-viro';
 
-var InitialScene = require('./js/HelloWorldScene');
+var InitialScene = require('./js/HumanBody/Heart');
 
 export default class ViroSample extends Component {
   render() {

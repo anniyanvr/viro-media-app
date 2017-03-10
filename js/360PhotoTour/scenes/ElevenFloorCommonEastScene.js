@@ -36,7 +36,7 @@ var ElevenFloorCommonEastScene = React.createClass({
   render: function() {
     var ElevenFloorCommonScene = require('../scenes/ElevenFloorCommonScene');
     return (
-        <ViroScene style={styles.container} onTap={this._onTapBack}>
+        <ViroScene style={styles.container} onClick={this._onTapBack}>
           <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
                      attenuationStartDistance={40} attenuationEndDistance={50}
                      spotInnerAngle={0} spotOuterAngle={20} />

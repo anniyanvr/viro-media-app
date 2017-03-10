@@ -42,8 +42,7 @@ var HeartScene = React.createClass({
 
         <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -.85]} active={true}/>
 
-        <ViroOmniLight position={[0, 0, 5]} color="#ffffff"
-          attenuationStartDistance={40} attenuationEndDistance={50} />
+        <ViroDirectionalLight direction={[0, 0, -1]} color="#ffffff" />
 
         <ViroAmbientLight color="#aaaaaa" />
 
@@ -52,8 +51,8 @@ var HeartScene = React.createClass({
                       materials={["heart"]} />
 
 
-      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", require('./res/label_superior_vena_cava.png'), left, 1.55, 1)}
-      {this._getLabel([ 0.085, 0.155, -0.738], "left_common_carotid", require('./res/label_left_common_carotid.png'), left, 1.9, 1)}
+      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", require('./res/label_superior_vena_cava.png'), left, 1.9, 1.5)}
+      {this._getLabel([ 0.085, 0.155, -0.738], "left_common_carotid", require('./res/label_left_common_carotid.png'), left, 2.5, 1.5)}
       {this._getLabel([ 0.143, 0.070, -0.741], "aorta", require('./res/label_aorta.png'), right, 1.7, 1)}
       {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", require('./res/label_left_pulmonary.png'), right, 1.5, 1)}
       {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", require('./res/label_right_atrium.png'),right, 1.25, 1)}
@@ -97,7 +96,7 @@ var HeartScene = React.createClass({
 var materials = ViroMaterials.createMaterials({
    heart: {
      lightingModel: "Lambert",
-     diffuseTexture: require('./res/Heart_D3.jpg'),
+     diffuseTexture: require('./res/Heart_D4.jpg'),
      specularTexture: require('./res/Heart_S2.jpg'),
      writesToDepthBuffer: true,
      readsFromDepthBuffer: true,

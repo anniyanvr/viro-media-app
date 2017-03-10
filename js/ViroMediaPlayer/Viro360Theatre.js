@@ -13,24 +13,27 @@
  * Pull in all imports required for the controls within this scene.
  */
 import React, { Component } from 'react';
-import { polarToCartesian } from 'polarToCartesian';
+import {StyleSheet} from 'react-native';
+
 import {
   AppRegistry,
   ViroScene,
   ViroVideo,
   ViroOmniLight,
   ViroSceneNavigator,
-  Materials,
-  StyleSheet,
+  ViroMaterials,
   ViroText,
-  Viro360Photo,
+  Viro360Image,
   Viro360Video,
   ViroButton,
   ViroImage,
   ViroNode,
   ViroAnimations,
   ViroAnimatedComponent,
+  ViroUtils,
 } from 'react-viro';
+
+let polarToCartesian = ViroUtils.polarToCartesian;
 
 /**
  * Set all the image and asset references required in this scene.
@@ -54,6 +57,7 @@ var Viro360Theatre = React.createClass({
       videoPaused: false,
       loopVideo: true,
       videoIndex: 0,
+      runAnimation: false,
     }
   },
 
@@ -62,10 +66,10 @@ var Viro360Theatre = React.createClass({
    */
   render: function() {
     return (
-        <ViroScene onTap={this._onVideoTapped} reticleEnabled={this.state.videoControlsAnimation=="fadeIn"}>
+        <ViroScene onClick={this._onVideoTapped} reticleEnabled={this.state.videoControlsAnimation=="fadeIn"}>
           <Viro360Video ref={VIDEO_REF} source={videos[this.state.videoIndex]} volume={1.0}
             loop={this.state.loopVideo} paused={this.state.videoPaused} onFinish={this._onFinish} />
-          <ViroAnimatedComponent animation={this.state.videoControlsAnimation} run={false} loop={false} ref={VideoControlRef}>
+          <ViroAnimatedComponent animation={this.state.videoControlsAnimation} run={this.state.runAnimation} loop={false} ref={VideoControlRef}>
               {this._renderVideoControl()}
           </ViroAnimatedComponent>
         </ViroScene>
@@ -81,9 +85,9 @@ var Viro360Theatre = React.createClass({
     }
 
     this.setState({
-      videoControlsAnimation:videoControlsAnimationState
+      videoControlsAnimation:videoControlsAnimationState,
+      runAnimation: true,
     });
-    this.refs[VideoControlRef].startAnimation();
   },
   /**
    * Render a set of Video UI Controls. This includes (in the order displayed from left to right):
@@ -99,36 +103,40 @@ var Viro360Theatre = React.createClass({
 
             <ViroButton
                 position={[-buttonSize-0.1,0,-2]}
+                scale={[1, 1, 1]}
                 width={buttonSize}
                 height={buttonSize}
                 source={require("./res/previous.png")}
                 gazeSource={require("./res/previous_hover.png")}
                 tapSource={require("./res/previous_hover.png")}
-                onTap={this._playPreviousVideo}/>
+                onClick={this._playPreviousVideo}/>
 
             {this._renderPlayControl()}
 
             <ViroButton
                 position={[buttonSize+0.1, 0,-2]}
+                scale={[1, 1, 1]}
                 width={buttonSize}
                 height={buttonSize}
                 source={require("./res/skip.png")}
                 gazeSource={require("./res/skip_hover.png")}
                 tapSource={require("./res/skip_hover.png")}
-                onTap={this._playNextVideo}/>
+                onClick={this._playNextVideo}/>
 
           <ViroButton
               position={[-0.3, -0.4 ,-2]}
+              scale={[1, 1, 1]}
               width={0.5}
               height={0.5}
               source={require("./res/icon_2D.png")}
               gazeSource={require("./res/icon_2D_hover.png")}
               tapSource={require("./res/icon_2D_hover.png")}
-              onTap={this._launchTheatreScene}
+              onClick={this._launchTheatreScene}
               />
 
           <ViroButton
               position={[0.3, -0.4 ,-2]}
+              scale={[1, 1, 1]}
               width={0.5}
               height={0.5}
               source={require("./res/icon_360_hover.png")}
@@ -147,25 +155,27 @@ var Viro360Theatre = React.createClass({
       return (
           <ViroButton
               position={[0,0,-2]}
+              scale={[1, 1, 1]}
               width={buttonSize}
               height={buttonSize}
               source={require("./res/play.png")}
               gazeSource={require("./res/play_hover.png")}
               tapSource={require("./res/play_hover.png")}
               transformBehaviors={["billboard"]}
-              onTap={this._togglePauseVideo}/>
+              onClick={this._togglePauseVideo}/>
       );
     } else {
       return (
           <ViroButton
               position={[0,0,-2]}
+              scale={[1, 1, 1]}
               width={buttonSize}
               height={buttonSize}
               source={require("./res/pause.png")}
               gazeSource={require("./res/pause_hover.png")}
               tapSource={require("./res/pause_hover.png")}
               transformBehaviors={["billboard"]}
-              onTap={this._togglePauseVideo}/>
+              onClick={this._togglePauseVideo}/>
       );
     }
   },
@@ -217,7 +227,7 @@ ViroAnimations.registerAnimations({
   fadeIn:{properties:{opacity: 1.0}, duration: 500},
 });
 
-Materials.createMaterials({
+ViroMaterials.createMaterials({
   opaqueWhite: {
     shininess: 2.0,
     lightingModel: "Lambert",
