@@ -2,8 +2,9 @@
 
 import React, { Component } from 'react';
 
+import {StyleSheet} from 'react-native';
+
 import {
-  StyleSheet,
   AppRegistry,
   ViroOmniLight,
   ViroDirectionalLight,
@@ -17,10 +18,10 @@ import {
   ViroNode,
   ViroImage,
   ViroSceneNavigator,
-  Materials,
+  ViroMaterials,
   ViroAnimations,
   ViroAnimatedComponent,
-  Viro360Photo,
+  Viro360Image,
 } from 'react-viro';
 
 var left = "left";
@@ -37,34 +38,33 @@ var HeartScene = React.createClass({
     return (
      <ViroScene style={styles.container}>
 
-        <Viro360Photo source={require("./res/heart_bg.jpg")} />
+        <Viro360Image source={require("./res/heart_bg.jpg")} />
 
-        <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -.85]} />
+        <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -.85]} active={true}/>
 
         <ViroOmniLight position={[0, 0, 5]} color="#ffffff"
           attenuationStartDistance={40} attenuationEndDistance={50} />
 
         <ViroAmbientLight color="#aaaaaa" />
 
-
         <Viro3DObject source={require('./res/heart.obj')}
                       position={[-0.0, -5.5, -1.15]}
                       materials={["heart"]} />
 
 
-      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", left, 1.55, 1)}
-      {this._getLabel([ 0.085, 0.155, -0.738], "left_common_carotid", left, 1.9, 1)}
-      {this._getLabel([ 0.143, 0.070, -0.741], "aorta", right, 1.7, 1)}
-      {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", right, 1.5, 1)}
-      {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", right, 1.25, 1)}
-      {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", left, 1.3, 1)}
-      {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", left, 1.5, 1)}
+      {this._getLabel([-0.039, 0.115, -0.779], "superior_vena_cava", require('./res/label_superior_vena_cava.png'), left, 1.55, 1)}
+      {this._getLabel([ 0.085, 0.155, -0.738], "left_common_carotid", require('./res/label_left_common_carotid.png'), left, 1.9, 1)}
+      {this._getLabel([ 0.143, 0.070, -0.741], "aorta", require('./res/label_aorta.png'), right, 1.7, 1)}
+      {this._getLabel([ 0.195, -0.010, -0.676], "left_pulmonary", require('./res/label_left_pulmonary.png'), right, 1.5, 1)}
+      {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", require('./res/label_right_atrium.png'),right, 1.25, 1)}
+      {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", require('./res/label_right_atrium.png'), left, 1.3, 1)}
+      {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", require('./res/label_right_ventricle.png'), left, 1.5, 1)}
 
      </ViroScene>
     );
   },
 
-  _getLabel(position, material, side, widthScale, heightScale) {
+  _getLabel(position, material, img, side, widthScale, heightScale) {
     let views = [];
 
     var labelPosition = position.slice(0);
@@ -80,19 +80,21 @@ var HeartScene = React.createClass({
     views.push(
       <ViroImage materials={["crosshair"]}
                  position={position}
-                 scale={[0.10, 0.10, 0.10]}/>
+                 scale={[0.10, 0.10, 0.10]}
+                 source={require('./res/label_crosshair.png')}/>
     );
 
     views.push(
       <ViroImage materials={[material]}
                  position={labelPosition}
-                 scale={[0.10 * widthScale, 0.10 * heightScale, 0.10]}/>
+                 scale={[0.10 * widthScale, 0.10 * heightScale, 0.10]}
+                 source={img}/>
     );
     return views;
   },
 });
 
-var materials = Materials.createMaterials({
+var materials = ViroMaterials.createMaterials({
    heart: {
      lightingModel: "Lambert",
      diffuseTexture: require('./res/Heart_D3.jpg'),
@@ -129,49 +131,42 @@ var materials = Materials.createMaterials({
    left_atrium: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_left_atrium.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    left_common_carotid: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_left_common_carotid.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    left_pulmonary: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_left_pulmonary.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    right_atrium: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_right_atrium.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    right_ventricle: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_right_ventricle.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    superior_aorta: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_superior_aorta.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },
    superior_vena_cava: {
      shininess: 2.0,
      lightingModel: "Constant",
-     diffuseTexture: require('./res/label_superior_vena_cava.png'),
      writesToDepthBuffer: false,
      readsFromDepthBuffer: false,
    },

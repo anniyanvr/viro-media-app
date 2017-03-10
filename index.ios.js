@@ -37,7 +37,7 @@ export default class ViroSample extends Component {
     if (sceneName == '360 Photo Tour') {
       return require('./js/360PhotoTour/MainScene');
     } else if (sceneName == 'Inside the Human Body') {
-      return require('./js/HelloWorld/HelloWorldScene');
+      return require('./js/HumanBody/Heart');
     } else if (sceneName == 'Viro Media Player') {
       return require('./js/HelloWorld/HelloWorldScene');
     } else if (sceneName == 'Flickr Photo Explorer') {
