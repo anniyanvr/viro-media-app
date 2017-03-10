@@ -37,7 +37,8 @@ var PortalElement = React.createClass({
     },
     render:function(){
         var photoSceneText = this.props.scenText;
-        var textOffset = 0.55;
+        var backgroundOffset = 0.55;
+        var textOffset = 0.58;
         if (this.props.iconOffset){
             textOffset=this.props.iconOffset;
         }
@@ -49,11 +50,11 @@ var PortalElement = React.createClass({
                     materials={["icon_scene"]} 
                     source={require('../img/icon_scene.png')}/>
                 <ViroImage
-                          position={[textOffset,0,0]}
-                          scale={[this.props.sceneLength, 0.26, 0.1]}
+                          position={[backgroundOffset,0,0]}
+                          scale={[this.props.sceneLength, 1, 1]}
                           materials={["icon_label_background"]} 
                           source={require('../img/icon_label_background.png')}/>
-                <ViroText position={[textOffset, 0, 0.1]}
+                <ViroText position={[textOffset, -0.4, 0.1]}
                           style={styles.markerText}
                           text={this.props.sceneText}/>
             </ViroNode>
@@ -92,7 +93,9 @@ var styles = StyleSheet.create({
     markerText: {
         marginLeft:50,
         fontFamily: 'HelveticaNeue-Medium',
-        fontSize: 60,
+        fontSize: 12,
+        alignItems: 'center',
+        flexDirection: 'column',
         color: '#FFFFFF',
     },
     textBackground: {
