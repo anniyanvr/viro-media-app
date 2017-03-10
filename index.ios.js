@@ -24,13 +24,28 @@ var InitialScene = require('./js/HelloWorldScene');
 
 export default class ViroSample extends Component {
   render() {
+    let scene = this._getScene(this.props.initialScene);
     return (
       <ViroSceneNavigator apiKey="7EEDCB99-2C3B-4681-AE17-17BC165BF792"
-       initialScene={{scene: InitialScene}}
+       initialScene={{scene: scene}}
+       vrModeEnabled={this.props.vrMode}
         />
     );
   }
+  _getScene(sceneName) {
+    // We're doing it this way so that we only load in the scenes that we need.
+    if (sceneName == '360 Photo Tour') {
+      return require('./js/360PhotoTour/MainScene');
+    } else if (sceneName == 'Inside the Human Body') {
+      return require('./js/HelloWorld/HelloWorldScene');
+    } else if (sceneName == 'Viro Media Player') {
+      return require('./js/HelloWorld/HelloWorldScene');
+    } else if (sceneName == 'Flickr Photo Explorer') {
+      return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
+    } else {
+      return require('./js/HelloWorld/HelloWorldScene');
+    }  }
 }
 
-AppRegistry.registerComponent('ViroMediaAppBeta', () => ViroSample);
+AppRegistry.registerComponent('ViroSample', () => ViroSample);
 
