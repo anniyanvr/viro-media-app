@@ -106,9 +106,9 @@ static NSString *const kLeftPanelCellXibName = @"LeftPanelCell";
         cell = [nib objectAtIndex:0];
     }
 
-    cell.iconImage.image = [UIImage imageNamed:@"nativeapp_btn_sign_up.png"];
-    cell.iconImage.highlightedImage = [UIImage imageNamed:@"nativeapp_btn_sign_up_press.png"];
-    cell.textView.text = @"Sign up for Alpha";
+    cell.iconImage.image = [UIImage imageNamed:@"icon_support.png"];
+    cell.iconImage.highlightedImage = [UIImage imageNamed:@"icon_support.png"];
+    cell.textView.text = @"Support";
 
     [self addBackgroundToCell:cell];
     

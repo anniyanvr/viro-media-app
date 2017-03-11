@@ -62,6 +62,7 @@
 		1312BF9A1E74528C00CF7AF7 /* nativeapp_logo_cardboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 1312BF7D1E74528C00CF7AF7 /* nativeapp_logo_cardboard.png */; };
 		1312BF9B1E74528C00CF7AF7 /* nativeapp_rotate_device.png in Resources */ = {isa = PBXBuildFile; fileRef = 1312BF7E1E74528C00CF7AF7 /* nativeapp_rotate_device.png */; };
 		1312BF9E1E7452A300CF7AF7 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1312BF9D1E7452A300CF7AF7 /* SWRevealViewController.m */; };
+		1312BFAC1E74722800CF7AF7 /* icon_support.png in Resources */ = {isa = PBXBuildFile; fileRef = 1312BFAB1E74722800CF7AF7 /* icon_support.png */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -328,6 +329,7 @@
 		1312BF7E1E74528C00CF7AF7 /* nativeapp_rotate_device.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nativeapp_rotate_device.png; sourceTree = "<group>"; };
 		1312BF9C1E7452A300CF7AF7 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		1312BF9D1E7452A300CF7AF7 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		1312BFAB1E74722800CF7AF7 /* icon_support.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_support.png; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ViroMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViroMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -469,6 +471,7 @@
 				1312BF6D1E74528C00CF7AF7 /* nativeapp_btn_no.png */,
 				1312BF6E1E74528C00CF7AF7 /* nativeapp_btn_sign_up_press.png */,
 				1312BF6F1E74528C00CF7AF7 /* nativeapp_btn_sign_up.png */,
+				1312BFAB1E74722800CF7AF7 /* icon_support.png */,
 				1312BF701E74528C00CF7AF7 /* nativeapp_btn_testbed_press.png */,
 				1312BF711E74528C00CF7AF7 /* nativeapp_btn_testbed.png */,
 				1312BF721E74528C00CF7AF7 /* nativeapp_btn_yes_press.png */,
@@ -1003,6 +1006,7 @@
 				1312BF861E74528C00CF7AF7 /* nativeapp_btn_info.png in Resources */,
 				1312BF8C1E74528C00CF7AF7 /* nativeapp_btn_sign_up.png in Resources */,
 				1312BF9A1E74528C00CF7AF7 /* nativeapp_logo_cardboard.png in Resources */,
+				1312BFAC1E74722800CF7AF7 /* icon_support.png in Resources */,
 				1312BF941E74528C00CF7AF7 /* nativeapp_card_phototour.png in Resources */,
 				1312BF901E74528C00CF7AF7 /* nativeapp_btn_yes.png in Resources */,
 				1312BF911E74528C00CF7AF7 /* nativeapp_card_flickr.png in Resources */,
