@@ -87,7 +87,8 @@ var HeartScene = React.createClass({
       <ViroImage materials={[material]}
                  position={labelPosition}
                  scale={[0.10 * widthScale, 0.10 * heightScale, 0.10]}
-                 source={img}/>
+                 source={img}
+                 key={material}/>
     );
     return views;
   },
