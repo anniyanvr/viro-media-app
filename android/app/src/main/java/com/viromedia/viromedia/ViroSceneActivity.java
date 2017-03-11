@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate;
 
 public class ViroSceneActivity extends ReactActivity {
 
@@ -36,4 +37,8 @@ public class ViroSceneActivity extends ReactActivity {
         return "ViroMediaAppBeta";
     }
 
+    @Override
+    protected ReactActivityDelegate createReactActivityDelegate() {
+        return new ViroReactActivityDelegate(this, getMainComponentName(), BuildConfig.DEBUG);
+    }
 }

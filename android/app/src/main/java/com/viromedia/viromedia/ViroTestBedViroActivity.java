@@ -10,8 +10,11 @@ import android.preference.PreferenceManager;
 import android.view.View;
 
 import com.facebook.react.ReactActivity;
+import com.facebook.react.ReactActivityDelegate;
 
 public class ViroTestBedViroActivity extends ReactActivity {
+
+    private static final String HOST_PORT = ":8081";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,7 @@ public class ViroTestBedViroActivity extends ReactActivity {
         String ipAddr = intent.getStringExtra(EnterTestbedActivity.EXTRA_IP_ADDRESS);
         SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        preferences.edit().putString("debug_http_host", ipAddr).apply();
+        preferences.edit().putString("debug_http_host", ipAddr  + HOST_PORT).apply();
     }
 
     @Override
@@ -45,4 +48,8 @@ public class ViroTestBedViroActivity extends ReactActivity {
         return "ViroMediaAppBeta";
     }
 
+    @Override
+    protected ReactActivityDelegate createReactActivityDelegate() {
+        return new ViroReactActivityDelegate(this, getMainComponentName(), true);
+    }
 }
