@@ -1,4 +1,5 @@
 <resources>
+    <string name="app_name_viro_media">Viro Media</string>
     <string name="photo_tour_title">360 Photo Tour</string>
     <string name="photo_tour_subtitle">Taking 360 photos further with interactivity.</string>
     <string name="media_player_title">Viro Media Player</string>
