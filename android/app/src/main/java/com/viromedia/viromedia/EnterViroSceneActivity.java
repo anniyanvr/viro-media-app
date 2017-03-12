@@ -12,14 +12,14 @@ import android.widget.ImageButton;
 import com.viromedia.viromedia.adapter.ViroSceneListAdapter;
 
 public class EnterViroSceneActivity extends AppCompatActivity {
-    public final static String EXTRA_ENABLE_VR_MODE = "com.viromedia.ENABLE_VR_MODE";
+
     private String mSceneName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_viro_scene);
         Intent intent = getIntent();
-        mSceneName = intent.getStringExtra(ViroSceneListAdapter.EXTRA_SCENE_NAME);
+        mSceneName = intent.getStringExtra(ViroSceneActivity.EXTRA_SCENE_NAME);
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,8 +54,8 @@ public class EnterViroSceneActivity extends AppCompatActivity {
 
     private void startViroSceneActivity(boolean enableVrMode) {
         Intent intent = new Intent(getApplicationContext(), ViroSceneActivity.class);
-        intent.putExtra(EXTRA_ENABLE_VR_MODE, enableVrMode);
-        intent.putExtra(ViroSceneListAdapter.EXTRA_SCENE_NAME, mSceneName);
+        intent.putExtra(ViroSceneActivity.EXTRA_ENABLE_VR_MODE, enableVrMode);
+        intent.putExtra(ViroSceneActivity.EXTRA_SCENE_NAME, mSceneName);
         startActivity(intent);
     }
 }

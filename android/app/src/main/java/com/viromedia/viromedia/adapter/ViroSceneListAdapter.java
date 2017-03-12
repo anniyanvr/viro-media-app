@@ -15,9 +15,10 @@ import android.widget.TextView;
 
 import com.viromedia.viromedia.EnterViroSceneActivity;
 import com.viromedia.viromedia.R;
+import com.viromedia.viromedia.ViroSceneActivity;
 
 public class ViroSceneListAdapter extends BaseAdapter {
-    public final static String EXTRA_SCENE_NAME = "com.viromedia.EXTRA_SCENE_NAME";
+
     private Context mContext;
     private String[] mTitles;
     private String[] mSubTitles;
@@ -67,7 +68,7 @@ public class ViroSceneListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, EnterViroSceneActivity.class);
-                intent.putExtra(EXTRA_SCENE_NAME, mSceneNames[position]);
+                intent.putExtra(ViroSceneActivity.EXTRA_SCENE_NAME, mSceneNames[position]);
                 mContext.startActivity(intent);
             }
         });

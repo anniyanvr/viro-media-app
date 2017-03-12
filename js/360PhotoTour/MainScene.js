@@ -25,8 +25,7 @@ import {
   ViroAnimations,
   ViroAnimatedComponent,
   ViroNode,
-  ViroSpinner,
-  ViroText
+  ViroSpinner
 } from 'react-viro';
 
 var MAINCARD_REF = 'maincard';

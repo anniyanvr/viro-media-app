@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, Viro, Inc.
+ * Copyright (c) 2016-present, Viro, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -9,23 +9,43 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  StyleSheet,
+  View
 } from 'react-native';
 
 import {
   ViroSceneNavigator,
+  ViroScene,
+  ViroBox,
 } from 'react-viro';
 
-var InitialScene = require('./js/HumanBody/Heart');
+var InitialScene = require('./js/HelloWorld/HelloWorldScene');
 
 export default class ViroSample extends Component {
   render() {
+  	console.log("index.android.js" + this.props.initialScene + this.props.vrMode);
+    let scene = this._getScene(this.props.initialScene);
     return (
       <ViroSceneNavigator apiKey="ANDROID_DOESNT_YET_NEED_A_KEY"
-        initialScene={{scene: InitialScene}}
+       initialScene={{scene: scene}}
+       vrModeEnabled={this.props.vrMode}
         />
     );
   }
+  _getScene(sceneName) {
+    // We're doing it this way so that we only load in the scenes that we need.
+    if (sceneName == '360 Photo Tour') {
+      return require('./js/360PhotoTour/MainScene');
+    } else if (sceneName == 'Inside the Human Body') {
+      return require('./js/HumanBody/Heart');
+    } else if (sceneName == 'Viro Media Player') {
+      return require('./js/ViroMediaPlayer/ViroTheatre');
+    } else if (sceneName == 'Flickr Photo Explorer') {
+      return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
+    } else {
+      return require('./js/HelloWorld/HelloWorldScene');
+    } 
+  }
 }
 
-AppRegistry.registerComponent('ViroMediaAppBeta', () => ViroSample);
-
+AppRegistry.registerComponent('ViroSample', () => ViroSample);

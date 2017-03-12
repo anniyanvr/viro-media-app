@@ -51,7 +51,7 @@ var LoadingSpinner = React.createClass({
                             position={textPosition}
                             fontFamily='HelveticaNeue-Medium'
                             fontSize={70}
-                            color={"#000000"}
+                            color={'#000000'}
                             text="Loading ...."
                         />
                     </ViroNode>

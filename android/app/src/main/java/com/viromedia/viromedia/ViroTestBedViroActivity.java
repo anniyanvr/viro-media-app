@@ -45,7 +45,7 @@ public class ViroTestBedViroActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "ViroMediaAppBeta";
+        return "ViroSample";
     }
 
     @Override
