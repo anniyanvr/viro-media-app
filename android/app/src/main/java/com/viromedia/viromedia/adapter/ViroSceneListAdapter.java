@@ -54,9 +54,7 @@ public class ViroSceneListAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View rowView = mLayoutInflater.inflate(R.layout.scene_list_item, null);
-
-        ImageView imgView = (ImageView) rowView.findViewById(R.id.backgroundImage);
-        imgView.setImageResource(mBackgroundImages[position]);
+        rowView.setBackgroundResource(mBackgroundImages[position]);
 
         TextView titleView = (TextView) rowView.findViewById(R.id.title);
         titleView.setText(mTitles[position]);

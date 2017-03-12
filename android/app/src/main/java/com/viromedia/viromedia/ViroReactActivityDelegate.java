@@ -4,7 +4,6 @@ package com.viromedia.viromedia;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactNativeHost;
