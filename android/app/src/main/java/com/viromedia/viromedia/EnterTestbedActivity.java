@@ -57,7 +57,7 @@ public class EnterTestbedActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ViroTestBedViroActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String ipAddr = editText.getText().toString();
-        if (ipAddr != null || ipAddr.trim().isEmpty()) {
+        if (ipAddr != null && !ipAddr.trim().isEmpty()) {
 
             intent.putExtra(EXTRA_IP_ADDRESS, ipAddr.trim());
             startActivity(intent);

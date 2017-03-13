@@ -50,7 +50,8 @@
                     android:layout_below="@id/testbed_steps"
                     android:background="@drawable/edittext_roundedcorners"
                     android:paddingLeft="5dp"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:maxLines="1"/>
                 <ImageButton
                     android:id="@+id/go_button"
                     android:layout_width="match_parent"
