@@ -9,7 +9,9 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="#000"
-    tools:context="com.viromedia.viromedia.EnterTestbedActivity">
+    tools:context="com.viromedia.viromedia.EnterTestbedActivity"
+    android:clickable="true"
+    android:focusableInTouchMode="true" >
 
         <ImageButton
             android:id="@+id/back_btn"
@@ -82,7 +84,8 @@
                 android:gravity="center_horizontal"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/previous_endpoint"
-                android:layout_below="@id/viro_version"/>
+                android:layout_below="@id/viro_version"
+                android:onClick="addPreviousEntpoint"/>
             <TextView
                 android:id="@+id/endpoint_string"
                 android:layout_width="match_parent"
@@ -91,6 +94,7 @@
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
                 android:text="@string/edit_testbed_message"
-                android:layout_below="@id/previous_endpoint"/>
+                android:layout_below="@id/previous_endpoint"
+                android:onClick="addPreviousEntpoint"/>
         </RelativeLayout>
 </RelativeLayout>

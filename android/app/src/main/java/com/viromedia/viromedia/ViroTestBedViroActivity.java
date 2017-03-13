@@ -14,7 +14,7 @@ import com.facebook.react.ReactActivityDelegate;
 
 public class ViroTestBedViroActivity extends ReactActivity {
 
-    private static final String HOST_PORT = ":8081";
+    public static final String HOST_PORT = ":8081";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,12 +3,14 @@
  */
 package com.viromedia.viromedia;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -28,7 +30,7 @@ public class EnterTestbedActivity extends AppCompatActivity {
             previousEndpointView.setVisibility(View.INVISIBLE);
         } else {
             previousEndpointView.setVisibility(View.VISIBLE);
-            previousEndpointView.setText(debug_http_host);
+            previousEndpointView.setText(debug_http_host.split(ViroTestBedViroActivity.HOST_PORT)[0]);
         }
 
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
@@ -36,6 +38,16 @@ public class EnterTestbedActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (!hasFocus) {
+                    hideKeyboard(v);
+                }
             }
         });
     }
@@ -51,6 +63,21 @@ public class EnterTestbedActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+    }
+
+    public void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void addPreviousEntpoint(View view) {
+        TextView prevEndpointView = (TextView) findViewById(R.id.endpoint_string);
+        String prevEndpointText = prevEndpointView.getText().toString();
+        if (!prevEndpointText.trim().isEmpty()) {
+
+            EditText editText = (EditText) findViewById(R.id.edit_message);
+            editText.setText(prevEndpointText);
+        }
     }
 
     public void startTestBed(View view) {
