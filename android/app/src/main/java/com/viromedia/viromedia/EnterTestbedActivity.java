@@ -9,7 +9,9 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -48,6 +50,19 @@ public class EnterTestbedActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     hideKeyboard(v);
                 }
+            }
+        });
+
+        editText.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    hideKeyboard(v);
+                    startTestBed(v);
+                    return true;
+                }
+                return false;
             }
         });
     }
