@@ -96,7 +96,7 @@ var HeartScene = React.createClass({
 
 var materials = ViroMaterials.createMaterials({
    heart: {
-     lightingModel: "Lambert",
+     lightingModel: "Blinn",
      diffuseTexture: require('./res/Heart_D4.jpg'),
      specularTexture: require('./res/Heart_S2.jpg'),
      writesToDepthBuffer: true,
