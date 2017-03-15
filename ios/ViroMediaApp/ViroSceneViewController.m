@@ -128,7 +128,9 @@ static NSInteger const kBackButtonInsetLeft = 12;
 
 - (void)exitReactViro {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+      [self willMoveToParentViewController:nil];
+      [self.view removeFromSuperview];
+      [self removeFromParentViewController];
     });
 }
 

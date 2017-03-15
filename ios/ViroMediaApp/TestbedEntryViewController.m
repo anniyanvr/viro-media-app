@@ -14,10 +14,8 @@ static NSString *const kInvalidEndpointMessage = @"[%@] is an invalid endpoint! 
 
 static NSString *const kVersionText = @"React-Viro v0.0.1";
 
-// a valid ngrok endpoint starts with `https://` and ends with `.ngrok.io` or `.ngrok.io/`, if its the latter, then we need to trim the extra slash
+// a validendpoint starts with `https://`.
 static NSString *const kNgrokEndpointPrefix = @"https://";
-static NSString *const kNgrokEndpointSuffix = @".ngrok.io";
-static NSString *const kNgrokEndpointSuffixNeedsTrim = @".ngrok.io/";
 
 // Key used to store the last endpoint in NSUserDefaults.
 static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
@@ -130,7 +128,6 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
-
         ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithIp:endpoint];
         [self presentViewController:vc animated:YES completion:nil];
         return;
@@ -145,7 +142,10 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
       
         ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self addChildViewController:vc];
+        vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
+        [self.view addSubview:vc.view];
+        [vc didMoveToParentViewController:self];
         return;
     }
 
@@ -173,24 +173,33 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 }
 
 /*
- Returns a valid ngrok endpoint or nil depending on whether or not the given
- candidate string is a valid ngrok endpoint or not. If it is, it'll format it
- to match: `https://xxxxx.ngrok.io`
+ Returns a valid hostname endpoint or nil depending on whether or not the given
+ candidate string is a valid endpoint or not. If it is, it'll format it
+ to match: `https://xxxxx.xxx.xxx`.
  */
 
 - (NSString *)getValidNgrokEndpoint:(NSString *)candidate {
-    // since 'https://' isn't a requirement, we should just add the prefix for the user if not given
-    if (![candidate hasPrefix:kNgrokEndpointPrefix]) {
+    // Since 'https://' isn't a requirement, we should just add the prefix for the user if not given
+    // Check if prefix is https or http, we'll implicitly add https if none is provided.
+  if (![candidate hasPrefix:kNgrokEndpointPrefix] && ![candidate hasPrefix:@"http://"]) {
         candidate = [NSString stringWithFormat:@"%@%@", kNgrokEndpointPrefix, candidate];
-    }
+  }
 
-    // now we check if the suffix is correct...
-    if ([candidate hasSuffix:kNgrokEndpointSuffix]) {
-        return candidate;
-    } else if ([candidate hasSuffix:kNgrokEndpointSuffixNeedsTrim]) {
-        return [candidate substringToIndex:candidate.length - 1];
+  if([self validateUrl:candidate]) {
+    if ([candidate hasSuffix:@"/"]) {
+      return [candidate substringToIndex:candidate.length - 1];
+    }else {
+      return candidate;
     }
-    return nil;
+  }
+
+  return nil;
+}
+
+- (BOOL)validateUrl:(NSString *)candidate {
+  NSString *urlRegEx = @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
+  NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", urlRegEx];
+  return [urlTest evaluateWithObject:candidate];
 }
 
 /*
