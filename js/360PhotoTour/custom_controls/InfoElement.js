@@ -26,8 +26,6 @@ import {
 } from 'react-viro';
 
 var PropTypes = require('react/lib/ReactPropTypes');
-var INFOCARD_REF = 'infoCard';
-var ICONCARD_REF = 'iconCard';
 /**
  * Info icon control that displays a ViroImage after being clicked on.
  * If a ViroImage is already displayed, it hides it.
@@ -45,24 +43,24 @@ var InfoElement = React.createClass({
             onCardShow:false,
             isInfoCardShowing:false,
             isIconCardShowing:true,
-            runAnimation:false,
+            runInfoCardAnimation:false,
+            runIconCardAnimation:false,
         }
     },
     render:function(){
             return (
                 <ViroNode onClick={this._onCardTap} {...this.props}>
                     <ViroNode scale={[this.props.cardScale[0],this.props.cardScale[1],this.props.cardScale[2]]} transformBehaviors={["billboard"]}>
-                        <ViroAnimatedComponent animation={this.state.currentInfoCardAnimation} run={this.state.runAnimation} loop={false} ref={INFOCARD_REF} onFinish={this._animateInfoCardFinished}>
+                        <ViroAnimatedComponent animation={this.state.currentInfoCardAnimation} run={this.state.runInfoCardAnimation} loop={false} onFinish={this._animateInfoCardFinished}>
                             <ViroImage
                                 opacity={0.0}
                                 scale={[.1,.1,.1]}
                                 materials={[this.props.windowContent]}
-                                onClick={this._onCardTap}
                                 onHover={this._onFocused}
                                 source={this.props.imgSource} />
                         </ViroAnimatedComponent>
                     </ViroNode>
-                    <ViroAnimatedComponent animation={this.state.currentIconCardAnimation} run={this.state.runAnimation} loop={false} ref={ICONCARD_REF} onFinish={this._animateIconCardFinished}>
+                    <ViroAnimatedComponent animation={this.state.currentIconCardAnimation} run={this.state.runIconCardAnimation} loop={false} onFinish={this._animateIconCardFinished}>
                         <ViroImage
                             transformBehaviors={["billboard"]}
                             opacity={1.0}
@@ -73,9 +71,8 @@ var InfoElement = React.createClass({
                 </ViroNode>
         );
     },
-    _onCardTap(){
+    _onCardTap(source){
         var showCard = !this.state.onCardShow
-
         if (showCard == true){
             this._animateIconCard(!showCard);
         } else {
@@ -90,7 +87,8 @@ var InfoElement = React.createClass({
         this.setState({
             isIconCardShowing:isVisible,
             currentIconCardAnimation: isVisible? "showIcon": "hide",
-            runAnimation:true,
+            runIconCardAnimation:true,
+            runInfoCardAnimation:false
         });
     },
 
@@ -98,7 +96,8 @@ var InfoElement = React.createClass({
         this.setState({
             isInfoCardShowing:isVisible,
             currentInfoCardAnimation: isVisible? "showInfo": "hide",
-            runAnimation: true
+            runInfoCardAnimation: true,
+            runIconCardAnimation:false
         });
     },
 
