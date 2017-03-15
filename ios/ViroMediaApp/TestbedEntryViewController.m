@@ -128,8 +128,7 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
-        ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithIp:endpoint];
-        [self presentViewController:vc animated:YES completion:nil];
+        [self pushSceneController:endpoint];
         return;
     }
 
@@ -140,17 +139,21 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
-      
-        ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
-        [self addChildViewController:vc];
-        vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
-        [self.view addSubview:vc.view];
-        [vc didMoveToParentViewController:self];
+        [self pushSceneController:endpoint];
         return;
     }
 
     self.errorText.text = [NSString stringWithFormat:kInvalidEndpointMessage, self.endpointTextField.text];
 
+}
+
+-(void)pushSceneController:(NSString *)endpoint {
+  ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
+  [self addChildViewController:vc];
+  vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
+  [self.view addSubview:vc.view];
+  [vc didMoveToParentViewController:self];
+  return;
 }
 
 /*
