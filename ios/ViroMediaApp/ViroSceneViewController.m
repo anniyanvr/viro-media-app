@@ -60,9 +60,18 @@ static NSInteger const kBackButtonInsetLeft = 12;
     }
     return self;
 }
+-(BOOL)shouldAutorotate {
+  return NO;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return (UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    delegate.isViroSceneDisplaying = YES;
     BOOL usingNgrok = YES;
     NSDictionary *initialProperties = nil;
     NSURL *jsCodeLocation = nil;
@@ -128,9 +137,15 @@ static NSInteger const kBackButtonInsetLeft = 12;
 
 - (void)exitReactViro {
     dispatch_async(dispatch_get_main_queue(), ^{
-      [self willMoveToParentViewController:nil];
-      [self.view removeFromSuperview];
-      [self removeFromParentViewController];
+      AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+      delegate.isViroSceneDisplaying = NO;
+      if(self.vrMode) {
+        [self willMoveToParentViewController:nil];
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+      } else {
+        [self dismissViewControllerAnimated:NO completion:nil];
+      }
     });
 }
 

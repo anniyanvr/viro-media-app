@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViroSceneViewController.h"
 #import <ViroReact/VRTBundleURLProvider.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -18,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  
+  self.isViroSceneDisplaying = NO;
 //  BOOL enterVrImmediately = YES;
 //  BOOL usingNgrok = YES;
 //  
@@ -53,7 +54,11 @@
 // This function determines what orientation our app supports whereas the orientation in the plist determines which orientation we are allowed
 // to launch into. If this function isn't specified then the plist is the default. Also UIViewControllers can override this too.
 - (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-  return UIInterfaceOrientationMaskAllButUpsideDown;
+  // Force the oprientation into landscape mode if we are displaying a ViroSceneViewController.
+  if(self.isViroSceneDisplaying) {
+    return (UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight);
+  }
+    return UIInterfaceOrientationMaskAllButUpsideDown;
 }
 
 @end
