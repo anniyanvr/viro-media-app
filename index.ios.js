@@ -44,9 +44,8 @@ export default class ViroSample extends Component {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
     } else {
       return require('./js/HelloWorld/HelloWorldScene');
-    } 
+    }
   }
 }
 
 AppRegistry.registerComponent('ViroSample', () => ViroSample);
-

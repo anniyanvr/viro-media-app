@@ -19,7 +19,7 @@ import {
   ViroBox,
 } from 'react-viro';
 
-var InitialScene = require('./js/HelloWorldScene');
+var InitialScene = require('./js/HelloWorld/HelloWorldScene');
 
 export default class ViroSample extends Component {
   render() {
@@ -41,10 +41,10 @@ export default class ViroSample extends Component {
     } else if (sceneName == 'Viro Media Player') {
       return require('./js/ViroMediaPlayer/ViroTheatre');
     } else if (sceneName == 'Flickr Photo Explorer') {
-      return require('./js/HelloWorldScene'); // TODO: replace this scene with the right one
+      return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
     } else {
-      return require('./js/HelloWorldScene');
-    } 
+      return require('./js/HelloWorld/HelloWorldScene');
+    }
   }
 }
 

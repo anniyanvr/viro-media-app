@@ -80,7 +80,8 @@ var HeartScene = React.createClass({
       <ViroImage materials={["crosshair"]}
                  position={position}
                  scale={[0.10, 0.10, 0.10]}
-                 source={require('./res/label_crosshair.png')}/>
+                 source={require('./res/label_crosshair.png')}
+                 key={'crosshair' + material}/>
     );
 
     views.push(
