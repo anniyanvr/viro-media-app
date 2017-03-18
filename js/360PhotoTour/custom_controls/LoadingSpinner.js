@@ -38,7 +38,7 @@ var LoadingSpinner = React.createClass({
     render: function() {
         var spinnerPosition = polarToCartesian([0, 0, 0]);
         spinnerPosition[2]=0;
-        var textPosition = polarToCartesian([1, -25, -40]);
+        var textPosition = polarToCartesian([1, 10, -58]);
         textPosition[2]=0.35;
         return (
                 <ViroNode {...this.props} >
@@ -50,8 +50,8 @@ var LoadingSpinner = React.createClass({
                         <ViroText
                             position={textPosition}
                             fontFamily='HelveticaNeue-Medium'
-                            fontSize={70}
-                            color={'#000000'}
+                            fontSize={20}
+                            color={'#FFFFFF'}
                             text="Loading ...."
                         />
                     </ViroNode>
