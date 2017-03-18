@@ -26,7 +26,7 @@ export default class ViroSample extends Component {
   	console.log("index.android.js" + this.props.initialScene + this.props.vrMode);
     let scene = this._getScene(this.props.initialScene);
     return (
-      <ViroSceneNavigator apiKey="ANDROID_DOESNT_YET_NEED_A_KEY"
+      <ViroSceneNavigator apiKey="25E18786-5C8C-4084-9DFA-00BDA03BE625"
        initialScene={{scene: scene}}
        vrModeEnabled={this.props.vrMode}
         />

@@ -26,7 +26,7 @@ export default class ViroSample extends Component {
   render() {
     let scene = this._getScene(this.props.initialScene);
     return (
-      <ViroSceneNavigator apiKey="7EEDCB99-2C3B-4681-AE17-17BC165BF792"
+      <ViroSceneNavigator apiKey="06232B7B-00EF-49D5-89F2-A254942824C6"
        initialScene={{scene: scene}}
        vrModeEnabled={this.props.vrMode}
         />
