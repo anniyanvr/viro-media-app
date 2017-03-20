@@ -36,7 +36,7 @@ var HelloWorldScene = React.createClass({
 var styles = StyleSheet.create({
  helloWorldTextStyle: {
     fontFamily: 'Arial',
-    fontSize: 60,
+    fontSize: 40,
     color: '#ffffff',
     textAlignVertical: 'center',
     textAlign: 'center',  
