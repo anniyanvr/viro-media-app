@@ -5,6 +5,8 @@ package com.viromedia.viromedia.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -53,11 +55,17 @@ public class NavigationDrawerAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        // For fonts
+        AssetManager assetManager = mContext.getAssets();
+
         View rowView;
+        Typeface regular = Typeface.createFromAsset(assetManager, "fonts/Raleway-Regular.ttf");
+
         if (position == 0) {
             rowView = mLayoutInflater.inflate(R.layout.drawer_list_header, null);
             TextView headerTextView = (TextView) rowView.findViewById(R.id.header_text);
             headerTextView.setText(mHeaderText);
+            headerTextView.setTypeface(regular);
         } else {
             rowView = mLayoutInflater.inflate(R.layout.drawer_list_item, null);
             ImageView imgView = (ImageView) rowView.findViewById(R.id.drawer_item_image);
@@ -65,6 +73,7 @@ public class NavigationDrawerAdapter extends BaseAdapter {
 
             TextView titleView = (TextView) rowView.findViewById(R.id.drawer_item_text);
             titleView.setText(mDrawerListText[position - 1]);
+            titleView.setTypeface(regular);
         }
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override

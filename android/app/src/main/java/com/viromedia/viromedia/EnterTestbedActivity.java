@@ -6,6 +6,8 @@ package com.viromedia.viromedia;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +26,7 @@ public class EnterTestbedActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_testbed);
+        setupTypeFaces();
         SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String debug_http_host = preferences.getString("debug_http_host", "");
@@ -67,6 +70,27 @@ public class EnterTestbedActivity extends AppCompatActivity {
         });
     }
 
+    private void setupTypeFaces() {
+        AssetManager assetManager = getAssets();
+        Typeface semiBold = Typeface.createFromAsset(assetManager, "fonts/Raleway-SemiBold.ttf");
+        Typeface regular = Typeface.createFromAsset(assetManager, "fonts/Raleway-Regular.ttf");
+
+        TextView titleView = (TextView) findViewById(R.id.testbed_title);
+        titleView.setTypeface(semiBold);
+
+        TextView testBedStep = (TextView) findViewById(R.id.testbed_steps);
+        testBedStep.setTypeface(regular);
+
+        TextView viroVersion = (TextView) findViewById(R.id.viro_version);
+        viroVersion.setTypeface(regular);
+
+        TextView previousEndpoint = (TextView) findViewById(R.id.previous_endpoint);
+        previousEndpoint.setTypeface(semiBold);
+
+        TextView previousEndpointString = (TextView) findViewById(R.id.endpoint_string);
+        previousEndpointString.setTypeface(regular);
+
+    }
     @Override
     public void onResume() {
         super.onResume();

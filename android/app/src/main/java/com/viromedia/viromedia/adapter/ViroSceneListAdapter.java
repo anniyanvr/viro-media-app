@@ -5,6 +5,8 @@ package com.viromedia.viromedia.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -53,14 +55,21 @@ public class ViroSceneListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+        // For fonts
+        AssetManager assetManager = mContext.getAssets();
+
         View rowView = mLayoutInflater.inflate(R.layout.scene_list_item, null);
         rowView.setBackgroundResource(mBackgroundImages[position]);
 
         TextView titleView = (TextView) rowView.findViewById(R.id.title);
         titleView.setText(mTitles[position]);
+        Typeface semiBold = Typeface.createFromAsset(assetManager, "fonts/Raleway-SemiBold.ttf");
+        titleView.setTypeface(semiBold);
 
         TextView subTitleView = (TextView) rowView.findViewById(R.id.subtitle);
         subTitleView.setText(mSubTitles[position]);
+        Typeface regular = Typeface.createFromAsset(assetManager, "fonts/Raleway-Regular.ttf");
+        subTitleView.setTypeface(regular);
 
         rowView.setOnClickListener(new OnClickListener() {
             @Override

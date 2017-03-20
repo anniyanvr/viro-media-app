@@ -4,10 +4,13 @@
 package com.viromedia.viromedia;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.viromedia.viromedia.adapter.ViroSceneListAdapter;
 
@@ -18,6 +21,12 @@ public class EnterViroSceneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_viro_scene);
+        // For fonts
+        AssetManager assetManager = getAssets();
+        TextView headset_question = (TextView) findViewById(R.id.headset_question);
+        Typeface regular = Typeface.createFromAsset(assetManager, "fonts/Raleway-Regular.ttf");
+        headset_question.setTypeface(regular);
+
         Intent intent = getIntent();
         mSceneName = intent.getStringExtra(ViroSceneActivity.EXTRA_SCENE_NAME);
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
