@@ -72,7 +72,7 @@ static NSInteger const kBackButtonInsetLeft = 12;
     [super viewDidLoad];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     delegate.isViroSceneDisplaying = YES;
-    BOOL usingNgrok = YES;
+    BOOL usingNgrok = NO;
     NSDictionary *initialProperties = nil;
     NSURL *jsCodeLocation = nil;
   
