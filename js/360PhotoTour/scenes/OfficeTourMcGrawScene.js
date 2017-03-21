@@ -56,38 +56,6 @@ var OfficeTourMcGrawScene = React.createClass({
               <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                   <ViroAnimatedComponent animation="fadeIn" run={this.state.runMainCardAnimation} loop={false} onFinish={this._onIconsAppear}>
                       <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
-                          <ViroAnimatedComponent animation="fadeArrowChain" run={this.state.runTutorialAnimation} loop={false} onFinish={this._onIconsAppear}>
-                          <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
-                             <ViroImage
-                                  transformBehaviors={["billboard"]}
-                                  position={polarToCartesian([-5, 35, 0])}
-                                  rotation={[0,0,180]}
-                                  scale={[0.5, 0.5, 0.5]}
-                                  materials={["intro_arrow"]}
-                                  source={require('../img/intro_arrow.png')} />
-                              <ViroImage
-                                  transformBehaviors={["billboard"]}
-                                  position={polarToCartesian([-5, -35, 0])}
-                                  rotation={[0,0,0]}
-                                  scale={[0.5, 0.5, 0.5]}
-                                  materials={["intro_arrow"]}
-                                  source={require('../img/intro_arrow.png')} />
-                              <ViroImage
-                                  transformBehaviors={["billboard"]}
-                                  position={polarToCartesian([-5, 0, 40])}
-                                  rotation={[0,0,90]}
-                                  scale={[0.5, 0.5, 0.5]}
-                                  materials={["intro_arrow"]}
-                                  source={require('../img/intro_arrow.png')} />
-                              <ViroImage
-                                  transformBehaviors={["billboard"]}
-                                  position={polarToCartesian([-5, 0, -40])}
-                                  rotation={[0,0,-90]}
-                                  scale={[0.5, 0.5, 0.5]}
-                                  materials={["intro_arrow"]}
-                                  source={require('../img/intro_arrow.png')} />
-                            </ViroNode>
-                            </ViroAnimatedComponent>
                         <Viro360Image source={require('../img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                         <InfoElement imgSource={require('../img/infocard_slut.png')} windowContent="infocard_slut" position={polarToCartesian([-5, 0, 0])} cardScale={[3.67,4,1]}/>
                         <InfoElement imgSource={require('../img/infocard_monorail.png')} windowContent="infocard_monorail" position={polarToCartesian([-5, 77, -10])} cardScale={[3.67,4,1]}/>
@@ -161,9 +129,6 @@ ViroMaterials.createMaterials({
 ViroAnimations.registerAnimations({
     testLoopRotate:{properties:{rotateY:"+45"}, duration:500},
     fadeIn:{properties:{opacity: 1.0}, duration: 1000},
-    fadeArrowAppear:{properties:{opacity: 1.0}, duration: 400},
-    fadeArrowGone:{properties:{opacity: 0.0}, duration: 400},
-    fadeArrowChain:[["fadeArrowAppear","fadeArrowGone"]],
 
 
 });

@@ -128,7 +128,7 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
-        [self pushSceneController:endpoint];
+        [self pushSceneControllerWithIp:endpoint];
         return;
     }
 
@@ -139,7 +139,7 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
-        [self pushSceneController:endpoint];
+        [self pushSceneControllerWithNgrok:endpoint];
         return;
     }
 
@@ -147,7 +147,7 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 
 }
 
--(void)pushSceneController:(NSString *)endpoint {
+-(void)pushSceneControllerWithNgrok:(NSString *)endpoint {
   ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
   [self addChildViewController:vc];
   vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
@@ -156,6 +156,14 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
   return;
 }
 
+-(void)pushSceneControllerWithIp:(NSString *)endpoint {
+  ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithIp:endpoint];
+  [self addChildViewController:vc];
+  vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
+  [self.view addSubview:vc.view];
+  [vc didMoveToParentViewController:self];
+  return;
+}
 /*
  Returns a valid IP or nil depending on whether or not the given candidate string is a valid IP.
  */
