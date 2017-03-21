@@ -200,6 +200,11 @@ var ViroTheatre = React.createClass({
         videoIndex: (currentVideo - 1),
         videoPaused: false
       });
+    } else {
+      this.setState({
+        videoIndex: (videos.length - 1),
+        videoPaused: false
+      });
     }
   },
 
@@ -213,11 +218,17 @@ var ViroTheatre = React.createClass({
         videoIndex: (currentVideo + 1),
         videoPaused: false
       });
+    } else {
+      this.setState({
+        videoIndex: 0,
+        videoPaused: false
+      });
     }
   },
 
   _onFinish() {
     console.log("The video is finished!");
+    {this._playNextVideo()}
   },
 
 
