@@ -23,12 +23,13 @@ var InitialScene = require('./js/HelloWorld/HelloWorldScene');
 
 export default class ViroSample extends Component {
   render() {
-  	console.log("index.android.js" + this.props.initialScene + this.props.vrMode);
+  	console.log("index.android.js" + this.props.debug);
     let scene = this._getScene(this.props.initialScene);
     return (
       <ViroSceneNavigator apiKey="25E18786-5C8C-4084-9DFA-00BDA03BE625"
        initialScene={{scene: scene}}
        vrModeEnabled={this.props.vrMode}
+       debug={this.props.debug}
         />
     );
   }

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.viromedia.viromedia"
-    android:versionCode="1"
+    android:versionCode="2"
     android:versionName="1.0">
 
     <uses-sdk
@@ -40,7 +40,8 @@
         <activity android:name=".EnterTestbedActivity"
             android:noHistory="true"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViroTestBedViroActivity" />
+        <activity android:name=".ViroTestBedViroActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" />
         <activity android:name=".EnterViroSceneActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"/>

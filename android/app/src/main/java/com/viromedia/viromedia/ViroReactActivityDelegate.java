@@ -40,6 +40,7 @@ public class ViroReactActivityDelegate extends ReactActivityDelegate {
         Bundle initialProps = new Bundle();
         initialProps.putString("initialScene", sceneName);
         initialProps.putBoolean("vrMode", vrMode);
+        initialProps.putBoolean("debug", mDebug);
         return initialProps;
     }
 }

@@ -15,6 +15,7 @@ import com.facebook.react.ReactActivityDelegate;
 public class ViroSceneActivity extends ReactActivity {
     public final static String EXTRA_ENABLE_VR_MODE = "com.viromedia.ENABLE_VR_MODE";
     public final static String EXTRA_SCENE_NAME = "com.viromedia.EXTRA_SCENE_NAME";
+    public final static String EXTRA_DEBUG_FLAG = "com.viromedia.EXTRA_DEBUG_FLAG";
     private String mSceneName;
     private boolean mVrMode;
     @Override
