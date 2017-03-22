@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 
 import com.facebook.react.ReactActivity;
@@ -23,7 +24,35 @@ public class ViroTestBedViroActivity extends ReactActivity {
         String ipAddr = intent.getStringExtra(EnterTestbedActivity.EXTRA_IP_ADDRESS);
         SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        preferences.edit().putString("debug_http_host", ipAddr  + HOST_PORT).apply();
+        preferences.edit().putString("debug_http_host", getHttpHost(ipAddr)).apply();
+    }
+
+    private String getHttpHost(String ipOrHost) {
+        if (isIp(ipOrHost)) {
+            return ipOrHost + HOST_PORT;
+        } else {
+            // at this point this is a fully qualified name (ie. ngrok endpoint)
+            return ipOrHost;
+        }
+    }
+
+    private boolean isIp(String ipOrHost) {
+        String[] octets = ipOrHost.split(".");
+        if (octets.length != 4) {
+            return false;
+        }
+        for (String octet: octets) {
+            int intOctet = 0;
+            try {
+                intOctet = Integer.valueOf(octet);
+            } catch(Exception e) {
+                return false;
+            }
+            if (intOctet < 0 || intOctet > 255) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
