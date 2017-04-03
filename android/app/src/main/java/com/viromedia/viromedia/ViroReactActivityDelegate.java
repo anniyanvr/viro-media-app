@@ -11,6 +11,7 @@ import com.facebook.react.ReactNativeHost;
 import javax.annotation.Nullable;
 
 public class ViroReactActivityDelegate extends ReactActivityDelegate {
+    private static final String mMainMenuScene = "MainMenu";
     private final boolean mDebug;
     private final Activity mActivity;
 
@@ -38,7 +39,8 @@ public class ViroReactActivityDelegate extends ReactActivityDelegate {
         String sceneName = intent.getStringExtra(ViroSceneActivity.EXTRA_SCENE_NAME);
         Boolean vrMode = intent.getBooleanExtra(ViroSceneActivity.EXTRA_ENABLE_VR_MODE, true);
         Bundle initialProps = new Bundle();
-        initialProps.putString("initialScene", sceneName);
+
+        initialProps.putString("initialScene", sceneName != null ? sceneName : mMainMenuScene);
         initialProps.putBoolean("vrMode", vrMode);
         initialProps.putBoolean("debug", mDebug);
         return initialProps;

@@ -9,9 +9,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  StyleSheet
 } from 'react-native';
 
 import {
@@ -19,8 +17,6 @@ import {
   ViroScene,
   ViroBox,
 } from 'react-viro';
-
-var InitialScene = require('./js/HelloWorld/HelloWorldScene');
 
 export default class ViroSample extends Component {
   render() {
@@ -43,7 +39,7 @@ export default class ViroSample extends Component {
     } else if (sceneName == 'Flickr Photo Explorer') {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
     } else {
-      return require('./js/HelloWorld/HelloWorldScene');
+      return require('./js/MainMenu/MainMenu');
     }
   }
 }

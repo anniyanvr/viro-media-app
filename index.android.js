@@ -9,8 +9,7 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet,
-  View
+  StyleSheet
 } from 'react-native';
 
 import {
@@ -19,12 +18,9 @@ import {
   ViroBox,
 } from 'react-viro';
 
-var InitialScene = require('./js/HelloWorld/HelloWorldScene');
-
 export default class ViroSample extends Component {
   render() {
-  	console.log("index.android.js" + this.props.debug);
-    let scene = this._getScene(this.props.initialScene);
+    scene = this._getScene(this.props.initialScene);
     return (
       <ViroSceneNavigator apiKey="25E18786-5C8C-4084-9DFA-00BDA03BE625"
        initialScene={{scene: scene}}
@@ -43,8 +39,10 @@ export default class ViroSample extends Component {
       return require('./js/ViroMediaPlayer/ViroTheatre');
     } else if (sceneName == 'Flickr Photo Explorer') {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
+    } else if (sceneName == 'MainMenu') {
+      return require('./js/MainMenu/MainMenu');
     } else {
-      return require('./js/HelloWorld/HelloWorldScene');
+      return require('./js/MainMenu/MainMenu');
     }
   }
 }
