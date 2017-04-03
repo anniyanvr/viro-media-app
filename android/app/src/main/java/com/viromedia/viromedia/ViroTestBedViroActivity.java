@@ -37,7 +37,8 @@ public class ViroTestBedViroActivity extends ReactActivity {
     }
 
     private boolean isIp(String ipOrHost) {
-        String[] octets = ipOrHost.split(".");
+        // split takes a regex, so we need to escape any periods as they stand for all characters
+        String[] octets = ipOrHost.split("\\.");
         if (octets.length != 4) {
             return false;
         }
