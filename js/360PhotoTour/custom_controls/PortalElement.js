@@ -29,7 +29,7 @@ var PropTypes = require('react/lib/ReactPropTypes');
 
 var PortalElement = React.createClass({
     propTypes: {
-        jumpToScene: PropTypes.func,
+        jumpToScene: PropTypes.object,
         sceneText:PropTypes.string,
         sceneLength:PropTypes.number,
         iconOffset:PropTypes.number,
@@ -45,29 +45,32 @@ var PortalElement = React.createClass({
             <ViroNode {...this.props} transformBehaviors={["billboard"]} onClick={this._onCardTap} >
                 <ViroImage
                     position={[0,0,0]}
-                    scale={[.33, .33, .33]}
-                    materials={["icon_scene"]} 
+                    scale={[1.2, 1.2, 1]}
+                    materials={["icon_scene"]}
                     source={require('../img/icon_scene.png')}/>
                 <ViroImage
                           position={[textOffset,0,0]}
-                          scale={[this.props.sceneLength, 1, 1]}
-                          materials={["icon_label_background"]} 
+                          scale={[this.props.sceneLength*3, 3, 1]}
+                          materials={["icon_label_background"]}
                           source={require('../img/icon_label_background.png')}/>
-                <ViroText position={[textOffset, -0.4, 0.1]}
+                <ViroText position={[textOffset+.15, -0.2, 0.1]}
                           style={styles.markerText}
-                          text={this.props.sceneText}/>
+                          text={this.props.sceneText} width={3}/>
             </ViroNode>
         );
     },
 
     _onCardTap(){
+        console.log("PortalElement onCardTap!");
         if (this.props.jumpToScene == null){
+            console.log("PortalElement is null!!");
             return;
         }
         if (this.props.backPortal){
             this.props.sceneNavigator.pop();
         } else {
-            this.props.sceneNavigator.push({scene:this.props.jumpToScene});
+            console.log("PortalElement pushing new scene!!");
+            this.props.sceneNavigator.push(this.props.jumpToScene);
         }
     },
 });
@@ -90,9 +93,9 @@ var styles = StyleSheet.create({
         flex: 0.66,
     },
     markerText: {
-        marginLeft:50,
+        marginLeft:.50,
         fontFamily: 'HelveticaNeue-Medium',
-        fontSize: 12,
+        fontSize: 30,
         color: '#FFFFFF',
     },
     textBackground: {

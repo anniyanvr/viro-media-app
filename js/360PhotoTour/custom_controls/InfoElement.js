@@ -50,13 +50,12 @@ var InfoElement = React.createClass({
     render:function(){
             return (
                 <ViroNode onClick={this._onCardTap} {...this.props}>
-                    <ViroNode scale={[this.props.cardScale[0],this.props.cardScale[1],this.props.cardScale[2]]} transformBehaviors={["billboard"]}>
+                    <ViroNode transformBehaviors={["billboard"]}>
                         <ViroAnimatedComponent animation={this.state.currentInfoCardAnimation} run={this.state.runInfoCardAnimation} loop={false} onFinish={this._animateInfoCardFinished}>
                             <ViroImage
                                 opacity={0.0}
                                 scale={[.1,.1,.1]}
                                 materials={[this.props.windowContent]}
-                                onHover={this._onFocused}
                                 source={this.props.imgSource} />
                         </ViroAnimatedComponent>
                     </ViroNode>
@@ -64,7 +63,7 @@ var InfoElement = React.createClass({
                         <ViroImage
                             transformBehaviors={["billboard"]}
                             opacity={1.0}
-                            scale={[0.5, 0.5, 0.5]}
+                            scale={[1.0, 1.0, 1.0]}
                             materials={["icon_info"]}
                             source={require('../img/icon_info.png')} />
                     </ViroAnimatedComponent>
@@ -130,8 +129,8 @@ ViroMaterials.createMaterials({
 
 ViroAnimations.registerAnimations({
     hide: {properties:{scaleX:.1, scaleY:.1, scaleZ:.1, opacity:0.0}, easing:"Bounce", duration:160},
-    showInfo: {properties:{scaleX:1, scaleY:1, scaleZ:1, opacity:1.0}, easing:"PowerDecel", duration:200},
-    showIcon: {properties:{scaleX:.5, scaleY:.5, scaleZ:.5, opacity:1.0}, easing:"PowerDecel", duration:200},
+    showInfo: {properties:{scaleX:6, scaleY:6, scaleZ:6, opacity:1.0}, easing:"PowerDecel", duration:200},
+    showIcon: {properties:{scaleX:1.0, scaleY:1.0, scaleZ:1.0, opacity:1.0}, easing:"PowerDecel", duration:200},
 });
 
 var styles = StyleSheet.create({

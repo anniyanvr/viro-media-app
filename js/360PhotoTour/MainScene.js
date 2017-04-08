@@ -30,6 +30,7 @@ import {
 
 var MAINCARD_REF = 'maincard';
 
+var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 var OfficeTourSplashScene = React.createClass({
   getInitialState() {
       return {
@@ -47,10 +48,11 @@ var OfficeTourSplashScene = React.createClass({
               <ViroNode visible={this.state.showSceneItems} position={this.props.position} rotation={this.props.rotation} >
                   <Viro360Image source={require('./img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
                   <ViroAnimatedComponent animation="showTitle" run={this.state.runAnimation} loop={false}>
-                        <ViroImage source={require('./img/wework_title.png')} materials={["wework_title"]} 
+                        <ViroImage source={require('./img/wework_title.png')} materials={["wework_title"]}
                         position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onClick={this._onClickTourSplashScreen}/>
                   </ViroAnimatedComponent>
               </ViroNode>
+            <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
           </ViroScene>
       );
   },
@@ -62,10 +64,10 @@ var OfficeTourSplashScene = React.createClass({
         }
         this.setState({
                 runAnimation: true,
-        }); 
+        });
   },
   _onClickTourSplashScreen(){
-     this.props.sceneNavigator.push({scene:OfficeTourMainScene});
+     this.props.sceneNavigator.push({scene:OfficeTourMainScene, passProps:{displayHomeButton:this.props.displayHomeButton}});
   },
 });
 ViroMaterials.createMaterials({

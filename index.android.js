@@ -24,6 +24,7 @@ export default class ViroSample extends Component {
     return (
       <ViroSceneNavigator apiKey="25E18786-5C8C-4084-9DFA-00BDA03BE625"
        initialScene={{scene: scene}}
+       initialSceneKey="homescreen"
        vrModeEnabled={this.props.vrMode}
        debug={this.props.debug}
         />
@@ -40,9 +41,9 @@ export default class ViroSample extends Component {
     } else if (sceneName == 'Flickr Photo Explorer') {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
     } else if (sceneName == 'MainMenu') {
-      return require('./js/MainMenu/MainMenu');
+      return require('./js/HomeScreen/HomeMenuScene');
     } else {
-      return require('./js/MainMenu/MainMenu');
+      return require('./js/HomeScreen/HomeMenuScene');
     }
   }
 }

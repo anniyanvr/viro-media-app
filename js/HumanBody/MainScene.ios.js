@@ -14,6 +14,7 @@ import {
   Materials,
 } from 'react-viro';
 
+var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 var MainScene = React.createClass({
   getInitialState() {
     return {
@@ -40,6 +41,7 @@ var MainScene = React.createClass({
        </ViroNode>
        <ViroText text="Heart" position={[0.0, 0.21, -0.3]} style={styles.textStyle}
                  transformBehaviors={["billboardY"]}/>
+      <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
      </ViroScene>
     );
   },

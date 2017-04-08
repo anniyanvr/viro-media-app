@@ -27,6 +27,7 @@ import {
 var left = "left";
 var right = "right";
 
+var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 var HeartScene = React.createClass({
   getInitialState() {
     return {
@@ -58,6 +59,7 @@ var HeartScene = React.createClass({
       {this._getLabel([ 0.113, -0.130, -0.590], "left_atrium", require('./res/label_right_atrium.png'),right, 1.25, 1)}
       {this._getLabel([-0.060, -0.220, -0.612], "right_atrium", require('./res/label_right_atrium.png'), left, 1.3, 1)}
       {this._getLabel([ 0.018, -0.291, -0.554], "right_ventricle", require('./res/label_right_ventricle.png'), left, 1.5, 1)}
+      <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
 
      </ViroScene>
     );

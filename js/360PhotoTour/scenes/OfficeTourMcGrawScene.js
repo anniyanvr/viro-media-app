@@ -16,7 +16,7 @@ var ElevenFloorScene = require('../scenes/ElevenFloorWaitingScene');
 var InfoElement = require('../custom_controls/InfoElement')
 var PortalElement = require('../custom_controls/PortalElement');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
-
+var HomeButton = require('../../HomeScreen/custom_component/HomeButton');
 import {
   ViroScene,
   ViroOmniLight,
@@ -45,7 +45,7 @@ var OfficeTourMcGrawScene = React.createClass({
     };
   },
   render: function() {
-      console.log("rendering _renderMainScreen screen");
+      console.log("rendering _renderMainScreen screen YO YO 5 Refresh");
       return (
           <ViroScene style={styles.container} >
               <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
@@ -57,21 +57,26 @@ var OfficeTourMcGrawScene = React.createClass({
                   <ViroAnimatedComponent animation="fadeIn" run={this.state.runMainCardAnimation} loop={false} onFinish={this._onIconsAppear}>
                       <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                         <Viro360Image source={require('../img/westlake_towers.jpg')} onLoadEnd={this._onLoadEnd}/>
-                        <InfoElement imgSource={require('../img/infocard_slut.png')} windowContent="infocard_slut" position={polarToCartesian([-5, 0, 0])} cardScale={[3.67,4,1]}/>
-                        <InfoElement imgSource={require('../img/infocard_monorail.png')} windowContent="infocard_monorail" position={polarToCartesian([-5, 77, -10])} cardScale={[3.67,4,1]}/>
-                        <InfoElement imgSource={require('../img/infocard_statue.png')} windowContent="infocard_statue" position={polarToCartesian([-5, 277, 0])} cardScale={[4,3.95,2]}/>
+                        <InfoElement imgSource={require('../img/infocard_slut.png')} windowContent="infocard_slut" position={polarToCartesian([10, 0, 0])} cardScale={[12.67,16,1]}/>
+                        <InfoElement imgSource={require('../img/infocard_monorail.png')} windowContent="infocard_monorail" position={polarToCartesian([10, 77, 20])} cardScale={[6.67,8,1]}/>
+                        <InfoElement imgSource={require('../img/infocard_statue.png')} windowContent="infocard_statue" position={polarToCartesian([10, 277, 0])} cardScale={[6,8.00,2]}/>
                         <PortalElement
-                            sceneLength={1.08}
-                            iconOffset ={0.72}
+                            sceneLength= {1.00}
+                            iconOffset = {1.98}
                             sceneText="WeWork Office"
-                            position={polarToCartesian([-5.5, 93, -3])}
-                            jumpToScene={ElevenFloorScene}
+                            position={polarToCartesian([10.0, 93, 30])}
+                            jumpToScene={{scene:ElevenFloorScene}}
                             sceneNavigator={this.props.sceneNavigator}/>
                       </ViroNode>
                   </ViroAnimatedComponent>
               </ViroNode>
+              <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
           </ViroScene>
       );
+  },
+
+  _nextScene() {
+    this.props.sceneNavigator.push({scene:ElevenFloorScene});
   },
     _onLoadEnd(){
         if (this.state.showSceneItems != true) {

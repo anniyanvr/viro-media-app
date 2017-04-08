@@ -35,7 +35,7 @@ import {
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
-
+var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 /**
  * Set all the image and asset references required in this scene.
  */
@@ -76,6 +76,7 @@ var ViroTheatre = React.createClass({
           <ViroAnimatedComponent animation={this.state.videoControlsAnimation} run={this.state.runAnimation} loop={false}>
               {this._renderVideoControl()}
           </ViroAnimatedComponent>
+          <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
         </ViroScene>
     );
   },
