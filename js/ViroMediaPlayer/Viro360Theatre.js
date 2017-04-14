@@ -107,8 +107,8 @@ var Viro360Theatre = React.createClass({
                 width={buttonSize}
                 height={buttonSize}
                 source={require("./res/previous.png")}
-                gazeSource={require("./res/previous_hover.png")}
-                tapSource={require("./res/previous_hover.png")}
+                hoverSource={require("./res/previous_hover.png")}
+                clickSource={require("./res/previous_hover.png")}
                 onClick={this._playPreviousVideo}/>
 
             {this._renderPlayControl()}
@@ -119,8 +119,8 @@ var Viro360Theatre = React.createClass({
                 width={buttonSize}
                 height={buttonSize}
                 source={require("./res/skip.png")}
-                gazeSource={require("./res/skip_hover.png")}
-                tapSource={require("./res/skip_hover.png")}
+                hoverSource={require("./res/skip_hover.png")}
+                clickSource={require("./res/skip_hover.png")}
                 onClick={this._playNextVideo}/>
 
           <ViroButton
@@ -129,8 +129,8 @@ var Viro360Theatre = React.createClass({
               width={0.5}
               height={0.5}
               source={require("./res/icon_2D.png")}
-              gazeSource={require("./res/icon_2D_hover.png")}
-              tapSource={require("./res/icon_2D_hover.png")}
+              hoverSource={require("./res/icon_2D_hover.png")}
+              clickSource={require("./res/icon_2D_hover.png")}
               onClick={this._launchTheatreScene}
               />
 
@@ -140,8 +140,8 @@ var Viro360Theatre = React.createClass({
               width={0.5}
               height={0.5}
               source={require("./res/icon_360_hover.png")}
-              gazeSource={require("./res/icon_360_hover.png")}
-              tapSource={require("./res/icon_360_hover.png")}
+              hoverSource={require("./res/icon_360_hover.png")}
+              clickSource={require("./res/icon_360_hover.png")}
               />
         </ViroNode>
     );
@@ -159,8 +159,8 @@ var Viro360Theatre = React.createClass({
               width={buttonSize}
               height={buttonSize}
               source={require("./res/play.png")}
-              gazeSource={require("./res/play_hover.png")}
-              tapSource={require("./res/play_hover.png")}
+              hoverSource={require("./res/play_hover.png")}
+              clickSource={require("./res/play_hover.png")}
               transformBehaviors={["billboard"]}
               onClick={this._togglePauseVideo}/>
       );
@@ -172,8 +172,8 @@ var Viro360Theatre = React.createClass({
               width={buttonSize}
               height={buttonSize}
               source={require("./res/pause.png")}
-              gazeSource={require("./res/pause_hover.png")}
-              tapSource={require("./res/pause_hover.png")}
+              hoverSource={require("./res/pause_hover.png")}
+              clickSource={require("./res/pause_hover.png")}
               transformBehaviors={["billboard"]}
               onClick={this._togglePauseVideo}/>
       );
