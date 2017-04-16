@@ -4,9 +4,11 @@ package com.viromedia.viromedia;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.graphics.Color;
 
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactNativeHost;
+import com.facebook.react.ReactRootView;
 
 import javax.annotation.Nullable;
 
@@ -30,6 +32,14 @@ public class ViroReactActivityDelegate extends ReactActivityDelegate {
         } else {
             return application.getReactNativeHost();
         }
+    }
+
+    @Nullable
+    @Override
+    protected ReactRootView createRootView() {
+       ReactRootView rootView = super.createRootView();
+        rootView.setBackgroundColor(Color.BLACK);
+       return rootView;
     }
 
     @Nullable

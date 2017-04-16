@@ -76,6 +76,7 @@ public class ViroSceneListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, EnterViroSceneActivity.class);
                 intent.putExtra(ViroSceneActivity.EXTRA_SCENE_NAME, mSceneNames[position]);
+                intent.putExtra(ViroSceneActivity.LAUNCHED_FROM_MAIN_OR_TESTBED, true);
                 mContext.startActivity(intent);
             }
         });

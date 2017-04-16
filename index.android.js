@@ -9,7 +9,8 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  StyleSheet
+  StyleSheet,
+  View,
 } from 'react-native';
 
 import {
@@ -23,11 +24,11 @@ export default class ViroSample extends Component {
     scene = this._getScene(this.props.initialScene);
     return (
       <ViroSceneNavigator apiKey="25E18786-5C8C-4084-9DFA-00BDA03BE625"
-       initialScene={{scene: scene}}
-       initialSceneKey="homescreen"
-       vrModeEnabled={this.props.vrMode}
-       debug={this.props.debug}
-        />
+        initialScene={{scene: scene}}
+        initialSceneKey="homescreen"
+        vrModeEnabled={this.props.vrMode}
+        debug={this.props.debug} onExitViro={this._onExit}
+    />
     );
   }
   _getScene(sceneName) {
@@ -45,6 +46,10 @@ export default class ViroSample extends Component {
     } else {
       return require('./js/HomeScreen/HomeMenuScene');
     }
+  }
+
+  _onExit() {
+    
   }
 }
 

@@ -17,6 +17,7 @@ import com.viromedia.viromedia.adapter.ViroSceneListAdapter;
 public class EnterViroSceneActivity extends AppCompatActivity {
 
     private String mSceneName;
+    private Boolean mEnterFromMainOrTestbed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ public class EnterViroSceneActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         mSceneName = intent.getStringExtra(ViroSceneActivity.EXTRA_SCENE_NAME);
+        mEnterFromMainOrTestbed = intent.getBooleanExtra(ViroSceneActivity.LAUNCHED_FROM_MAIN_OR_TESTBED, false);
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +67,7 @@ public class EnterViroSceneActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), ViroSceneActivity.class);
         intent.putExtra(ViroSceneActivity.EXTRA_ENABLE_VR_MODE, enableVrMode);
         intent.putExtra(ViroSceneActivity.EXTRA_SCENE_NAME, mSceneName);
+        intent.putExtra(ViroSceneActivity.LAUNCHED_FROM_MAIN_OR_TESTBED, mEnterFromMainOrTestbed);
         startActivity(intent);
     }
 }
