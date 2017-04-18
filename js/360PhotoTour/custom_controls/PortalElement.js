@@ -52,7 +52,8 @@ var PortalElement = React.createClass({
                           position={[textOffset,0,0]}
                           scale={[this.props.sceneLength*3, 3, 1]}
                           materials={["icon_label_background"]}
-                          source={require('../img/icon_label_background.png')}/>
+                          source={require('../img/icon_label_background.png')}
+                          resizeMode="scaleToFill"/>
                 <ViroText position={[textOffset+.15, -0.2, 0.1]}
                           style={styles.markerText}
                           text={this.props.sceneText} width={3}/>
