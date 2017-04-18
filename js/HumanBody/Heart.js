@@ -100,13 +100,13 @@ var materials = ViroMaterials.createMaterials({
    },
    skeleton: {
      lightingModel: "Blinn",
-     diffuseTexture: require('./res/skeleton_D.jpg'),
+     diffuseTexture: require('./res/skeleton_d.jpg'),
      writesToDepthBuffer: true,
      readsFromDepthBuffer: true,
    },
    body: {
      lightingModel: "Blinn",
-     diffuseTexture: require('./res/outer_skin_D.jpg'),
+     diffuseTexture: require('./res/outer_skin_d.jpg'),
      writesToDepthBuffer: true,
      readsFromDepthBuffer: true,
    },
