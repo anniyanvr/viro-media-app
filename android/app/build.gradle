@@ -143,8 +143,7 @@ dependencies {
     compile project(':gvr_common')
     releaseCompile project(path: ':react_viro', configuration: 'release')
     debugCompile project(path: ':react_viro', configuration: 'debug')
-    releaseCompile project(path: ':viro_renderer', configuration: 'release')
-    debugCompile project(path: ':viro_renderer', configuration: 'debug')
+    compile project(':viro_renderer')
     compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
     compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
