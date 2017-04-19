@@ -65,7 +65,8 @@ var InfoElement = React.createClass({
                             opacity={1.0}
                             scale={[1.0, 1.0, 1.0]}
                             materials={["icon_info"]}
-                            source={require('../img/icon_info.png')} />
+                            source={require('../img/icon_info.png')}
+                            resizeMode="scaleToFill" />
                     </ViroAnimatedComponent>
                 </ViroNode>
         );

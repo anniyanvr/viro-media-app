@@ -44,8 +44,8 @@ var ElevenFloorMeetingScene = React.createClass({
             <ViroAnimatedComponent animation="fadeIn" run={this.state.runAnimation} loop={false}>
                 <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                 <Viro360Image source={require('../img/wework_11th_meeting.jpg')} onLoadEnd={this._onLoadEnd} />
-                <PortalElement  backPortal={true} iconOffset={1.98} sceneLength={0.95}
-                                sceneText="   Waiting Area" position={[0,0,10]} jumpToScene={{scene:ElevenFloorWaitingScene}} sceneNavigator={this.props.sceneNavigator}/>
+                <PortalElement  backPortal={true} iconOffset={1.75} sceneLength={0.95}
+                                sceneText="Waiting Area" position={[-3,0,8.5]} jumpToScene={{scene:ElevenFloorWaitingScene}} sceneNavigator={this.props.sceneNavigator}/>
 
                 </ViroNode>
             </ViroAnimatedComponent>

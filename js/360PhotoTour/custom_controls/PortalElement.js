@@ -33,7 +33,7 @@ var PortalElement = React.createClass({
         sceneText:PropTypes.string,
         sceneLength:PropTypes.number,
         iconOffset:PropTypes.number,
-        backPortal:PropTypes.bool
+        backPortal:PropTypes.bool,
     },
     render:function(){
         var photoSceneText = this.props.scenText;
@@ -44,19 +44,22 @@ var PortalElement = React.createClass({
         return(
             <ViroNode {...this.props} transformBehaviors={["billboard"]} onClick={this._onCardTap} >
                 <ViroImage
-                    position={[0,0,0]}
-                    scale={[1.2, 1.2, 1]}
+                    position={[0,0,.15]}
+                    scale={[1, 1, 1]}
                     materials={["icon_scene"]}
                     source={require('../img/icon_scene.png')}/>
                 <ViroImage
                           position={[textOffset,0,0]}
-                          scale={[this.props.sceneLength*3, 3, 1]}
+                          width={this.props.sceneLength*2.5}
+                          height={1}
                           materials={["icon_label_background"]}
                           source={require('../img/icon_label_background.png')}
-                          resizeMode="scaleToFill"/>
-                <ViroText position={[textOffset+.15, -0.2, 0.1]}
+                          resizeMode="scaleToFit"/>
+                <ViroText position={[textOffset, -0.1, 0.1]}
+                          width={this.props.sceneLength*2.5}
+                          height={1}
                           style={styles.markerText}
-                          text={this.props.sceneText} width={3}/>
+                          text={this.props.sceneText}/>
             </ViroNode>
         );
     },
@@ -95,6 +98,8 @@ var styles = StyleSheet.create({
     },
     markerText: {
         marginLeft:.50,
+        textAlignVertical: 'center',
+        textAlign: "center",
         fontFamily: 'HelveticaNeue-Medium',
         fontSize: 30,
         color: '#FFFFFF',

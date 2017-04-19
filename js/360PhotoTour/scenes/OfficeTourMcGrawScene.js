@@ -45,7 +45,6 @@ var OfficeTourMcGrawScene = React.createClass({
     };
   },
   render: function() {
-      console.log("rendering _renderMainScreen screen YO YO 5 Refresh");
       return (
           <ViroScene style={styles.container} >
               <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
@@ -62,9 +61,10 @@ var OfficeTourMcGrawScene = React.createClass({
                         <InfoElement imgSource={require('../img/infocard_statue.png')} windowContent="infocard_statue" position={polarToCartesian([10, 277, 0])} cardScale={[6,8.00,2]}/>
                         <PortalElement
                             sceneLength= {1.00}
-                            iconOffset = {1.98}
+                            iconOffset = {1.75}
+                            scale = {[.8,.8,1]}
                             sceneText="WeWork Office"
-                            position={polarToCartesian([10.0, 93, 30])}
+                            position={polarToCartesian([10.0, 93, 0])}
                             jumpToScene={{scene:ElevenFloorScene}}
                             sceneNavigator={this.props.sceneNavigator}/>
                       </ViroNode>

@@ -59,16 +59,16 @@ var ElevenFloorCommonScene = React.createClass({
 
 
                         <Viro360Image source={require('../img/wework_11th_commons.jpg')} onLoadEnd={this._onLoadEnd}  />
-                        <InfoElement imgSource={require('../img/infocard_receptionist.png')} windowContent="infocard_receptionist" cardScale={[3.65,4,1]} position={polarToCartesian([-5, 10, 10])} />
-                        <InfoElement imgSource={require('../img/infocard_kitchen.png')} windowContent="infocard_kitchen" cardScale={[3.65,4,1]} position={polarToCartesian([-5, -100, 0])}/>
+                        <InfoElement imgSource={require('../img/infocard_receptionist.png')} windowContent="infocard_receptionist" cardScale={[3.65,4,1]} position={polarToCartesian([-10, 10, 10])} />
+                        <InfoElement imgSource={require('../img/infocard_kitchen.png')} windowContent="infocard_kitchen" cardScale={[3.65,4,1]} position={polarToCartesian([-10, -100, 0])}/>
 
-                        <PortalElement transformBehaviors={["billboard"]} backPortal={true} iconOffset={1.98} sceneLength={0.95} sceneText="   Waiting Area"
+                        <PortalElement iconOffset={1.65} sceneLength={0.95} scale={[.8, .8, 1]} sceneText="Waiting Area" transformBehaviors={["billboard"]} backPortal={true}
                                        position={polarToCartesian([-10, -40, 0])} jumpToScene={{scene:ElevenFloorWaitingScene}} sceneNavigator={this.props.sceneNavigator}/>
 
-                        <PortalElement transformBehaviors={["billboard"]} iconOffset={1.78} sceneLength={0.78} sceneText="     South Side"
+                        <PortalElement  iconOffset={1.45} sceneLength={0.78} scale={[.8, .8, 1]} sceneText="South Side" transformBehaviors={["billboard"]} 
                                        position={polarToCartesian([-10, 190, 0])} jumpToScene={{scene:ElevenFloorCommonSouthScene}} sceneNavigator={this.props.sceneNavigator}/>
 
-                        <PortalElement transformBehaviors={["billboard"]}  iconOffset={1.78} sceneLength={0.7} sceneText="       East Side"
+                        <PortalElement iconOffset={1.41} sceneLength={0.7} scale={[.8, .8, 1]} sceneText="East Side" transformBehaviors={["billboard"]}
                                        position={polarToCartesian([-10, 50, 0])} jumpToScene={{scene:ElevenFloorCommonEastScene}} sceneNavigator={this.props.sceneNavigator}/>
 
                     </ViroNode>

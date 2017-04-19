@@ -45,7 +45,7 @@ var ElevenFloorCommonEastScene = React.createClass({
                 <ViroAnimatedComponent animation="fadeIn" run={this.state.runAnimation} loop={false}>
                     <ViroNode opacity={0.0} position={this.props.position} rotation={this.props.rotation} scale={this.props.scale}>
                         <Viro360Image source={require('../img/wework_11th_commons_east.jpg')} onLoadEnd={this._onLoadEnd} />
-                        <PortalElement  backPortal={true}  iconOffset={1.98} sceneLength={1}  sceneText=" Main Commons"
+                        <PortalElement  backPortal={true}  iconOffset={1.75} sceneLength={1} scale={[.8,.8,1]} sceneText="Main Commons"
                                         position={polarToCartesian([-10, -65, 0])} jumpToScene={{scene:ElevenFloorCommonScene}} sceneNavigator={this.props.sceneNavigator}/>
                     </ViroNode>
                 </ViroAnimatedComponent>
