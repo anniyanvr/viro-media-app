@@ -123,7 +123,7 @@ static NSInteger const kBackButtonInsetLeft = 12;
     // register for the exit notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(exitReactViro)
-                                                 name:kVRTUserRequestedExit
+                                                 name:kVRTOnExitViro
                                                object:nil];
 
 
