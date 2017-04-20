@@ -41,12 +41,12 @@ var HeartScene = React.createClass({
      <ViroScene style={styles.container}>
         <Viro360Image source={require("./res/heart_bg.jpg")} />
         <ViroDirectionalLight direction={[0, 0, -1]} color="#ffffff" />
-        <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -.45]} active={true}/>
+        <ViroOrbitCamera position={[0, 0, 0]} focalPoint={[0, 0, -5.15]} active={true}/>
         <ViroAmbientLight color="#aaaaaa" />
 
           <Viro3DObject source={require('./res/heart.obj')}
-                        position={[0.5, -1.0, -7.00]}
-                       materials={["heart"]}  scale={[10,10,10]}/>
+                        position={[0.5, -1.0, -5.25]}
+                       materials={["heart"]}  scale={[7,7,7]}/>
       {this._getLabel([-0.039*scaleBy, 0.115*scaleBy, -0.779*scaleBy], "superior_vena_cava", require('./res/label_superior_vena_cava.png'), left, 1.9*scaleBy, 1.5*scaleBy)}
       {this._getLabel([ 0.085*scaleBy, 0.155*scaleBy, -0.738*scaleBy], "left_common_carotid", require('./res/label_left_common_carotid.png'), left, 2.5*scaleBy, 1.5*scaleBy)}
       {this._getLabel([ 0.143*scaleBy, 0.070*scaleBy, -0.741*scaleBy], "aorta", require('./res/label_aorta.png'), right, 1.7*scaleBy, 1*scaleBy)}
