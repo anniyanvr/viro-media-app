@@ -182,7 +182,7 @@ var Viro360Theatre = React.createClass({
   },
 
   _launchTheatreScene(){
-    this.props.sceneNavigator.jump("ViroTheatre", {scene:require('./ViroTheatre')});
+    this.props.sceneNavigator.jump("ViroTheatre", {scene:require('./ViroTheatre'), passProps:{displayHomeButton:this.props.displayHomeButton}});
   },
   _togglePauseVideo() {
     this.setState({
