@@ -141,8 +141,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.facebook.react:react-native:+'
     compile project(':gvr_common')
-    releaseCompile project(path: ':react_viro', configuration: 'release')
-    debugCompile project(path: ':react_viro', configuration: 'debug')
+    compile project(':react_viro')
     compile project(':viro_renderer')
     compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
     compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
