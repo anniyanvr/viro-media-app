@@ -109,13 +109,14 @@ public class EnterTestbedActivity extends AppCompatActivity {
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void addPreviousEntpoint(View view) {
+    public void addPreviousEndpoint(View view) {
         TextView prevEndpointView = (TextView) findViewById(R.id.endpoint_string);
         String prevEndpointText = prevEndpointView.getText().toString();
         if (!prevEndpointText.trim().isEmpty()) {
 
             EditText editText = (EditText) findViewById(R.id.edit_message);
             editText.setText(prevEndpointText);
+            startTestBed(null);
         }
     }
 

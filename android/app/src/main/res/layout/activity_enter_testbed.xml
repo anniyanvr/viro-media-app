@@ -87,7 +87,7 @@
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/previous_endpoint"
                 android:layout_below="@id/viro_version"
-                android:onClick="addPreviousEntpoint"/>
+                android:onClick="addPreviousEndpoint"/>
             <TextView
                 android:id="@+id/endpoint_string"
                 android:layout_width="match_parent"
@@ -97,6 +97,6 @@
                 android:gravity="center_horizontal"
                 android:text="@string/edit_testbed_message"
                 android:layout_below="@id/previous_endpoint"
-                android:onClick="addPreviousEntpoint"/>
+                android:onClick="addPreviousEndpoint"/>
         </RelativeLayout>
 </RelativeLayout>
