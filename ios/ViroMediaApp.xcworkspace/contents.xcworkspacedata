@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/manish/workspace/ViroMediaAppBeta/ios/ViroMediaApp.xcodeproj">
+      location = "group:ViroMediaApp.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

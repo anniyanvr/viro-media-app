@@ -55,7 +55,8 @@
                     android:layout_marginTop="8dp"
                     android:maxLines="1"
                     android:inputType="text"
-                    android:imeOptions="actionDone"/>
+                    android:imeOptions="actionDone"
+                    android:selectAllOnFocus="true" />
                 <ImageButton
                     android:id="@+id/go_button"
                     android:layout_width="match_parent"
@@ -70,6 +71,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="bottom|center_horizontal">
+            <ImageButton
+                android:id="@+id/clear_data_button"
+                android:src="@drawable/clear_cache_btn_states"
+                android:background="@null"
+                android:layout_width="88dp"
+                android:layout_height="25dp"
+                android:scaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                android:onClick="clearAppData"/>
             <TextView
                 android:id="@+id/viro_version"
                 android:layout_width="match_parent"
@@ -77,26 +87,8 @@
                 android:textColor="#fff"
                 android:fontFamily="sans-serif-light"
                 android:gravity="center_horizontal"
-                android:text="@string/viro_version" />
-            <TextView
-                android:id="@+id/previous_endpoint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:gravity="center_horizontal"
-                android:fontFamily="sans-serif-medium"
-                android:text="@string/previous_endpoint"
-                android:layout_below="@id/viro_version"
-                android:onClick="addPreviousEndpoint"/>
-            <TextView
-                android:id="@+id/endpoint_string"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:text="@string/edit_testbed_message"
-                android:layout_below="@id/previous_endpoint"
-                android:onClick="addPreviousEndpoint"/>
+                android:text="@string/viro_version"
+                android:layout_below="@id/clear_data_button"
+                android:paddingTop="10dp"/>
         </RelativeLayout>
 </RelativeLayout>

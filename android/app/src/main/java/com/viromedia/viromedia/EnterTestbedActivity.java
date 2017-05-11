@@ -4,6 +4,7 @@
 package com.viromedia.viromedia;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
@@ -29,13 +30,11 @@ public class EnterTestbedActivity extends AppCompatActivity {
         setupTypeFaces();
         SharedPreferences preferences =
                 PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String debug_http_host = preferences.getString("debug_http_host", "");
-        TextView previousEndpointView = (TextView) findViewById(R.id.endpoint_string);
-        if (debug_http_host.isEmpty()) {
-            previousEndpointView.setVisibility(View.INVISIBLE);
-        } else {
-            previousEndpointView.setVisibility(View.VISIBLE);
-            previousEndpointView.setText(debug_http_host.split(ViroTestBedViroActivity.HOST_PORT)[0]);
+        String debugHttpHost = preferences.getString("debug_http_host", "");
+
+        EditText endpointText = (EditText) findViewById(R.id.edit_message);
+        if (!debugHttpHost.isEmpty()) {
+            endpointText.setText(debugHttpHost.split(ViroTestBedViroActivity.HOST_PORT)[0]);
         }
 
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
@@ -83,14 +82,8 @@ public class EnterTestbedActivity extends AppCompatActivity {
 
         TextView viroVersion = (TextView) findViewById(R.id.viro_version);
         viroVersion.setTypeface(regular);
-
-        TextView previousEndpoint = (TextView) findViewById(R.id.previous_endpoint);
-        previousEndpoint.setTypeface(semiBold);
-
-        TextView previousEndpointString = (TextView) findViewById(R.id.endpoint_string);
-        previousEndpointString.setTypeface(regular);
-
     }
+
     @Override
     public void onResume() {
         super.onResume();
@@ -109,17 +102,6 @@ public class EnterTestbedActivity extends AppCompatActivity {
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public void addPreviousEndpoint(View view) {
-        TextView prevEndpointView = (TextView) findViewById(R.id.endpoint_string);
-        String prevEndpointText = prevEndpointView.getText().toString();
-        if (!prevEndpointText.trim().isEmpty()) {
-
-            EditText editText = (EditText) findViewById(R.id.edit_message);
-            editText.setText(prevEndpointText);
-            startTestBed(null);
-        }
-    }
-
     public void startTestBed(View view) {
         Intent intent = new Intent(this, ViroTestBedViroActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
@@ -129,5 +111,12 @@ public class EnterTestbedActivity extends AppCompatActivity {
             intent.putExtra(EXTRA_IP_ADDRESS, ipAddr.trim());
             startActivity(intent);
         }
+    }
+
+    /**
+     * This method clears the app data, but that also causes the app to close, so keep that in mind.
+     */
+    public void clearAppData(View view) {
+        ((ActivityManager)getApplicationContext().getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
     }
 }

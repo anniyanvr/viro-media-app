@@ -3,6 +3,7 @@
  */
 package com.viromedia.viromedia.adapter;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -20,6 +21,8 @@ import android.widget.Toast;
 import com.viromedia.viromedia.EnterTestbedActivity;
 import com.viromedia.viromedia.R;
 import com.viromedia.viromedia.ViroSceneActivity;
+
+import static android.content.Context.ACTIVITY_SERVICE;
 
 public class NavigationDrawerAdapter extends BaseAdapter {
     private Context mContext;
@@ -79,14 +82,16 @@ public class NavigationDrawerAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
 
-                if (position == 1) {
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://www.viromedia.com/support"));
-                    mContext.startActivity(browserIntent);
-                }
-                if (position == 2) {
-                    Intent intent = new Intent(mContext, EnterTestbedActivity.class);
-                    mContext.startActivity(intent);
+                switch (position) {
+                    case 1: // Support
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://www.viromedia.com/support"));
+                        mContext.startActivity(browserIntent);
+                        break;
+                    case 2: // Enter Test Bed
+                        Intent intent = new Intent(mContext, EnterTestbedActivity.class);
+                        mContext.startActivity(intent);
+                        break;
                 }
             }
         });

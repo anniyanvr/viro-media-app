@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestbedEntryViewController : UIViewController
+@interface TestbedEntryViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *endpointTextField;
 @property (weak, nonatomic) IBOutlet UIButton *enterButton;
 @property (weak, nonatomic) IBOutlet UILabel *errorText;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionText;
-
-@property (weak, nonatomic) IBOutlet UILabel *previousEndpointTitle;
-@property (weak, nonatomic) IBOutlet UILabel *previousEndpointText;
 
 @end

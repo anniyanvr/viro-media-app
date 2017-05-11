@@ -1,11 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Raleway-Regular.ttf">
@@ -28,7 +32,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nativeapp_loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-2Q-3fR"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nativeapp_loading.png" translatesAutoresizingMaskIntoConstraints="NO" id="iwK-2Q-3fR">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,6 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPQ-W6-hrY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
@@ -92,23 +99,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="More Apps Coming Soon!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydg-4t-Hxn">
-                                <frame key="frameInset" minX="87" minY="324" width="201" height="20"/>
+                                <rect key="frame" x="87" y="324" width="201" height="20"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                 <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5WX-CX-bzo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.18823529410000001" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-e1-NPg">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have a VR Headset?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsJ-bs-lnk">
+                                        <rect key="frame" x="109" y="326" width="165.5" height="15.5"/>
                                         <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="13"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c2-2F-Zdf">
+                                        <rect key="frame" x="80.5" y="361.5" width="96" height="95.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2c2-2F-Zdf" secondAttribute="height" multiplier="1:1" id="tyB-7Y-c22"/>
                                         </constraints>
@@ -119,11 +130,13 @@
                                         <state key="focused" image="nativeapp_btn_yes_press.png"/>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nativeapp_logo_cardboard.png" translatesAutoresizingMaskIntoConstraints="NO" id="n33-bx-wZF">
+                                        <rect key="frame" x="163" y="268.5" width="57" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="n33-bx-wZF" secondAttribute="height" multiplier="194:127" id="TPo-fU-QZH"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iY-eH-PDY">
+                                        <rect key="frame" x="206.5" y="361.5" width="96" height="95.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="8iY-eH-PDY" secondAttribute="height" multiplier="1:1" id="t7A-Yl-Ukh"/>
                                         </constraints>
@@ -135,6 +148,7 @@
                                         <state key="focused" image="nativeapp_btn_back_press.png"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbX-si-eGM">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dbX-si-eGM" secondAttribute="height" multiplier="1:1" id="YJM-Oy-pbn"/>
                                             <constraint firstAttribute="width" constant="44" id="ZCW-zb-w9b"/>
@@ -221,6 +235,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X6W-Vu-Krd">
+                                <rect key="frame" x="137.5" y="363.5" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="X6W-Vu-Krd" secondAttribute="height" multiplier="1:1" id="cZD-oc-xVd"/>
                                     <constraint firstAttribute="width" constant="100" id="ql6-Vq-uUC"/>
@@ -229,6 +244,7 @@
                                 <state key="highlighted" image="nativeapp_btn_go_press.png"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHX-dh-HV0">
+                                <rect key="frame" x="46" y="197.5" width="283" height="106"/>
                                 <string key="text" base64-UTF8="YES">
 MS4gUnVuICducG0gc3RhcnQnIGF0IHlvdXIgcHJvamVjdCdzIHJvb3QgZGlyZWN0b3J5LhERERERERER
 DTIuIEVuc3VyZSB5b3VyIGRldmljZSBhbmQgZGV2ZWxvcG1lbnQgbWFjaGluZSBhcmUgb24gdGhlIHNh
@@ -240,30 +256,24 @@ ZHJlc3Mgb3Igbmdyb2sgZW5kcG9pbnQgYmVsb3cuA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viro Media Application Testbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2z-Ey-xgD">
+                                <rect key="frame" x="46" y="161" width="283" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-qY-5Gi">
+                                <rect key="frame" x="46" y="478.5" width="283" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weU-Dz-sXe">
-                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Endpoint:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEs-qg-mku">
-                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.0.0.0 or xxxxxx.ngrok.io" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QwW-U0-cDP">
+                                <rect key="frame" x="46" y="318.5" width="283" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="otG-VN-Val">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="otG-VN-Val" secondAttribute="height" multiplier="1:1" id="XSN-K3-abh"/>
                                     <constraint firstAttribute="width" constant="44" id="mFT-Fh-ekh"/>
@@ -272,8 +282,8 @@ ZHJlc3Mgb3Igbmdyb2sgZW5kcG9pbnQgYmVsb3cuA
                                 <state key="normal" image="nativeapp_btn_back.png"/>
                                 <state key="highlighted" image="nativeapp_btn_back_press.png"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqd-NO-TUp">
-                                <frame key="frameInset" minX="166" minY="560" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dqd-NO-TUp">
+                                <rect key="frame" x="187" y="659" width="0.0" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -281,30 +291,26 @@ ZHJlc3Mgb3Igbmdyb2sgZW5kcG9pbnQgYmVsb3cuA
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="weU-Dz-sXe" firstAttribute="top" secondItem="nEs-qg-mku" secondAttribute="bottom" constant="8" id="1N4-KD-prd"/>
                             <constraint firstItem="Dqd-NO-TUp" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="2U9-Bo-Mxg"/>
-                            <constraint firstItem="f2z-Ey-xgD" firstAttribute="top" secondItem="CSZ-om-Hse" secondAttribute="bottom" constant="150" id="44r-cZ-uXH"/>
-                            <constraint firstItem="nEs-qg-mku" firstAttribute="top" secondItem="Dqd-NO-TUp" secondAttribute="bottom" constant="8" id="5kh-M6-Grj"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8BR-K9-nPC"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="8CQ-Go-L49"/>
                             <constraint firstItem="f2z-Ey-xgD" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="8Mu-6v-ruj"/>
-                            <constraint firstItem="weU-Dz-sXe" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Clz-9z-fKR"/>
                             <constraint firstItem="X6W-Vu-Krd" firstAttribute="top" secondItem="QwW-U0-cDP" secondAttribute="bottom" constant="15" id="Fsm-5y-hiW"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="GPo-ls-ioc"/>
+                            <constraint firstItem="JGu-P4-PQx" firstAttribute="top" secondItem="Dqd-NO-TUp" secondAttribute="bottom" constant="8" id="MrR-Lf-9YY"/>
+                            <constraint firstItem="YHX-dh-HV0" firstAttribute="top" secondItem="f2z-Ey-xgD" secondAttribute="bottom" constant="15" id="RN1-Qn-FNA"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="top" secondItem="YHX-dh-HV0" secondAttribute="bottom" constant="15" id="Uwj-Z1-avw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YHX-dh-HV0" secondAttribute="trailing" constant="30" id="ZJj-eb-MPn"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="Zjs-TN-3ww"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="top" secondItem="X6W-Vu-Krd" secondAttribute="bottom" constant="15" id="dL6-9t-OSo"/>
                             <constraint firstItem="X6W-Vu-Krd" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="dlm-XT-j6W"/>
                             <constraint firstItem="YHX-dh-HV0" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="liL-dc-sUJ"/>
-                            <constraint firstItem="nEs-qg-mku" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="qX2-7y-GSs"/>
                             <constraint firstItem="otG-VN-Val" firstAttribute="top" secondItem="LTT-U2-ChA" secondAttribute="topMargin" id="qtQ-DY-cH5"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="centerY" secondItem="LTT-U2-ChA" secondAttribute="centerY" id="rCI-pi-1dz"/>
                             <constraint firstItem="QwW-U0-cDP" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leadingMargin" constant="30" id="wAy-xn-dY0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QwW-U0-cDP" secondAttribute="trailing" constant="30" id="ww9-2e-kBF"/>
                             <constraint firstItem="jf9-qY-5Gi" firstAttribute="centerX" secondItem="LTT-U2-ChA" secondAttribute="centerX" id="xaE-Z6-46o"/>
                             <constraint firstItem="otG-VN-Val" firstAttribute="leading" secondItem="LTT-U2-ChA" secondAttribute="leading" id="xhm-MC-dgy"/>
-                            <constraint firstItem="JGu-P4-PQx" firstAttribute="top" secondItem="weU-Dz-sXe" secondAttribute="bottom" constant="50" id="zOY-gN-RdN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jf9-qY-5Gi" secondAttribute="trailing" constant="30" id="zeT-5H-QEd"/>
                         </constraints>
                     </view>
@@ -313,8 +319,6 @@ ZHJlc3Mgb3Igbmdyb2sgZW5kcG9pbnQgYmVsb3cuA
                         <outlet property="endpointTextField" destination="QwW-U0-cDP" id="Jtr-sb-gfk"/>
                         <outlet property="enterButton" destination="X6W-Vu-Krd" id="yhq-iI-QbV"/>
                         <outlet property="errorText" destination="jf9-qY-5Gi" id="8sd-xA-km2"/>
-                        <outlet property="previousEndpointText" destination="weU-Dz-sXe" id="E38-EU-Klp"/>
-                        <outlet property="previousEndpointTitle" destination="nEs-qg-mku" id="lMj-kM-gje"/>
                         <outlet property="versionText" destination="Dqd-NO-TUp" id="mYh-zV-Zf4"/>
                     </connections>
                 </viewController>

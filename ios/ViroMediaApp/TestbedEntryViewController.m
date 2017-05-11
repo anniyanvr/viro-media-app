@@ -57,6 +57,9 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
     // Change keyboard return key to 'Go'
     self.endpointTextField.returnKeyType = UIReturnKeyGo;
 
+    // Set this object as the delegate to the textfield
+    self.endpointTextField.delegate = self;
+
     // Set the version text
     self.versionText.text = kVersionText;
   
@@ -69,44 +72,13 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 - (void)viewWillAppear:(BOOL)animated {
     NSString *previousEndpoint = [[NSUserDefaults standardUserDefaults] stringForKey:kLastEndpointKey];
     if (previousEndpoint) {
-        [self showPreviousEndpoint:previousEndpoint];
-    } else {
-        [self hidePreviousEndpointViews];
+        self.endpointTextField.text = previousEndpoint;
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)showPreviousEndpoint:(NSString *)previousEndpoint {
-    self.previousEndpointTitle.hidden = NO;
-    self.previousEndpointText.hidden = NO;
-    self.previousEndpointText.text = previousEndpoint;
-
-    UITapGestureRecognizer *previousEndpointTitleTap =
-            [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                    action:@selector(goToPreviousEndpoint)];
-    [self.previousEndpointTitle addGestureRecognizer:previousEndpointTitleTap];
-
-    UITapGestureRecognizer *previousEndpointTextTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(goToPreviousEndpoint)];
-    [self.previousEndpointText addGestureRecognizer:previousEndpointTextTap];
-
-    self.previousEndpointTitle.userInteractionEnabled = YES;
-    self.previousEndpointText.userInteractionEnabled = YES;
-}
-
-- (void)hidePreviousEndpointViews {
-    self.previousEndpointTitle.hidden = YES;
-    self.previousEndpointText.hidden = YES;
-}
-
-- (void)goToPreviousEndpoint {
-    self.endpointTextField.text = self.previousEndpointText.text;
-    [self enterViroTestbed];
 }
 
 - (void)dismissSelf {
@@ -193,15 +165,15 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
     // Since 'https://' isn't a requirement, we should just add the prefix for the user if not given
     // Check if prefix is https or http, we'll implicitly add https if none is provided.
   if (![candidate hasPrefix:kNgrokEndpointPrefix] && ![candidate hasPrefix:@"http://"]) {
-        candidate = [NSString stringWithFormat:@"%@%@", kNgrokEndpointPrefix, candidate];
+      candidate = [NSString stringWithFormat:@"%@%@", kNgrokEndpointPrefix, candidate];
   }
 
   if([self validateUrl:candidate]) {
-    if ([candidate hasSuffix:@"/"]) {
-      return [candidate substringToIndex:candidate.length - 1];
-    }else {
-      return candidate;
-    }
+      if ([candidate hasSuffix:@"/"]) {
+          return [candidate substringToIndex:candidate.length - 1];
+      } else {
+          return candidate;
+      }
   }
 
   return nil;
@@ -211,6 +183,12 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
   NSString *urlRegEx = @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
   NSPredicate *urlTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", urlRegEx];
   return [urlTest evaluateWithObject:candidate];
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [textField selectAll:nil];
 }
 
 /*
