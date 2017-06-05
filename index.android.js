@@ -33,14 +33,16 @@ export default class ViroSample extends Component {
   }
   _getScene(sceneName) {
     // We're doing it this way so that we only load in the scenes that we need.
-    if (sceneName == '360 Photo Tour') {
+    if (sceneName == 'Revoked') {
+      return require('./js/HomeScreen/HomeMenuScene');
+    } else if (sceneName == '360 Photo Tour') {
       return require('./js/360PhotoTour/MainScene');
     } else if (sceneName == 'Inside the Human Body') {
       return require('./js/HumanBody/Heart');
     } else if (sceneName == 'Viro Media Player') {
       return require('./js/ViroMediaPlayer/ViroTheatre');
-    } else if (sceneName == 'Flickr Photo Explorer') {
-      return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
+    } else if (sceneName == 'NBA') {
+      return require('./js/NBA/NBADemo');
     } else if (sceneName == 'MainMenu') {
       return require('./js/HomeScreen/HomeMenuScene');
     } else {

@@ -46,7 +46,8 @@ var HeartScene = React.createClass({
 
           <Viro3DObject source={require('./res/heart.obj')}
                         position={[0.5, -1.0, -5.25]}
-                       materials={["heart"]}  scale={[7,7,7]}/>
+                       materials={["heart"]}  scale={[7,7,7]}
+                       onClick={()=>{this.props.sceneNavigator.pop()}}/>
       {this._getLabel([-0.039*scaleBy, 0.115*scaleBy, -0.779*scaleBy], "superior_vena_cava", require('./res/label_superior_vena_cava.png'), left, 1.9*scaleBy, 1.5*scaleBy)}
       {this._getLabel([ 0.085*scaleBy, 0.155*scaleBy, -0.738*scaleBy], "left_common_carotid", require('./res/label_left_common_carotid.png'), left, 2.5*scaleBy, 1.5*scaleBy)}
       {this._getLabel([ 0.143*scaleBy, 0.070*scaleBy, -0.741*scaleBy], "aorta", require('./res/label_aorta.png'), right, 1.7*scaleBy, 1*scaleBy)}
@@ -54,7 +55,7 @@ var HeartScene = React.createClass({
       {this._getLabel([ 0.113*scaleBy, -0.130*scaleBy, -0.590*scaleBy], "left_atrium", require('./res/label_right_atrium.png'),right, 1.25*scaleBy, 1*scaleBy)}
       {this._getLabel([-0.060*scaleBy, -0.220*scaleBy, -0.612*scaleBy], "right_atrium", require('./res/label_right_atrium.png'), left, 1.3*scaleBy, 1*scaleBy)}
       {this._getLabel([ 0.018*scaleBy, -0.291*scaleBy, -0.554*scaleBy], "right_ventricle", require('./res/label_right_ventricle.png'), left, 1.5*scaleBy, 1*scaleBy)}
-      <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
+      <HomeButton sceneNavigator={this.props.sceneNavigator} />
 
      </ViroScene>
     );

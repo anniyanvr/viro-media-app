@@ -47,9 +47,9 @@ var VideoControlRef = "VideoControlRef";
  * Several references to video sources (wether it be local or on AWS) stored in an array.
  */
 var videos = [
-  {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo1.mp4'},
-  {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo2.mp4'},
-  {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo3.mp4'},
+  require('./res/MediaDemo1.mp4'),
+  require('./res/MediaDemo2.mp4'),
+  require('./res/MediaDemo3.mp4'),
 ];
 
 var ViroTheatre = React.createClass({
@@ -100,7 +100,7 @@ var ViroTheatre = React.createClass({
    */
   _renderVideoControl(){
     return(
-        <ViroNode position={[0,-0.8,0]} opacity={1.0}>
+        <ViroNode position={[0,-0.8,-0.5]} opacity={1.0}>
             <ViroImage
                 scale={[1.4, 1.2, 1]}
                 position={[0, -0.27,-2.1]}

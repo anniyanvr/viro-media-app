@@ -35,7 +35,7 @@ var HomeButton = React.createClass({
         <ViroButton visible={visible} source={require("../res/btn_home.png")}
                     hoverSource={require("../res/btn_home_hover.png")}
                     onClick={()=>{this.props.sceneNavigator.jump("homescreen")}}
-                    position={[0, -2.5, .1]}
+                    position={[0, -3, -4]}
                     rotation={[-90, 0, 0]}
                     scale={[1, 1, 1]}
                      />

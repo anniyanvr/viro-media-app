@@ -57,16 +57,19 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupSceneListView() {
         // TODO send a list of object instead of 3 different lists
-        mSceneListTitles = new String[]{getString(R.string.photo_tour_title),
+        mSceneListTitles = new String[]{getString(R.string.revoked_title),
+                getString(R.string.photo_tour_title),
                 getString(R.string.media_player_title),
                 getString(R.string.human_heart_title)};
-        mSceneListSubTitles = new String[]{getString(R.string.photo_tour_subtitle),
+        mSceneListSubTitles = new String[]{getString(R.string.revoked_subtitle),
+                getString(R.string.photo_tour_subtitle),
                 getString(R.string.media_player_subtitle),
                 getString(R.string.human_heart_subtitle)};
-        mSceneListBackgroundImages = new int[]{R.drawable.card_360phototour,
+        mSceneListBackgroundImages = new int[]{R.drawable.card_revoked,
+                R.drawable.card_360phototour,
                 R.drawable.card_mediaplayer,
                 R.drawable.card_humanheart};
-        mSceneNames = new String[]{"360 Photo Tour", "Viro Media Player", "Inside the Human Body"};
+        mSceneNames = new String[]{"Revoked", "360 Photo Tour", "Viro Media Player", "Inside the Human Body"};
         mSceneListView = (ListView) findViewById(R.id.viro_scene_list);
         mSceneListView.setAdapter(new ViroSceneListAdapter(this, mSceneListTitles,
                 mSceneListSubTitles,

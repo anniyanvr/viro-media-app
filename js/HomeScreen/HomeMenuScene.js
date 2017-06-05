@@ -31,6 +31,8 @@ import {
   ViroNode,
   ViroText,
   ViroFlexView,
+  ViroCamera,
+  ViroOrbitCamera
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
@@ -45,6 +47,8 @@ var HomeMenuScene = React.createClass({
   render: function() {
     return (
       <ViroScene >
+        <ViroCamera active={true} />
+        <ViroOrbitCamera active={false} />
         <ViroAmbientLight color="#ffffff"/>
 
         <Viro360Image source={require("./res/viro_menu_bg.jpg")} />
@@ -52,9 +56,14 @@ var HomeMenuScene = React.createClass({
         <Viro3DObject source={require("./res/home_logo_viro_top.obj")} position={polarToCartesian([6.5, 0, 30])}
         materials={["home_logo_viro"]} transformBehaviors={"billboardY"}/>
 
-        <RollOverMenuItem  text="360 Photo Tour" onClick={this._onClick} position={polarToCartesian([5.0, -25, 5])} rotation={[0, 45, 0]} image={require("./res/btn_phototour.jpg")} />
-        <RollOverMenuItem  text="Viro Media Player" onClick={this._onClick}  position={polarToCartesian([5.0, 0, 5])} image={require("./res/btn_mediaplayer.jpg")} />
-        <RollOverMenuItem  text="The Human Heart" onClick={this._onClick} position={polarToCartesian([5.0, 25, 5])} rotation={[0, -45, 0]} image={require("./res/btn_heart.jpg")} />
+        <RollOverMenuItem  text="NBA" onClick={this._onClick}  position={polarToCartesian([5.0, -30, 5])} rotation={[0, 30, 0]} image={require("./res/btn_nba.jpg")} />
+        <RollOverMenuItem  text="Real Estate Tour" onClick={this._onClick} position={polarToCartesian([5.0, 0, 5])} image={require("./res/btn_real_estate.jpg")} />
+        <RollOverMenuItem  text="Product Showcase" onClick={this._onClick} position={polarToCartesian([5.0, 30, 5])} rotation={[0, -30, 0]} image={require("./res/btn_product.jpg")} />
+
+        <RollOverMenuItem  text="360 Photo Tour" onClick={this._onClick} position={polarToCartesian([5.0, -30, -20])} rotation={[0, 30, 0]} image={require("./res/btn_phototour.jpg")} />
+        <RollOverMenuItem  text="Viro Media Player" onClick={this._onClick}  position={polarToCartesian([5.0, 0, -20])} image={require("./res/btn_mediaplayer.jpg")} />
+        <RollOverMenuItem  text="The Human Heart" onClick={this._onClick} position={polarToCartesian([5.0, 30, -20])} rotation={[0, -30, 0]} image={require("./res/btn_heart.jpg")} />
+
       </ViroScene>
     );
   },
@@ -75,9 +84,15 @@ var HomeMenuScene = React.createClass({
       } else if (sceneName == 'Viro Media Player') {
         console.log("Going to push viro theatre");
         return require('../ViroMediaPlayer/ViroTheatre');
+      } else if (sceneName == 'Product Showcase') {
+        return require('../ProductShowcase/ProductShowcase');
+      } else if (sceneName == 'Real Estate Tour') {
+        return require('../RealEstate/MainScene');
+      } else if (sceneName == 'NBA') {
+        return require('../NBA/NBADemo');
       } else  {
         return require('../HelloWorld/HelloWorldScene');
-      }
+      } 
   },
 });
 
