@@ -30,6 +30,9 @@ var laOverlook360Video = {uri:"https://dtvtrcn42ef1b.cloudfront.net/3_LA_Overloo
 var laOverlookCityBkgAudio = {uri:"https://dtvtrcn42ef1b.cloudfront.net/3_LA_Overlook/3_LA_Overlook_bkgsfx_city.mp3"};
 var laOverlookNatureBkgAudio = {uri:"https://dtvtrcn42ef1b.cloudfront.net/3_LA_Overlook/3_LA_Overlook_bkgsfx_nature.mp3"};
 var LA_Overlook = React.createClass({
+  propTypes: {
+    playNextScene: React.PropTypes.func,
+  },
   getInitialState() {
   	return {
   		muteVideo:false,
@@ -118,11 +121,9 @@ var LA_Overlook = React.createClass({
   	);
   },
   _onHotSpotClicked: function(source) {
-    if (this.props.onClick) {
-      this.props.onClick(source);
-    }
+    
     if (this.props.playNextScene) {
-      this.props.playNextScene(source);
+      this.props.playNextScene("Jane's Apartment");
     }
 
   },

@@ -71,7 +71,7 @@ var NBAWarmup = React.createClass({
 
         {/* Interaction Video #1 */}
         <ViroAnimatedComponent animation={this.state.animationName1} run={this.state.runAnimation1}>
-          <ViroVideo source={require("./res/curry_dribble.mp4")} position={[1.5,0,-7]}
+          <ViroVideo source={require("../Revoked/res/video/APN_LINE2B.mp4")} position={[1.5,0,-7]}
               scale={[0, 0, 0]} onClick={this._closeCard1} transformBehaviors={["billboard"]} onHover={()=>{}}
               loop={true} paused={this.state.pauseCurryDribble} />
         </ViroAnimatedComponent>

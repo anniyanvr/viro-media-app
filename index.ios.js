@@ -39,7 +39,7 @@ export default class ViroSample extends Component {
     } else if (sceneName == 'Flickr Photo Explorer') {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
     } else {
-      return require('./js/HomeScreen/HomeMenuScene');
+      return require('./js/Revoked/RevokedHomeMenu');
     }
   }
 }

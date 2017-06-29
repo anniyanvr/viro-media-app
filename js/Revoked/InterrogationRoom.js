@@ -36,7 +36,6 @@ import {
 
 let polarToCartesian = ViroUtils.polarToCartesian;
 import renderIf from './custom_controls/renderIf';
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 var HotSpotButton = require('./custom_controls/HotSpotButton');
 var Label = require('./custom_controls/LabelElement');
 /**
@@ -120,7 +119,7 @@ var InterrogationRoom = React.createClass({
   _onButtonClicked: function(source) {
     
     if (this.props.playNextScene) {
-      this.props.playNextScene(source);
+      this.props.playNextScene("Office");
     }
   },
   _onUpdateTime(current, total) {

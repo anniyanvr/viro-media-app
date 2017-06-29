@@ -34,9 +34,11 @@ import {
   ViroSound
 } from 'react-viro';
 
+var PropTypes = require('react/lib/ReactPropTypes');
+
 let polarToCartesian = ViroUtils.polarToCartesian;
 import renderIf from './custom_controls/renderIf';
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
+var HomeButton = require('./custom_controls/HomeButton');
 var HotSpotButton = require('./custom_controls/HotSpotButton');
 var Label = require('./custom_controls/LabelElement')
 /**
@@ -49,7 +51,18 @@ var interrogationRoomCriesAudio = {uri:"https://dtvtrcn42ef1b.cloudfront.net/1_I
 var InterrogationRoom = require('./InterrogationRoom');
 var LA_Overlook = require('./LA_Overlook');
 var Janes_Apartment = require('./Janes_Apartment');
+var I5_Freeway = require('./I5_Freeway');
+var Office = require('./Office');
+var AGS_Checkpoint = require('./AGS_Checkpoint');
+var I5_Freeway_Corridor = require('./I5_Freeway_Corridor');
+var Exterior_Sanctuary = require('./ExtSanctuary');
+var Sanctuary = require('./Sanctuary');
+
 var Viro360Theatre = React.createClass({
+  propTypes: {
+        sceneName: PropTypes.string,
+        displayHomeButton: PropTypes.string,
+  },
   getInitialState() {
     return {
       videoControlsAnimation:"fadeOut",
@@ -61,30 +74,48 @@ var Viro360Theatre = React.createClass({
       showTitle: false,
       showSubtitle: false,
       showStartButton: false,
+      currentSceneName: "Interrogation Room",
     }
   },
-
+  componentWillMount() {
+    var initialScene = this.props.sceneName;
+    this.setState({
+      currentSceneName: initialScene,
+    })
+  },
   /**
    * Renders a scene that contains a 360 video and Video Controls.
    */
   render: function() {
     return (
         <ViroScene onClick={this._onVideoTapped} reticleEnabled={this.state.videoControlsAnimation=="fadeIn"}>
-          {renderIf(this.state.videoIndex == 0, 
+          {renderIf(this.state.currentSceneName == "Interrogation Room", 
             <InterrogationRoom playNextScene={this._nextFilmScene}/>)}
-          {renderIf(this.state.videoIndex == 1,
+          {renderIf(this.state.currentSceneName == "Office", 
+            <Office playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "Los Angeles Overlook",
             <LA_Overlook playNextScene={this._nextFilmScene}/>)}
-          {renderIf(this.state.videoIndex == 2,
+          {renderIf(this.state.currentSceneName == "Jane's Apartment",
             <Janes_Apartment playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "I-5 Freeway",
+            <I5_Freeway playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "AGS Checkpoint",
+            <AGS_Checkpoint playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "I-5 Freeway Corridor",
+            <I5_Freeway_Corridor playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "Exterior Sanctuary",
+            <Exterior_Sanctuary playNextScene={this._nextFilmScene}/>)}
+          {renderIf(this.state.currentSceneName == "Sanctuary",
+            <Sanctuary playNextScene={this._nextFilmScene}/>)}
+          
           <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
 
         </ViroScene>
     );
   },
-  _nextFilmScene() {
-    var currentVideo = this.state.videoIndex;
+  _nextFilmScene(nextSceneName) {
     this.setState({
-      videoIndex: (currentVideo + 1)
+      currentSceneName: nextSceneName,
     });
   },
   _onUpdateTime(current, total) {

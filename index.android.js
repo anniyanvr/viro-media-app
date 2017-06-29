@@ -34,7 +34,7 @@ export default class ViroSample extends Component {
   _getScene(sceneName) {
     // We're doing it this way so that we only load in the scenes that we need.
     if (sceneName == 'Revoked') {
-      return require('./js/HomeScreen/HomeMenuScene');
+      return require('./js/Revoked/RevokedHomeMenu');
     } else if (sceneName == '360 Photo Tour') {
       return require('./js/360PhotoTour/MainScene');
     } else if (sceneName == 'Inside the Human Body') {
