@@ -25,7 +25,7 @@ import {
   ViroAnimatedComponent,
 } from 'react-viro';
 
-var PropTypes = require('react/lib/ReactPropTypes');
+var PropTypes = React.PropTypes;
 /**
  * Info icon control that displays a ViroImage after being clicked on.
  * If a ViroImage is already displayed, it hides it.

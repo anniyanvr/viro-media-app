@@ -25,7 +25,7 @@ import {
   ViroNode
 } from 'react-viro';
 
-var PropTypes = require('react/lib/ReactPropTypes');
+var PropTypes = React.PropTypes;
 
 var PortalElement = React.createClass({
     propTypes: {
