@@ -83,12 +83,21 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
+<<<<<<< HEAD
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
         applicationId "com.viromediaappbeta"
         minSdkVersion 23
+=======
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    defaultConfig {
+        applicationId "com.viromedia.viromedia"
+        minSdkVersion 21
+>>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -141,10 +150,21 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile 'com.facebook.react:react-native:+'
     compile project(':gvr_common')
+<<<<<<< HEAD
     releaseCompile project(path: ':react_viro', configuration: 'release')
     debugCompile project(path: ':react_viro', configuration: 'debug')
     releaseCompile project(path: ':viro_renderer', configuration: 'release')
     debugCompile project(path: ':viro_renderer', configuration: 'debug')
+=======
+    compile project(':react_viro')
+    compile project(':viro_renderer')
+    compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
+    compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-cognito:2.2.+'
+    compile 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.+'
+>>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
     compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
 }
 

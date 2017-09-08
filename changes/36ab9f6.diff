@@ -1,0 +1,31 @@
+19a20
+> import com.facebook.common.logging.FLog;
+28a30
+> import com.facebook.react.common.ReactConstants;
+537a540
+>   private boolean mIsInIllegalUIState = false;
+791a795,797
+>                } catch (Exception e) {
+>                  mIsInIllegalUIState = true;
+>                  throw e;
+826a833,837
+>     if (mIsInIllegalUIState) {
+>       FLog.w(ReactConstants.TAG,
+>           "Not flushing pending UI operations because of previously thrown Exception");
+>       return;
+>     }
+860a872,876
+>       if (mIsInIllegalUIState) {
+>         FLog.w(ReactConstants.TAG,
+>             "Not flushing pending UI operations because of previously thrown Exception");
+>         return;
+>       }
+890c906,911
+<         nextOperation.execute();
+---
+>         try {
+>           nextOperation.execute();
+>         } catch (Exception e) {
+>           mIsInIllegalUIState = true;
+>           throw e;
+>         }

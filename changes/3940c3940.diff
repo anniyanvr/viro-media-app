@@ -1,0 +1,32 @@
+27,28c27,28
+< #ifndef RCT_DEBUG
+< #if DEBUG
+---
+> //#ifndef RCT_DEBUG
+> //#if DEBUG
+30,33c30,33
+< #else
+< #define RCT_DEBUG 0
+< #endif
+< #endif
+---
+> //#else
+> //#define RCT_DEBUG 0
+> //#endif
+> //#endif
+39,40c39,40
+< #ifndef RCT_DEV
+< #if DEBUG
+---
+> //#ifndef RCT_DEV
+> //#if DEBUG
+42,45c42,45
+< #else
+< #define RCT_DEV 0
+< #endif
+< #endif
+---
+> //#else
+> //#define RCT_DEV 0
+> //#endif
+> //#endif

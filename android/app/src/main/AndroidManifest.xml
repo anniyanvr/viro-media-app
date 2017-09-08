@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.viromediaappbeta"
     android:versionCode="1"
@@ -31,3 +32,74 @@
     </application>
 
 </manifest>
+=======
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.viromedia.viromedia"
+    android:versionCode="7"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/viro_app_icon"
+        android:label="@string/app_name_viro_media"
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <!--
+         Any activity that wants to be Daydream enabled needs to have the intent-filter w/ DAYDREAM.
+         The intent-filters also determine what part of your application is launched when opening it
+         from the app drawer, cardboard app, daydream app, and daydream VR home (apparently in a FCFS
+         order).
+         -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name_viro_media"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <!-- The 2D menu should only be shown if opened from the app drawer OR the cardboard app -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <activity android:name=".ViroSceneActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:enableVrMode="true"  android:resizeableActivity="false" android:theme="@style/VrActivityTheme">
+            ">
+            <meta-data android:name="com.google.android.vr.icon"
+                android:resource="@drawable/viro_button_foreground" />
+            <meta-data android:name="com.google.android.vr.icon_background"
+                android:resource="@drawable/viro_button_background" />
+            <intent-filter>
+                <!-- This is the  activity started if opened from the Daydream app (even in cardboard mode) -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.intent.category.DAYDREAM" />
+                <category android:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EnterTestbedActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ViroTestBedViroActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.google.intent.category.DAYDREAM" />
+                <category android:name="com.google.intent.category.CARDBOARD" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EnterViroSceneActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"/>
+    </application>
+
+</manifest>
+>>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c

@@ -1,5 +1,9 @@
 platform :ios, '9.3'
+<<<<<<< HEAD
 target 'ViroMediaAppBeta' do
+=======
+target 'ViroMediaApp' do
+>>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
   pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
 end
 
