@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-=======
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.viromedia.viromedia"
     android:versionCode="5"
@@ -14,13 +10,10 @@
     <uses-feature android:glEsVersion="0x00030000" android:required="true" />
 
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="25" />
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
     <application>
         <meta-data
             android:name="com.samsung.android.vr.application.mode"
             android:value="vr_only"/>
-<<<<<<< HEAD
-=======
         <activity android:name=".ViroSceneActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:excludeFromRecents="true" android:screenOrientation="landscape" android:launchMode="singleTask">
             <intent-filter>
@@ -54,7 +47,6 @@
                 <category tools:node="remove" android:name="com.google.intent.category.CARDBOARD" />
             </intent-filter>
         </activity>
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
     </application>
 
 </manifest>

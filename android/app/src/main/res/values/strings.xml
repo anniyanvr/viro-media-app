@@ -1,6 +1,4 @@
 <resources>
-<<<<<<< HEAD
-=======
     <string name="app_name_viro_media">Viro Media</string>
     <string name="photo_tour_title">360 Photo Tour</string>
     <string name="photo_tour_subtitle">Taking 360 photos further with interactivity.</string>
@@ -18,5 +16,4 @@
     <string name="viro_version">React-Viro v1.1.0</string>
     <string name="previous_endpoint">Previous Endpoint:</string>
     <string name="vr_enable_mode">Do you have a VR Headset?</string>
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
 </resources>

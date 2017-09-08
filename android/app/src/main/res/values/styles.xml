@@ -2,9 +2,6 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-<<<<<<< HEAD
-        <!-- Customize your theme here. -->
-=======
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name ="android:windowBackground">@color/black</item>
@@ -22,7 +19,6 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:windowDisablePreview">true</item>
         <item name="android:windowContentOverlay">@null</item>
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
     </style>
 
 </resources>

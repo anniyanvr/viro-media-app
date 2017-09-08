@@ -13,33 +13,12 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-<<<<<<< HEAD
-=======
   StyleSheet,
   View,
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
 } from 'react-native';
 
 import {
   ViroSceneNavigator,
-<<<<<<< HEAD
-} from 'react-viro';
-
-var InitialScene = require('./js/HelloWorldScene');
-
-export default class ViroSample extends Component {
-  render() {
-    return (
-      <ViroSceneNavigator apiKey="ANDROID_DOESNT_YET_NEED_A_KEY"
-        initialScene={{scene: InitialScene}}
-        />
-    );
-  }
-}
-
-AppRegistry.registerComponent('ViroMediaAppBeta', () => ViroSample);
-
-=======
   ViroScene,
   ViroBox,
 } from 'react-viro';
@@ -79,4 +58,3 @@ export default class ViroSample extends Component {
 }
 
 AppRegistry.registerComponent('ViroSample', () => ViroSample);
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c

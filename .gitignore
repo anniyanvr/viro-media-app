@@ -30,12 +30,9 @@ build/
 local.properties
 *.iml
 
-<<<<<<< HEAD
-=======
 # iOS
 ios/ngrokendpoint.txt
 
->>>>>>> a3de7a631f3627894b2e5d8f06177c22f85a617c
 # node.js
 #
 node_modules/
