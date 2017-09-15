@@ -50,7 +50,7 @@ var HomeMenuScene = React.createClass({
         <Viro360Image source={require("./res/viro_menu_bg.jpg")} />
 
         <Viro3DObject source={require("./res/home_logo_viro_top.obj")} position={polarToCartesian([6.5, 0, 30])}
-        materials={["home_logo_viro"]} transformBehaviors={"billboardY"}/>
+        materials={["home_logo_viro"]} transformBehaviors={"billboardY"} type="OBJ"/>
 
         <RollOverMenuItem  text="360 Photo Tour" onClick={this._onClick} position={polarToCartesian([5.0, -25, 5])} rotation={[0, 45, 0]} image={require("./res/btn_phototour.jpg")} />
         <RollOverMenuItem  text="Viro Media Player" onClick={this._onClick}  position={polarToCartesian([5.0, 0, 5])} image={require("./res/btn_mediaplayer.jpg")} />

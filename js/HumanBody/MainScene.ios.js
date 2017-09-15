@@ -37,7 +37,8 @@ var MainScene = React.createClass({
 
        <ViroNode position={[0, 0, -0.5]} >
          <Viro3DObject source={require('./res/heart.obj')}
-                       materials={["heart"]} />
+                       materials={["heart"]} 
+                       type="OBJ"/>
        </ViroNode>
        <ViroText text="Heart" position={[0.0, 0.21, -0.3]} style={styles.textStyle}
                  transformBehaviors={["billboardY"]}/>

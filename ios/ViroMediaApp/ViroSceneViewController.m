@@ -146,6 +146,7 @@ static NSInteger const kBackButtonInsetLeft = 12;
       } else {
         [self dismissViewControllerAnimated:NO completion:nil];
       }
+      [[NSNotificationCenter defaultCenter] removeObserver:self];
     });
 }
 
