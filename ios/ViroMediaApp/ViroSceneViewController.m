@@ -26,7 +26,7 @@ static NSInteger const kBackButtonInsetLeft = 12;
 @property (nonatomic, copy, nonnull) NSString *sceneName;
 @property (nonatomic, assign) BOOL vrMode;
 @property (nonatomic, strong) UIButton *exit360Button;
-
+@property (nonatomic, strong) RCTBridge *bridge;
 @end
 
 @implementation ViroSceneViewController
@@ -98,12 +98,13 @@ static NSInteger const kBackButtonInsetLeft = 12;
         jsCodeLocation = [NSURL URLWithString:urlString];
     }
 
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                        moduleName:@"ViroSample"
-                                                 initialProperties:initialProperties
-                                                     launchOptions:nil];
+    self.bridge = [[RCTBridge alloc] initWithBundleURL:jsCodeLocation
+                                            moduleProvider:nil
+                                             launchOptions:nil];
 
-
+  
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:self.bridge moduleName:@"ViroSample" initialProperties:initialProperties];
+  
     // Add an exit button only if we're in 360 Mode, cardboard comes with its own exit button.
     if (!self.vrMode) {
         UIImage *defaultImage = [UIImage imageNamed:@"nativeapp_360_btn_back.png"];
@@ -139,6 +140,7 @@ static NSInteger const kBackButtonInsetLeft = 12;
     dispatch_async(dispatch_get_main_queue(), ^{
       AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
       delegate.isViroSceneDisplaying = NO;
+      
       if(self.vrMode) {
         [self willMoveToParentViewController:nil];
         [self.view removeFromSuperview];
@@ -147,6 +149,9 @@ static NSInteger const kBackButtonInsetLeft = 12;
         [self dismissViewControllerAnimated:NO completion:nil];
       }
       [[NSNotificationCenter defaultCenter] removeObserver:self];
+      if(self.bridge) {
+        [_bridge invalidate];
+      }
     });
 }
 
