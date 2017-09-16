@@ -120,6 +120,12 @@ static NSString *const kViroSceneName = @"viroSceneName";
     return
         @[
             @{
+                kTitleKey: @"Figment AR",
+                kImageKey: @"nativeapp_card_figment.png",
+                kDescriptionKey: @"Showcase AR app featuring Objects, Portals, and Effects.",
+                kViroSceneName: @"Hello World"
+            },
+            @{
                 kTitleKey: @"360 Photo Tour",
                 kImageKey: @"nativeapp_card_wework.png",
                 kDescriptionKey: @"Taking 360 photos further with interactivity.",
@@ -133,7 +139,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
             },
             @{
                 kTitleKey: @"The Human Heart",
-                kImageKey: @"nativeapp_card_heart.png",
+                kImageKey: @"nativeapp_card_human_body.png",
                 kDescriptionKey: @"View the heart up close in this powerful 3D experience.",
                 kViroSceneName: @"Inside the Human Body"
             },
@@ -158,12 +164,18 @@ static NSString *const kViroSceneName = @"viroSceneName";
     }];
 }
 
-- (void)deselectAndShowOverlay {
+- (void)openFigment {
+  NSString *customURL = @"viro.ios.figmentar://";
+  if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:customURL]]) {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
+  } else {
+    [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1270018902"]];
+  }
+}
+- (void)deselect {
     // Deselect the row to make it look like the row was clicked
     [self.samplesTableView deselectRowAtIndexPath:[self.samplesTableView indexPathForSelectedRow] animated:NO];
 
-    // show the overlay.
-    [self showOverlay];
 }
 
 - (void)enterViroSceneInVRMode {
@@ -197,7 +209,15 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
     // iOS's tableview selection logic leaves the row selected, so we want to deselect and then show
     // the overlay to make it look like the row was tapped.
-    [self performSelector:@selector(deselectAndShowOverlay) withObject:nil afterDelay:.15];
+     [self performSelector:@selector(deselect) withObject:nil afterDelay:.15];
+  
+  if (self.selectedRow == 0) {
+    // open figment
+    [self openFigment];
+  } else {
+    // show overlay
+    [self showOverlay];
+  }
 }
 
 #pragma mark - UITableViewDataSource
@@ -208,7 +228,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning we're using a fixed number because the "Coming Soon" overlay doesn't look as good, so just hide the ones that aren't active
-    return 3;//[[self getCardContents] count];
+    return 4;//[[self getCardContents] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -237,7 +257,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 #warning the "Coming Soon" overlay doesn't look as good, so we've decided to just hide them by simply fixing tableView:numberOfRowsInSection:, so we may want to just remove the "Coming Soon" overlay and this logic altogether.
     // if the sample isn't ready, make it not interactable and add a Coming Soon overlay
-    if (indexPath.row > 2) {
+    if (indexPath.row > 3) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.comingSoonView.hidden = NO;
     } else {

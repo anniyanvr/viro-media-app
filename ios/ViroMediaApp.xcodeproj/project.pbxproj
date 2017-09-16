@@ -68,6 +68,9 @@
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
+		13E20BD71F6C87D6001411AF /* nativeapp_card_figment.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E20BD41F6C87D5001411AF /* nativeapp_card_figment.png */; };
+		13E20BD81F6C87D6001411AF /* nativeapp_card_retail.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E20BD51F6C87D5001411AF /* nativeapp_card_retail.png */; };
+		13E20BD91F6C87D6001411AF /* nativeapp_card_revoked.png in Resources */ = {isa = PBXBuildFile; fileRef = 13E20BD61F6C87D5001411AF /* nativeapp_card_revoked.png */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -363,6 +366,9 @@
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* ViroMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViroMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E20BD41F6C87D5001411AF /* nativeapp_card_figment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_figment.png; path = ViroMediaApp/Resources/nativeapp_card_figment.png; sourceTree = "<group>"; };
+		13E20BD51F6C87D5001411AF /* nativeapp_card_retail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_retail.png; path = ViroMediaApp/Resources/nativeapp_card_retail.png; sourceTree = "<group>"; };
+		13E20BD61F6C87D5001411AF /* nativeapp_card_revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_revoked.png; path = ViroMediaApp/Resources/nativeapp_card_revoked.png; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		27F3D8BC13158E9AC6FF4160 /* Pods-ViroMediaAppBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppBeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppBeta/Pods-ViroMediaAppBeta.release.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -510,6 +516,9 @@
 				1312BFDB1E7770A800CF7AF7 /* nativeapp_btn_yes_press.png */,
 				1312BFDC1E7770A800CF7AF7 /* nativeapp_btn_yes.png */,
 				1312BFDD1E7770A800CF7AF7 /* nativeapp_card_flickr.png */,
+				13E20BD41F6C87D5001411AF /* nativeapp_card_figment.png */,
+				13E20BD51F6C87D5001411AF /* nativeapp_card_retail.png */,
+				13E20BD61F6C87D5001411AF /* nativeapp_card_revoked.png */,
 				1312BFDE1E7770A800CF7AF7 /* nativeapp_card_heart.png */,
 				1312BFDF1E7770A800CF7AF7 /* nativeapp_card_human_body.png */,
 				1312BFE01E7770A800CF7AF7 /* nativeapp_card_phototour.png */,
@@ -1064,14 +1073,17 @@
 				1312BFF51E7770A800CF7AF7 /* nativeapp_btn_sign_up_press.png in Resources */,
 				1312BFED1E7770A800CF7AF7 /* nativeapp_btn_go_press.png in Resources */,
 				1312BFF41E7770A800CF7AF7 /* nativeapp_btn_no.png in Resources */,
+				13E20BD91F6C87D6001411AF /* nativeapp_card_revoked.png in Resources */,
 				1312BFEB1E7770A800CF7AF7 /* nativeapp_btn_back_press.png in Resources */,
 				1312BFFD1E7770A800CF7AF7 /* nativeapp_card_human_body.png in Resources */,
 				1312BFF91E7770A800CF7AF7 /* nativeapp_btn_yes_press.png in Resources */,
+				13E20BD71F6C87D6001411AF /* nativeapp_card_figment.png in Resources */,
 				1312C0051E7770A800CF7AF7 /* nativeapp_rotate_device.png in Resources */,
 				1312C0181E77726E00CF7AF7 /* SamplesTableViewHeader.xib in Resources */,
 				1312C0001E7770A800CF7AF7 /* nativeapp_card_wework.png in Resources */,
 				1312C0011E7770A800CF7AF7 /* nativeapp_header_logo_color.png in Resources */,
 				1312BF021E71DB1900CF7AF7 /* Info.plist in Resources */,
+				13E20BD81F6C87D6001411AF /* nativeapp_card_retail.png in Resources */,
 				1312BFEC1E7770A800CF7AF7 /* nativeapp_btn_back.png in Resources */,
 				1312BFF11E7770A800CF7AF7 /* nativeapp_btn_leftpanel_press.png in Resources */,
 				1312BFFF1E7770A800CF7AF7 /* nativeapp_card_video.png in Resources */,
