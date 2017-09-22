@@ -13,6 +13,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* ViroMediaAppBetaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ViroMediaAppBetaTests.m */; };
+		130B31191F708A75006CE172 /* nativeapp_card_ar.png in Resources */ = {isa = PBXBuildFile; fileRef = 130B30FB1F708A75006CE172 /* nativeapp_card_ar.png */; };
 		1312BF001E71DB1900CF7AF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1312BEFB1E71DB1900CF7AF7 /* AppDelegate.m */; };
 		1312BF011E71DB1900CF7AF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1312BEFD1E71DB1900CF7AF7 /* Images.xcassets */; };
 		1312BF021E71DB1900CF7AF7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1312BEFE1E71DB1900CF7AF7 /* Info.plist */; };
@@ -300,6 +301,7 @@
 		00E356EE1AD99517003FC87E /* ViroMediaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViroMediaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ViroMediaAppBetaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViroMediaAppBetaTests.m; sourceTree = "<group>"; };
+		130B30FB1F708A75006CE172 /* nativeapp_card_ar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_ar.png; path = ViroMediaApp/Resources/nativeapp_card_ar.png; sourceTree = "<group>"; };
 		1312BEFA1E71DB1800CF7AF7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ViroMediaApp/AppDelegate.h; sourceTree = "<group>"; };
 		1312BEFB1E71DB1900CF7AF7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ViroMediaApp/AppDelegate.m; sourceTree = "<group>"; };
 		1312BEFD1E71DB1900CF7AF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ViroMediaApp/Images.xcassets; sourceTree = "<group>"; };
@@ -496,6 +498,7 @@
 		1312BF5E1E74524000CF7AF7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				130B30FB1F708A75006CE172 /* nativeapp_card_ar.png */,
 				1312BFCA1E7770A800CF7AF7 /* icon_support.png */,
 				1312BFCB1E7770A800CF7AF7 /* nativeapp_360_btn_back_press.png */,
 				1312BFCC1E7770A800CF7AF7 /* nativeapp_360_btn_back.png */,
@@ -1076,6 +1079,7 @@
 				13E20BD91F6C87D6001411AF /* nativeapp_card_revoked.png in Resources */,
 				1312BFEB1E7770A800CF7AF7 /* nativeapp_btn_back_press.png in Resources */,
 				1312BFFD1E7770A800CF7AF7 /* nativeapp_card_human_body.png in Resources */,
+				130B31191F708A75006CE172 /* nativeapp_card_ar.png in Resources */,
 				1312BFF91E7770A800CF7AF7 /* nativeapp_btn_yes_press.png in Resources */,
 				13E20BD71F6C87D6001411AF /* nativeapp_card_figment.png in Resources */,
 				1312C0051E7770A800CF7AF7 /* nativeapp_rotate_device.png in Resources */,
@@ -1284,6 +1288,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMedia;
 				PRODUCT_NAME = ViroMediaApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1306,6 +1311,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.viromedia.ViroMedia;
 				PRODUCT_NAME = ViroMediaApp;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

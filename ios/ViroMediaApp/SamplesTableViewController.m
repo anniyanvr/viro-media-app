@@ -21,6 +21,9 @@ static NSString *const kImageKey = @"image";
 static NSString *const kDescriptionKey = @"description";
 static NSString *const kViroSceneName = @"viroSceneName";
 
+#define IDIOM    UI_USER_INTERFACE_IDIOM()
+#define IPAD     UIUserInterfaceIdiomPad
+
 @interface SamplesTableViewController ()
 
 @property (nonatomic, assign) NSInteger selectedRow;
@@ -120,10 +123,10 @@ static NSString *const kViroSceneName = @"viroSceneName";
     return
         @[
             @{
-                kTitleKey: @"Figment AR",
-                kImageKey: @"nativeapp_card_figment.png",
-                kDescriptionKey: @"Showcase AR app featuring Objects, Portals, and Effects.",
-                kViroSceneName: @"Hello World"
+                kTitleKey: @"AR Hello World",
+                kImageKey: @"nativeapp_card_ar.png",
+                kDescriptionKey: @"AR sample app for 3D model interaction",
+                kViroSceneName: @"AR Sample"
             },
             @{
                 kTitleKey: @"360 Photo Tour",
@@ -186,6 +189,14 @@ static NSString *const kViroSceneName = @"viroSceneName";
     [self enterViroSceneInVRMode:NO];
 }
 
+- (void)enterViroSceneinAR {
+  NSString *sceneName = [[[self getCardContents] objectAtIndex:self.selectedRow] objectForKey:kViroSceneName];
+  ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:NO];
+  vc.modalPresentationStyle = UIModalPresentationFullScreen;
+  [self presentViewController:vc animated:YES completion:nil];
+
+}
+
 - (void)enterViroSceneInVRMode:(BOOL)vrMode {
   NSString *sceneName = [[[self getCardContents] objectAtIndex:self.selectedRow] objectForKey:kViroSceneName];
   ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:vrMode];
@@ -196,7 +207,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
       [self.view addSubview:vc.view];
       [vc didMoveToParentViewController:self];
       [self hideOverlay];
-    }else{
+    } else {
       vc.modalPresentationStyle = UIModalPresentationFullScreen;
       [self presentViewController:vc animated:YES completion:nil];
     }
@@ -212,11 +223,17 @@ static NSString *const kViroSceneName = @"viroSceneName";
      [self performSelector:@selector(deselect) withObject:nil afterDelay:.15];
   
   if (self.selectedRow == 0) {
-    // open figment
-    [self openFigment];
+    // enter Viro Scene in AR Mode
+    [self enterViroSceneinAR];
+//    // open figment
+//    [self openFigment];
   } else {
-    // show overlay
-    [self showOverlay];
+    if (IDIOM == IPAD) {
+      [self enterViroSceneIn360Mode];
+    } else {
+      // show overlay if on iPhones
+      [self showOverlay];
+    }
   }
 }
 
@@ -246,7 +263,7 @@ static NSString *const kViroSceneName = @"viroSceneName";
     // Create 2 background images 1 normal and 1 "selected" with a black image w/ 50% alpha
     cell.backgroundView = [[UIImageView alloc] initWithImage:image];
     cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:image];
-    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, self.view.frame.size.height)];
+    UIView *overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [overlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
     [cell.selectedBackgroundView addSubview:overlay];
     

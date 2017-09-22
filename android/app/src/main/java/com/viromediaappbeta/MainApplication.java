@@ -11,6 +11,7 @@ import com.facebook.react.shell.MainReactPackage;
 
 import com.viromedia.bridge.ReactViroPackage;
 import com.facebook.soloader.SoLoader;
+import com.viromedia.viromedia.BuildConfig;
 
 import java.util.Arrays;
 import java.util.List;

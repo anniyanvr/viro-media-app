@@ -14,6 +14,7 @@ import {
 
 import {
   ViroSceneNavigator,
+  ViroARSceneNavigator,
   ViroScene,
   ViroBox,
 } from 'react-viro';
@@ -21,12 +22,21 @@ import {
 export default class ViroSample extends Component {
   render() {
     let scene = this._getScene(this.props.initialScene);
-    return (
-      <ViroSceneNavigator apiKey="06232B7B-00EF-49D5-89F2-A254942824C6"
-       initialScene={{scene: scene}}
-       vrModeEnabled={this.props.vrMode}
-        />
-    );
+
+    if (this.props.initialScene == 'AR Sample') {      
+      return (
+      <ViroARSceneNavigator apiKey="06232B7B-00EF-49D5-89F2-A254942824C6"
+        initialScene={{scene: scene}} />
+      );
+    } else {
+
+      return (
+        <ViroSceneNavigator apiKey="06232B7B-00EF-49D5-89F2-A254942824C6"
+         initialScene={{scene: scene}}
+         vrModeEnabled={this.props.vrMode}
+          />
+      );
+    }
   }
   _getScene(sceneName) {
     // We're doing it this way so that we only load in the scenes that we need.
@@ -38,6 +48,8 @@ export default class ViroSample extends Component {
       return require('./js/ViroMediaPlayer/ViroTheatre');
     } else if (sceneName == 'Flickr Photo Explorer') {
       return require('./js/HelloWorld/HelloWorldScene'); // TODO: replace this scene with the right one
+    } else if (sceneName == 'AR Sample') {
+      return require('./js/ARSample/HelloWorldSceneAR.js');
     } else {
       return require('./js/MainMenu/MainMenu');
     }
