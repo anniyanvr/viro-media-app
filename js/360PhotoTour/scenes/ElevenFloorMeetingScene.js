@@ -25,8 +25,9 @@ import {
 
 var PortalElement = require('../custom_controls/PortalElement');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
+var createReactClass = require('create-react-class');
 
-var ElevenFloorMeetingScene = React.createClass({
+var ElevenFloorMeetingScene = createReactClass({
   getInitialState() {
     return {
       runAnimation:false,

@@ -74,7 +74,8 @@ public class ViroSceneListAdapter extends BaseAdapter {
         rowView.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, EnterViroSceneActivity.class);
+
+                Intent intent = new Intent(mContext, position == 0 ? ViroSceneActivity.class : EnterViroSceneActivity.class);
                 intent.putExtra(ViroSceneActivity.EXTRA_SCENE_NAME, mSceneNames[position]);
                 intent.putExtra(ViroSceneActivity.LAUNCHED_FROM_MAIN_OR_TESTBED, true);
                 mContext.startActivity(intent);

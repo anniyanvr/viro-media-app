@@ -19,7 +19,9 @@ import {
   ViroAnimations,
 } from 'react-viro';
 
-var HelloWorldSceneAR = React.createClass({
+var createReactClass = require('create-react-class');
+
+var HelloWorldSceneAR = createReactClass({
   getInitialState() {
     return {
       text : "Initializing AR..."
@@ -76,6 +78,7 @@ var HelloWorldSceneAR = React.createClass({
             rotation={[-90,0,0]}
             width={.5} height={.5}
             arShadowReceiver={true}
+            visible={false}
             lightReceivingBitMask={2} />
 
        </ViroNode>
@@ -110,6 +113,7 @@ var HelloWorldSceneAR = React.createClass({
             rotation={[-90,0,0]}
             width={.5} height={.5}
             arShadowReceiver={true}
+            visible={false}
             lightReceivingBitMask={4} />
 
         </ViroNode>

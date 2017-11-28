@@ -11,7 +11,9 @@ import {
   Viro360Image,
 } from 'react-viro';
 
-var HelloWorldScene = React.createClass({
+var createReactClass = require('create-react-class');
+
+var HelloWorldScene = createReactClass({
   getInitialState() {
     return {
 
@@ -26,7 +28,7 @@ var HelloWorldScene = React.createClass({
 
       <Viro360Image source={require('./res/guadalupe_360.jpg')} />
 
-      <ViroText text="Hello World!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
+      <ViroText text="Hello World Manish!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
 
      </ViroScene>
     );

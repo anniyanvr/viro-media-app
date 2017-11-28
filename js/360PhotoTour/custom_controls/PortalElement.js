@@ -25,9 +25,11 @@ import {
   ViroNode
 } from 'react-viro';
 
-var PropTypes = React.PropTypes;
+import PropTypes from 'prop-types';
 
-var PortalElement = React.createClass({
+var createReactClass = require('create-react-class');
+
+var PortalElement = createReactClass({
     propTypes: {
         jumpToScene: PropTypes.object,
         sceneText:PropTypes.string,

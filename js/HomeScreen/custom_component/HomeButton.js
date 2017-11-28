@@ -17,10 +17,10 @@ import {
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
+var createReactClass = require('create-react-class');
+import PropTypes from 'prop-types';
 
-var PropTypes = React.PropTypes;
-
-var HomeButton = React.createClass({
+var HomeButton = createReactClass({
     propTypes: {
         sceneNavigator: PropTypes.object,
         shouldRender: PropTypes.string,

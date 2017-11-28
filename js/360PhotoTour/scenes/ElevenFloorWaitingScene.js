@@ -30,8 +30,9 @@ import {
     ViroUtils
 } from 'react-viro';
 let polarToCartesian = ViroUtils.polarToCartesian;
+var createReactClass = require('create-react-class');
 
-var ElevenFloorWaitingScene = React.createClass({
+var ElevenFloorWaitingScene = createReactClass({
   getInitialState() {
     return {
         showSceneItems:false,

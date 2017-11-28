@@ -25,12 +25,13 @@ import {
   ViroAnimatedComponent,
 } from 'react-viro';
 
-var PropTypes = React.PropTypes;
+var createReactClass = require('create-react-class');
+import PropTypes from 'prop-types';
 /**
  * Info icon control that displays a ViroImage after being clicked on.
  * If a ViroImage is already displayed, it hides it.
  */
-var InfoElement = React.createClass({
+var InfoElement = createReactClass({
     propTypes: {
         cardScale: PropTypes.arrayOf(PropTypes.number),
         windowContent: PropTypes.string,

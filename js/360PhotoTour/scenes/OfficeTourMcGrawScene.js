@@ -32,8 +32,9 @@ import {
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
+var createReactClass = require('create-react-class');
 
-var OfficeTourMcGrawScene = React.createClass({
+var OfficeTourMcGrawScene = createReactClass({
   getInitialState() {
     return {
         showSceneItems:false,

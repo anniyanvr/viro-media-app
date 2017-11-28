@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *errorText;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionText;
+@property (weak, nonatomic) IBOutlet UILabel *releaseNotes;
 
 @end

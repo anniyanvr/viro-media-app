@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 
 static NSString *const kPackagerUrlPrefixForIp = @"http://%@:8081";
-static NSString *const kPackagerUrlSuffix = @"/index.ios.bundle?platform=ios&dev=true";
+static NSString *const kPackagerUrlSuffix = @"/index.bundle?platform=ios&dev=true";
 static NSInteger const kBackButtonSize = 38;
 static NSInteger const kBackButtonInsetTop = 8;
 static NSInteger const kBackButtonInsetLeft = 12;
@@ -85,12 +85,12 @@ static NSInteger const kBackButtonInsetLeft = 12;
 #ifdef DEBUG
       if(usingNgrok) {
         VRTBundleURLProvider *bundleProvider = [[VRTBundleURLProvider alloc] init];
-        jsCodeLocation = [bundleProvider jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+        jsCodeLocation = [bundleProvider jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
       }
 #endif
       
       if(jsCodeLocation == nil) {
-        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+        jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
       }
     } else {
         NSString *prefix = self.isEndpointIpAddress ? [NSString stringWithFormat:kPackagerUrlPrefixForIp, self.packagerServerEndpoint] : self.packagerServerEndpoint;

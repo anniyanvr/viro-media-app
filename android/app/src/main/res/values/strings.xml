@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name_viro_media">Viro Media</string>
+    <string name="ar_sample_title">AR Hello World</string>
+    <string name="ar_sample_subtitle">AR sample app for 3D model interaction.</string>
     <string name="photo_tour_title">360 Photo Tour</string>
     <string name="photo_tour_subtitle">Taking 360 photos further with interactivity.</string>
     <string name="media_player_title">Viro Media Player</string>
@@ -13,7 +15,8 @@
     <string name="viro_media_testbed_steps">"1. Run 'npm start' at your project's root directory.\n2. Ensure your device and development machine are on the same WiFi network.\n3. Enter your development machine's IP address or ngrok endpoint below."</string>
     <string name="edit_testbed_message">0.0.0.0 or xxxxxx.ngrok.io</string>
     <string name="clear_cache_message">Clear App Cache</string>
-    <string name="viro_version">React-Viro v2.0.0</string>
+    <string name="viro_version">React-Viro v2.1.0</string>
     <string name="previous_endpoint">Previous Endpoint:</string>
     <string name="vr_enable_mode">Do you have a VR Headset?</string>
+    <string name="release_notes"><a href="https://docs.viromedia.com/docs/releases">Release Notes</a></string>
 </resources>

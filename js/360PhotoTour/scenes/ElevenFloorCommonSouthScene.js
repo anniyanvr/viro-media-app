@@ -27,10 +27,11 @@ let polarToCartesian = ViroUtils.polarToCartesian;
 var PortalElement = require('../custom_controls/PortalElement');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
 
+var createReactClass = require('create-react-class');
 
 var MAINCARD_REF = 'maincard';
 
-var ElevenFloorCommonSouthScene = React.createClass({
+var ElevenFloorCommonSouthScene = createReactClass({
   getInitialState() {
     return {
       runAnimation: false,

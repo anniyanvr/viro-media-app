@@ -18,7 +18,7 @@ var BackElement = require('../custom_controls/BackElement');
 var InfoElement = require('../custom_controls/InfoElement');
 var PortalElement = require('../custom_controls/PortalElement');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
-
+var createReactClass = require('create-react-class');
 import {
     ViroScene,
     ViroOmniLight,
@@ -35,7 +35,7 @@ let polarToCartesian = ViroUtils.polarToCartesian;
 
 var MAINCARD_REF = 'maincard';
 
-var ElevenFloorCommonScene = React.createClass({
+var ElevenFloorCommonScene = createReactClass({
   getInitialState() {
     return {
         showSceneItems:false,

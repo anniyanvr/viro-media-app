@@ -31,6 +31,17 @@ public class MainApplication extends Application implements ReactApplication {
           new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM))
       );
     }
+
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
+    }
+
+    @Override
+    protected String getBundleAssetName() {
+      return "index.bundle";
+    }
+
   };
 
   private final ReactNativeHost mDebugReactNativeHost = new ReactNativeHost(this) {
@@ -45,6 +56,16 @@ public class MainApplication extends Application implements ReactApplication {
               new MainReactPackage(),
               new ReactViroPackage(ReactViroPackage.ViroPlatform.valueOf(BuildConfig.VR_PLATFORM))
       );
+    }
+
+    @Override
+    protected String getJSMainModuleName() {
+      return "index";
+    }
+
+    @Override
+    protected String getBundleAssetName() {
+      return "index.bundle";
     }
   };
 

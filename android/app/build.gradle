@@ -65,6 +65,11 @@ import com.android.build.OutputFile
  * ]
  */
 
+project.ext.react = [
+        bundleAssetName: "index.bundle",
+        entryFile: "index.js"
+]
+
 apply from: "../../node_modules/react-native/react.gradle"
 
 /**
@@ -90,11 +95,14 @@ android {
         applicationId "com.viromedia.viromedia"
         minSdkVersion 21
         targetSdkVersion 25
-        versionCode 13
+        group "com.viromedia.react"
+        versionCode 15
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+        multiDexEnabled true
+
     }
     splits {
         abi {
@@ -142,6 +150,7 @@ dependencies {
     compile project(':ReactAndroid')
     compile project(':gvr_common')
     compile project(':react_viro')
+    compile project(':arcore_client')
     compile project(':viro_renderer')
     compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
     compile 'com.amazonaws:aws-android-sdk-core:2.2.+'

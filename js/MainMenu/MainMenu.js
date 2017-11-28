@@ -19,7 +19,9 @@ import {
   Viro360Image,
 } from 'react-viro';
 
-var MainMenuScene = React.createClass({
+var createReactClass = require('create-react-class');
+
+var MainMenuScene = createReactClass({
   getInitialState() {
     return {
 
@@ -32,7 +34,7 @@ var MainMenuScene = React.createClass({
       <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
         direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50} />
 
-      <ViroText text="Hello World!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
+      <ViroText text="Hello World Andy!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
 
      </ViroScene>
     );
@@ -42,7 +44,7 @@ var MainMenuScene = React.createClass({
 var styles = StyleSheet.create({
  helloWorldTextStyle: {
     fontFamily: 'Arial',
-    fontSize: 40,
+    fontSize: 25,
     color: '#ffffff',
     textAlignVertical: 'center',
     textAlign: 'center',  

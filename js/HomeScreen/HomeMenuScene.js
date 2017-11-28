@@ -35,8 +35,9 @@ import {
 
 let polarToCartesian = ViroUtils.polarToCartesian;
 var RollOverMenuItem = require('./custom_component/RollOverMenuItem');
+var createReactClass = require('create-react-class');
 
-var HomeMenuScene = React.createClass({
+var HomeMenuScene = createReactClass({
   getInitialState() {
     return {
       runMenuAnimation: false,

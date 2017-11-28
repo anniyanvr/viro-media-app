@@ -22,9 +22,10 @@ import {
 
 let polarToCartesian = ViroUtils.polarToCartesian;
 
-var PropTypes = React.PropTypes;
+import PropTypes from 'prop-types';
+var createReactClass = require('create-react-class');
 
-var RollOverMenuItem = React.createClass({
+var RollOverMenuItem = createReactClass({
     propTypes: {
         text:   PropTypes.string,
         onHover: React.PropTypes.func,

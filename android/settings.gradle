@@ -1,7 +1,8 @@
 rootProject.name = 'ViroMediaAppBeta'
 
 include ':app'
-include ':react_viro', ':gvr_common', ':viro_renderer'
+include ':react_viro', ':gvr_common', ':viro_renderer', ":arcore_client"
+project(':arcore_client').projectDir = new File('../node_modules/react-viro/android/arcore_client')
 project(':gvr_common').projectDir = new File('../node_modules/react-viro/android/gvr_common')
 project(':viro_renderer').projectDir = new File('../node_modules/react-viro/android/viro_renderer')
 project(':react_viro').projectDir = new File('../node_modules/react-viro/android/react_viro')

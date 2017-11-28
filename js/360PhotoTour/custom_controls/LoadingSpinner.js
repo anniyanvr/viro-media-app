@@ -29,9 +29,11 @@ import {
 
 let polarToCartesian = ViroUtils.polarToCartesian;
 
-var PropTypes = React.PropTypes;
+import PropTypes from 'prop-types';
 
-var LoadingSpinner = React.createClass({
+var createReactClass = require('create-react-class');
+
+var LoadingSpinner = createReactClass({
     propTypes: {
         showLoadingText:PropTypes.bool,
     },

@@ -24,11 +24,12 @@ import {
   Viro360Image,
 } from 'react-viro';
 
+var createReactClass = require('create-react-class');
+
 var left = "left";
 var right = "right";
 
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
-var HeartScene = React.createClass({
+var HeartScene = createReactClass({
   getInitialState() {
     return {
 
@@ -55,8 +56,7 @@ var HeartScene = React.createClass({
       {this._getLabel([ 0.113*scaleBy, -0.130*scaleBy, -0.590*scaleBy], "left_atrium", require('./res/label_right_atrium.png'),right, 1.25*scaleBy, 1*scaleBy)}
       {this._getLabel([-0.060*scaleBy, -0.220*scaleBy, -0.612*scaleBy], "right_atrium", require('./res/label_right_atrium.png'), left, 1.3*scaleBy, 1*scaleBy)}
       {this._getLabel([ 0.018*scaleBy, -0.291*scaleBy, -0.554*scaleBy], "right_ventricle", require('./res/label_right_ventricle.png'), left, 1.5*scaleBy, 1*scaleBy)}
-      <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
-
+      
      </ViroScene>
     );
   },

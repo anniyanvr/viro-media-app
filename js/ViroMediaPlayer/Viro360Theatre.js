@@ -34,13 +34,13 @@ import {
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
 /**
  * Set all the image and asset references required in this scene.
  */
 var buttonSize = 0.25;
 var VIDEO_REF = "videoref";
 var VideoControlRef = "VideoControlRef";
+var createReactClass = require('create-react-class');
 
 /**
  * Several references to video sources (wether it be local or on AWS) stored in an array.
@@ -50,7 +50,7 @@ var videos = [
   {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo360_2.mp4'}
 ];
 
-var Viro360Theatre = React.createClass({
+var Viro360Theatre = createReactClass({
   getInitialState() {
     return {
       videoControlsAnimation:"fadeIn",
@@ -72,7 +72,6 @@ var Viro360Theatre = React.createClass({
           <ViroAnimatedComponent animation={this.state.videoControlsAnimation} run={this.state.runAnimation} loop={false} ref={VideoControlRef}>
               {this._renderVideoControl()}
           </ViroAnimatedComponent>
-          <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
         </ViroScene>
     );
   },

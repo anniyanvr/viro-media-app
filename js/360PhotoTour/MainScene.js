@@ -29,9 +29,9 @@ import {
 } from 'react-viro';
 
 var MAINCARD_REF = 'maincard';
+var createReactClass = require('create-react-class');
 
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
-var OfficeTourSplashScene = React.createClass({
+var OfficeTourSplashScene = createReactClass({
   getInitialState() {
       return {
           showSceneItems:false,
@@ -52,7 +52,6 @@ var OfficeTourSplashScene = React.createClass({
                         position={[0, 0, -5]} scale={[0.6, 1, .1]} opacity={0.0} onClick={this._onClickTourSplashScreen}/>
                   </ViroAnimatedComponent>
               </ViroNode>
-            <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
           </ViroScene>
       );
   },

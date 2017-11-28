@@ -12,6 +12,7 @@ import android.graphics.Typeface;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -67,6 +68,9 @@ public class EnterTestbedActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        TextView releaseNotes = (TextView) findViewById(R.id.release_notes);
+        releaseNotes.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void setupTypeFaces() {
@@ -109,7 +113,7 @@ public class EnterTestbedActivity extends AppCompatActivity {
         if (ipAddr != null && !ipAddr.trim().isEmpty()) {
 
             intent.putExtra(EXTRA_IP_ADDRESS, ipAddr.trim());
-            startActivity(intent);
+            startActivity(intent, new Bundle());
         }
     }
 

@@ -22,7 +22,9 @@ import {
   ViroAnimatedComponent
 } from 'react-viro';
 
-var BackElement = React.createClass({
+var createReactClass = require('create-react-class');
+
+var BackElement = createReactClass({
     getInitialState() {
         return {
         };

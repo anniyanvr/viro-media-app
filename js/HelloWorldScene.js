@@ -10,7 +10,8 @@ import {
   Viro360Image,
 } from 'react-viro';
 
-var HelloWorldScene = React.createClass({
+var createReactClass = require('create-react-class');
+var HelloWorldScene = createReactClass({
   getInitialState() {
     return {
 

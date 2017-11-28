@@ -66,6 +66,16 @@
                     android:layout_below="@id/edit_message"
                     android:layout_marginTop="8dp"
                     android:onClick="startTestBed"/>
+                <TextView
+                    android:id="@+id/release_notes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fff"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center_horizontal"
+                    android:text="@string/release_notes"
+                    android:layout_below="@id/go_button"
+                    android:paddingTop="20dp"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"

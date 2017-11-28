@@ -35,7 +35,7 @@ import {
 } from 'react-viro';
 
 let polarToCartesian = ViroUtils.polarToCartesian;
-var HomeButton = require('../HomeScreen/custom_component/HomeButton');
+var createReactClass = require('create-react-class');
 /**
  * Set all the image and asset references required in this scene.
  */
@@ -52,7 +52,7 @@ var videos = [
   {uri:'https://s3-us-west-2.amazonaws.com/viro/MediaDemo3.mp4'},
 ];
 
-var ViroTheatre = React.createClass({
+var ViroTheatre = createReactClass({
   getInitialState() {
     return {
       videoControlsAnimation:"fadeIn",
@@ -76,7 +76,6 @@ var ViroTheatre = React.createClass({
           <ViroAnimatedComponent animation={this.state.videoControlsAnimation} run={this.state.runAnimation} loop={false}>
               {this._renderVideoControl()}
           </ViroAnimatedComponent>
-          <HomeButton sceneNavigator={this.props.sceneNavigator} shouldRender={this.props.displayHomeButton} />
         </ViroScene>
     );
   },

@@ -12,7 +12,8 @@
 
 static NSString *const kInvalidEndpointMessage = @"[%@] is an invalid endpoint! Please enter an IP Address between 0.0.0.0 and 255.255.255.255 or a ngrok endpoint of the form 'xxxxx.ngrok.io'";
 
-static NSString *const kVersionText = @"React-Viro v2.0.0";
+static NSString *const kVersionText = @"React-Viro v2.1.0";
+static NSString *const kReleaseNotes = @"Release Notes";
 
 // a validendpoint starts with `https://`.
 static NSString *const kNgrokEndpointPrefix = @"https://";
@@ -35,19 +36,30 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (void)openReleasNotes {
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://docs.viromedia.com/docs/releases"]];
+}
+
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+  
     // onTap for back button
     UITapGestureRecognizer *backButtonTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(dismissSelf)];
     [self.backButton addGestureRecognizer:backButtonTap];
 
+  NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)};
+  UITapGestureRecognizer *releaseButtonTap =
+  [[UITapGestureRecognizer alloc] initWithTarget:self
+                                          action:@selector(openReleasNotes)];
+  releaseButtonTap.numberOfTapsRequired = 1;
+  [self.releaseNotes addGestureRecognizer:releaseButtonTap];
+  self.releaseNotes.userInteractionEnabled = YES;
     // Add button callback
     [self.enterButton addTarget:self action:@selector(enterViroTestbed) forControlEvents:UIControlEventTouchUpInside];
 
@@ -61,8 +73,11 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
     self.endpointTextField.delegate = self;
 
     // Set the version text
-    self.versionText.text = kVersionText;
+  self.versionText.text = kVersionText;
   
+    // Set release notes
+  self.releaseNotes.attributedText = [[NSAttributedString alloc] initWithString:kReleaseNotes
+                                                                     attributes:underlineAttribute];
     UITapGestureRecognizer *dismissKeyboardTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(dismissKeyboard)];

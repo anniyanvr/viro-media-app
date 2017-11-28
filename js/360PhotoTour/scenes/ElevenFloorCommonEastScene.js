@@ -26,8 +26,9 @@ let polarToCartesian = ViroUtils.polarToCartesian;
 
 var PortalElement = require('../custom_controls/PortalElement');
 var LoadingSpinner = require('../custom_controls/LoadingSpinner');
+var createReactClass = require('create-react-class');
 
-var ElevenFloorCommonEastScene = React.createClass({
+var ElevenFloorCommonEastScene = createReactClass({
   getInitialState() {
     return {
       runAnimation: false,
