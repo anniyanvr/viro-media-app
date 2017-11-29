@@ -59,3 +59,6 @@ fastlane/screenshots
 # Fastlane
 android/fastlane/report.xml
 android/fastlane/README.md
+
+# Android keystore
+android/app/viro-media-app.jks
