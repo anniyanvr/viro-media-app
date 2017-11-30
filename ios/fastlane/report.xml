@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="00: Verifying required fastlane version" time="0.007366">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="01: Verifying required fastlane version" time="0.003695">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="02: default_platform" time="0.003173">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="03: Verifying required fastlane version" time="0.003641">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="04: default_platform" time="0.003069">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="05: default_platform" time="0.002956">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="06: cocoapods" time="3.183913">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="07: Switch to ios release_react_viro_lib lane" time="0.002655">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="08: Switch to ios release_virokit_framework lane" time="0.002293">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="09: xcodebuild -workspace ViroRenderer.xcworkspace/ -scheme ViroKit -configuration Release clean | xcpretty -c" time="2.251687">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="10: xcodebuild -workspace ViroRenderer.xcworkspace/ -scheme ViroKit -configuration Release | xcpretty -c" time="122.643319">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="11: xcodebuild -workspace ViroExample/ViroExample.xcworkspace/ -scheme React -configuration Release clean | xcpretty -c" time="2.230595">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="12: xcodebuild -workspace ViroExample/ViroExample.xcworkspace/ -scheme React -configuration Release | xcpretty -c" time="66.600254">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="13: xcodebuild -workspace ViroExample/ViroExample.xcworkspace/ -scheme ViroReact -configuration Release clean | xcpretty -c" time="3.170143">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="14: xcodebuild -workspace ViroExample/ViroExample.xcworkspace/ -scheme ViroReact -configuration Release | xcpretty -c" time="150.163834">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="15: gym" time="114.072999">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>
