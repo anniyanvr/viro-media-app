@@ -62,3 +62,7 @@ android/fastlane/README.md
 
 # Android keystore
 android/app/viro-media-app.jks
+
+#ngrokendpoint
+ios/ngrokendpoint.txt
+android/ngrokendpoint.txt
