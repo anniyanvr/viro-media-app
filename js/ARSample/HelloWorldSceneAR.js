@@ -78,7 +78,7 @@ var HelloWorldSceneAR = createReactClass({
             rotation={[-90,0,0]}
             width={.5} height={.5}
             arShadowReceiver={true}
-            visible={false}
+            visible={true}
             lightReceivingBitMask={2} />
 
        </ViroNode>
@@ -113,7 +113,7 @@ var HelloWorldSceneAR = createReactClass({
             rotation={[-90,0,0]}
             width={.5} height={.5}
             arShadowReceiver={true}
-            visible={false}
+            visible={true}
             lightReceivingBitMask={4} />
 
         </ViroNode>

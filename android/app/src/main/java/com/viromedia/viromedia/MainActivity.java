@@ -15,6 +15,8 @@ import android.widget.ListView;
 import com.viromedia.viromedia.adapter.NavigationDrawerAdapter;
 import com.viromedia.viromedia.adapter.ViroSceneListAdapter;
 
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
     private String[] mDrawerTitles;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);

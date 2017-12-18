@@ -67,6 +67,10 @@
         <activity android:name=".EnterViroSceneActivity"
             android:noHistory="true"
             android:screenOrientation="portrait"/>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="***REMOVED***"
+            />
     </application>
 
 </manifest>

@@ -1167,7 +1167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/ngrok_launch.sh";
+			shellScript = $SRCROOT/ngrok_launch.sh;
 		};
 		132BF44C1E6619EC0020602F /* Copy ngrok file over */ = {
 			isa = PBXShellScriptBuildPhase;
