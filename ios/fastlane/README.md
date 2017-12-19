@@ -30,16 +30,6 @@ xcode-select --install
 
 # Available Actions
 ## iOS
-### ios release_virokit_framework
-```
-fastlane ios release_virokit_framework
-```
-Build ViroKit framework (release)
-### ios release_react_viro_lib
-```
-fastlane ios release_react_viro_lib
-```
-Build react, ViroReact frameworks
 ### ios release
 ```
 fastlane ios release

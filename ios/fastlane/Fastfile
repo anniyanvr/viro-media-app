@@ -12,22 +12,25 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
 fastlane_version "2.66.2"
-import "../../../react-viro/Examples/ios/fastlane/Fastfile"
+#import "../../../react-viro/Examples/ios/fastlane/Fastfile"
 
 default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    cocoapods
     # carthage
   end
 
   desc "Build test bed app"
   lane :release do
-    Dir.chdir("../../../react-viro/Examples/ios/ViroExample") do
-      release_react_viro_lib
-    end 
-    gym(scheme: "ViroMediaApp") # Build your app - more options available
+#    Dir.chdir("../../../react-viro/Examples/ios/ViroExample") do
+#      release_react_viro_lib
+#    end 
+    # Clean ViroMediaApp
+    sh("xcodebuild clean -workspace ViroMediaApp.xcworkspace/ -scheme ViroMediaApp -configuration Release | xcpretty -c")
+
+    # Build ViroMediaApp
+    sh("xcodebuild -workspace ViroMediaApp.xcworkspace/ -scheme ViroMediaApp -configuration Release | xcpretty -c")
   end
   # You can define as many lanes as you want
 

@@ -11,6 +11,7 @@
 #import "SamplesTableViewCell.h"
 #import "SamplesTableViewHeader.h"
 #import "ViroSceneViewController.h"
+#import <Arkit/ARConfiguration.h>
 
 static NSString *const kSampleCellReuseIdentifier = @"sampleCell";
 static NSString *const kSamplesTableViewCellXib = @"SamplesTableViewCell";
@@ -23,6 +24,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 #define IDIOM    UI_USER_INTERFACE_IDIOM()
 #define IPAD     UIUserInterfaceIdiomPad
+
+#define IS_AR_SUPPORTED [NSClassFromString(@"ARConfiguration") isSupported]
 
 @interface SamplesTableViewController ()
 
@@ -120,39 +123,44 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 - (NSArray *)getCardContents {
 #warning do this better!
-    return
-        @[
-            @{
-                kTitleKey: @"AR Hello World",
-                kImageKey: @"nativeapp_card_ar.png",
-                kDescriptionKey: @"AR sample app for 3D model interaction",
-                kViroSceneName: @"AR Sample"
-            },
-            @{
-                kTitleKey: @"360 Photo Tour",
-                kImageKey: @"nativeapp_card_wework.png",
-                kDescriptionKey: @"Taking 360 photos further with interactivity.",
-                kViroSceneName: @"360 Photo Tour"
-            },
-            @{
-                kTitleKey: @"Viro Media Player",
-                kImageKey: @"nativeapp_card_video.png",
-                kDescriptionKey: @"Two unique immersive viewing experiences in VR.",
-                kViroSceneName: @"Viro Media Player"
-            },
-            @{
-                kTitleKey: @"The Human Heart",
-                kImageKey: @"nativeapp_card_human_body.png",
-                kDescriptionKey: @"View the heart up close in this powerful 3D experience.",
-                kViroSceneName: @"Inside the Human Body"
-            },
-            @{
-              kTitleKey: @"Flickr Photo Explorer",
-              kImageKey: @"nativeapp_card_flickr.png",
-              kDescriptionKey: @"Immerse yourself in both 360 and regular photos in this simple but powerful experience.",
-              kViroSceneName: @"HelloWorldScene"
-            },
-        ];
+  NSArray *cardContents = @[
+                             @{
+                               kTitleKey: @"360 Photo Tour",
+                               kImageKey: @"nativeapp_card_wework.png",
+                               kDescriptionKey: @"Taking 360 photos further with interactivity.",
+                               kViroSceneName: @"360 Photo Tour"
+                               },
+                             @{
+                               kTitleKey: @"Viro Media Player",
+                               kImageKey: @"nativeapp_card_video.png",
+                               kDescriptionKey: @"Two unique immersive viewing experiences in VR.",
+                               kViroSceneName: @"Viro Media Player"
+                               },
+                             @{
+                               kTitleKey: @"The Human Heart",
+                               kImageKey: @"nativeapp_card_human_body.png",
+                               kDescriptionKey: @"View the heart up close in this powerful 3D experience.",
+                               kViroSceneName: @"Inside the Human Body"
+                               },
+                             @{
+                               kTitleKey: @"Flickr Photo Explorer",
+                               kImageKey: @"nativeapp_card_flickr.png",
+                               kDescriptionKey: @"Immerse yourself in both 360 and regular photos in this simple but powerful experience.",
+                               kViroSceneName: @"HelloWorldScene"
+                               },
+                             ];
+  if (IS_AR_SUPPORTED) {
+    NSObject *arSample = @{
+                           kTitleKey: @"AR Hello World",
+                           kImageKey: @"nativeapp_card_ar.png",
+                           kDescriptionKey: @"AR sample app for 3D model interaction",
+                           kViroSceneName: @"AR Sample"
+                           };
+    NSMutableArray *mutableCardContents = [NSMutableArray arrayWithArray:cardContents];
+    [mutableCardContents insertObject:arSample atIndex:0];
+    cardContents = [mutableCardContents copy];
+  }
+  return cardContents;
 }
 
 - (void)hideOverlay {
@@ -245,7 +253,11 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning we're using a fixed number because the "Coming Soon" overlay doesn't look as good, so just hide the ones that aren't active
-    return 4;//[[self getCardContents] count];
+  if (IS_AR_SUPPORTED) {
+    return 4;
+  } else {
+    return 3;
+  }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -274,7 +286,8 @@ static NSString *const kViroSceneName = @"viroSceneName";
 
 #warning the "Coming Soon" overlay doesn't look as good, so we've decided to just hide them by simply fixing tableView:numberOfRowsInSection:, so we may want to just remove the "Coming Soon" overlay and this logic altogether.
     // if the sample isn't ready, make it not interactable and add a Coming Soon overlay
-    if (indexPath.row > 3) {
+    NSInteger numRows = IS_AR_SUPPORTED ? 3 : 2;
+    if (indexPath.row > numRows) {
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.comingSoonView.hidden = NO;
     } else {
