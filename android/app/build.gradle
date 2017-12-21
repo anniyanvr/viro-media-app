@@ -11,7 +11,19 @@ def getPassword(String currentUser, String keyChain) {
     stdout.toString().trim()
 }
 
-def pass = getPassword("manish","android_keystore")
+def getUserName() {
+    def stdout = new ByteArrayOutputStream()
+    def stderr = new ByteArrayOutputStream()
+    exec {
+        commandLine 'id -un'
+        standardOutput = stdout
+        errorOutput = stderr
+        ignoreExitValue true
+    }
+    stdout.toString().trim()
+}
+def username = getUserName()
+def pass = getPassword(username,"android_viro_media_app_keystore")
 
 
 apply plugin: "com.android.application"
