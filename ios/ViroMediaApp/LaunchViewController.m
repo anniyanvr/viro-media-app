@@ -28,9 +28,9 @@ static NSString *const kGoToExperiencesTwoSegue = @"goToExperiencesTwo";
     // Dispose of any resources that can be recreated.
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 - (void)goNextScene {
     [self performSegueWithIdentifier:kGoToExperiencesTwoSegue sender:self];

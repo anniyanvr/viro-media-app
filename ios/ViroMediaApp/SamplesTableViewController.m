@@ -209,16 +209,16 @@ static NSString *const kViroSceneName = @"viroSceneName";
   NSString *sceneName = [[[self getCardContents] objectAtIndex:self.selectedRow] objectForKey:kViroSceneName];
   ViroSceneViewController *vc = [[ViroSceneViewController alloc] initWithSceneName:sceneName vrMode:vrMode];
   
-  if(vrMode) {
-      [self addChildViewController:vc];
-      vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
-      [self.view addSubview:vc.view];
-      [vc didMoveToParentViewController:self];
-      [self hideOverlay];
-    } else {
+  //if(vrMode) {
+    //  [self addChildViewController:vc];
+      //vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
+     // [self.view addSubview:vc.view];
+     // [vc didMoveToParentViewController:self];
+     // [self hideOverlay];
+   // } else {
       vc.modalPresentationStyle = UIModalPresentationFullScreen;
       [self presentViewController:vc animated:YES completion:nil];
-    }
+    //}
 }
 
 #pragma mark - UITableViewDelegate

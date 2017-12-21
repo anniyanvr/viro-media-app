@@ -61,12 +61,12 @@ static NSInteger const kBackButtonInsetLeft = 12;
     return self;
 }
 -(BOOL)shouldAutorotate {
-  return NO;
+  return YES;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return (UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight);
-}
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return (UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight);
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -105,8 +105,8 @@ static NSInteger const kBackButtonInsetLeft = 12;
   
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:self.bridge moduleName:@"ViroSample" initialProperties:initialProperties];
   
-    // Add an exit button only if we're in 360 Mode, cardboard comes with its own exit button.
-    if (!self.vrMode) {
+  // TODO: Woraround for now - Add an exit button only if in AR Sample (first from listview), cardboard comes with its own exit button.
+    if (self.sceneName && [self.sceneName caseInsensitiveCompare:@"AR Sample"] == NSOrderedSame) {
         UIImage *defaultImage = [UIImage imageNamed:@"nativeapp_360_btn_back.png"];
         UIImage *highlightedImage = [UIImage imageNamed:@"nativeapp_360_btn_back_press.png"];
         self.exit360Button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kBackButtonSize, kBackButtonSize)];
@@ -141,13 +141,13 @@ static NSInteger const kBackButtonInsetLeft = 12;
       AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
       delegate.isViroSceneDisplaying = NO;
       
-      if(self.vrMode) {
-        [self willMoveToParentViewController:nil];
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-      } else {
+    //  if(self.vrMode) {
+    //    [self willMoveToParentViewController:nil];
+    //    [self.view removeFromSuperview];
+    //    [self removeFromParentViewController];
+     // } else {
         [self dismissViewControllerAnimated:NO completion:nil];
-      }
+     // }
       [[NSNotificationCenter defaultCenter] removeObserver:self];
       if(self.bridge) {
         [_bridge invalidate];

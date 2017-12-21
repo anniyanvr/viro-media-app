@@ -27,14 +27,14 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 
 @implementation TestbedEntryViewController
 
-// Override the following 3 methods to fix this view controller to portrait
-- (BOOL)shouldAutorotate {
-    return NO;
-}
+//// Override the following 3 methods to fix this view controller to portrait
+//- (BOOL)shouldAutorotate {
+//    return NO;
+//}
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 - (void)openReleasNotes {
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://docs.viromedia.com/docs/releases"]];
@@ -136,20 +136,14 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 
 -(void)pushSceneControllerWithNgrok:(NSString *)endpoint {
   ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithNgrok:endpoint];
-  [self addChildViewController:vc];
-  vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
-  [self.view addSubview:vc.view];
-  [vc didMoveToParentViewController:self];
-  return;
+  vc.modalPresentationStyle = UIModalPresentationFullScreen;
+  [self presentViewController:vc animated:YES completion:nil];  return;
 }
 
 -(void)pushSceneControllerWithIp:(NSString *)endpoint {
   ViroSceneViewController *vc = [[ViroSceneViewController alloc] initForTestbedWithIp:endpoint];
-  [self addChildViewController:vc];
-  vc.view.frame = CGRectMake(0, 0, self.view.frame.size.width,self.view.frame.size.height);
-  [self.view addSubview:vc.view];
-  [vc didMoveToParentViewController:self];
-  return;
+  vc.modalPresentationStyle = UIModalPresentationFullScreen;
+  [self presentViewController:vc animated:YES completion:nil];  return;  return;
 }
 /*
  Returns a valid IP or nil depending on whether or not the given candidate string is a valid IP.

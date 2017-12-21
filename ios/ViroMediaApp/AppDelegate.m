@@ -57,12 +57,12 @@
 
 // This function determines what orientation our app supports whereas the orientation in the plist determines which orientation we are allowed
 // to launch into. If this function isn't specified then the plist is the default. Also UIViewControllers can override this too.
-- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
-  // Force the oprientation into landscape mode if we are displaying a ViroSceneViewController.
-  if(self.isViroSceneDisplaying) {
-    return (UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight);
-  }
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
+//- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+//  // Force the oprientation into landscape mode if we are displaying a ViroSceneViewController.
+//  if(self.isViroSceneDisplaying) {
+//    return (UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationLandscapeRight);
+//  }
+//    return UIInterfaceOrientationMaskAllButUpsideDown;
+//}
 
 @end

@@ -56,7 +56,6 @@ var HelloWorldSceneAR = createReactClass({
             position={[0, 3, 0]}
             color="#ffffff"
             castsShadow={true}
-            influenceBitMask={2}
             shadowMapSize={2048}
             shadowNearZ={2}
             shadowFarZ={5}
@@ -67,20 +66,10 @@ var HelloWorldSceneAR = createReactClass({
               position={[0, .2, 0]}
               scale={[.2, .2, .2]}
               type="VRX" 
-            lightReceivingBitMask={3}
-            shadowCastingBitMask={2}
             transformBehaviors={['billboardY']}
             resources={[require('./res/emoji_smile/emoji_smile_diffuse.png'),
                        require('./res/emoji_smile/emoji_smile_specular.png'),
                        require('./res/emoji_smile/emoji_smile_normal.png')]}/>
-
-          <ViroSurface
-            rotation={[-90,0,0]}
-            width={.5} height={.5}
-            arShadowReceiver={true}
-            visible={true}
-            lightReceivingBitMask={2} />
-
        </ViroNode>
 
         <ViroNode position={[.5,-.5,-.5]} dragType="FixedToWorld" onDrag={()=>{}} >
@@ -92,7 +81,6 @@ var HelloWorldSceneAR = createReactClass({
             position={[0, 3, 0]}
             color="#ffffff"
             castsShadow={true}
-            influenceBitMask={4}
             shadowMapSize={2048}
             shadowNearZ={2}
             shadowFarZ={5}
@@ -103,19 +91,11 @@ var HelloWorldSceneAR = createReactClass({
             position={[0, .15, 0]}
             scale={[.3, .3, .3]}
             type="VRX"
-            lightReceivingBitMask={5}
-            shadowCastingBitMask={4}
+
             transformBehaviors={['billboardY']}
             resources={[require('./res/object_soccerball/object_soccer_ball_diffuse.png'),
                        require('./res/object_soccerball/object_soccer_ball_normal.png'),
                        require('./res/object_soccerball/object_soccer_ball_specular.png')]}/>
-          <ViroSurface
-            rotation={[-90,0,0]}
-            width={.5} height={.5}
-            arShadowReceiver={true}
-            visible={true}
-            lightReceivingBitMask={4} />
-
         </ViroNode>
 
       </ViroARScene>
