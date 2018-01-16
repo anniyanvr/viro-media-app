@@ -12,7 +12,7 @@
 
 static NSString *const kInvalidEndpointMessage = @"[%@] is an invalid endpoint! Please enter an IP Address between 0.0.0.0 and 255.255.255.255 or a ngrok endpoint of the form 'xxxxx.ngrok.io'";
 
-static NSString *const kVersionText = @"React-Viro v2.2.0";
+static NSString *const kVersionText = @"React-Viro v2.3.0";
 static NSString *const kReleaseNotes = @"Release Notes";
 
 // a validendpoint starts with `https://`.

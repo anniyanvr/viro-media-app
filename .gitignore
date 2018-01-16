@@ -66,3 +66,7 @@ android/app/viro-media-app.jks
 #ngrokendpoint
 ios/ngrokendpoint.txt
 android/ngrokendpoint.txt
+
+#iOS/PODs
+ios/Pods
+

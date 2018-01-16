@@ -78,7 +78,7 @@
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		A4FD7275FD7E612C160CC512 /* libPods-ViroMediaApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF3615FA12EB44F6197333C /* libPods-ViroMediaApp.a */; };
+		C200F687D48B50224B65C492 /* Pods_ViroMediaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 262E11DA0A99DA2A9A5A2092 /* Pods_ViroMediaApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -390,6 +390,7 @@
 		13E20BD51F6C87D5001411AF /* nativeapp_card_retail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_retail.png; path = ViroMediaApp/Resources/nativeapp_card_retail.png; sourceTree = "<group>"; };
 		13E20BD61F6C87D5001411AF /* nativeapp_card_revoked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = nativeapp_card_revoked.png; path = ViroMediaApp/Resources/nativeapp_card_revoked.png; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		262E11DA0A99DA2A9A5A2092 /* Pods_ViroMediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViroMediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F3D8BC13158E9AC6FF4160 /* Pods-ViroMediaAppBeta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppBeta.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppBeta/Pods-ViroMediaAppBeta.release.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
@@ -397,7 +398,6 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		A8DF88C5A266B301289A472E /* Pods-ViroMediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CF45D63407F5BE82E7B5DA47 /* Pods-ViroMediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp.release.xcconfig"; sourceTree = "<group>"; };
-		EAF3615FA12EB44F6197333C /* libPods-ViroMediaApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ViroMediaApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBFBB20C5B4F98E90C368C8D /* Pods-ViroMediaAppBeta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViroMediaAppBeta.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViroMediaAppBeta/Pods-ViroMediaAppBeta.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -427,7 +427,7 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				A4FD7275FD7E612C160CC512 /* libPods-ViroMediaApp.a in Frameworks */,
+				C200F687D48B50224B65C492 /* Pods_ViroMediaApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,7 +646,7 @@
 				133047A51FBE54750000F538 /* Crashlytics.framework */,
 				133047A61FBE54760000F538 /* Fabric.framework */,
 				7BAF1D1EB471822D12093C26 /* libPods-ViroMediaAppBeta.a */,
-				EAF3615FA12EB44F6197333C /* libPods-ViroMediaApp.a */,
+				262E11DA0A99DA2A9A5A2092 /* Pods_ViroMediaApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1204,10 +1204,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp-frameworks.sh",
-				"${PODS_ROOT}/../../node_modules/react-viro/ios/dist/ViroKit.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/../../node_modules/react-viro/ios/dist/ViroRenderer/ViroKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViroKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1221,9 +1229,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ViroMediaApp/Pods-ViroMediaApp-resources.sh",
+				"${PODS_ROOT}/GVRSDK/Resources/CardboardSDK.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitCore.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitDialogs.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/GoogleKitHUD.bundle",
+				"${PODS_ROOT}/GVRSDK/Resources/MaterialRobotoFontLoader.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1334,7 +1349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ***REMOVED***;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
