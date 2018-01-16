@@ -34,7 +34,7 @@ var MainMenuScene = createReactClass({
       <ViroOmniLight position={[0, 0, 0]} color="#ffffff"
         direction={[0,0, -1.0]} attenuationStartDistance={40} attenuationEndDistance={50} />
 
-      <ViroText text="Hello World Andy!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
+      <ViroText text="Hello World!" position={[0, 0, -2]} style={styles.helloWorldTextStyle} />
 
      </ViroScene>
     );
