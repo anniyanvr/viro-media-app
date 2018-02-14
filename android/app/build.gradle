@@ -22,7 +22,7 @@ def getUserName() {
     }
     stdout.toString().trim()
 }
-def username = getUserName()
+def username = 'manish'
 def pass = getPassword(username,"android_viro_media_app_keystore")
 
 
@@ -131,7 +131,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 25
         group "com.viromedia.react"
-        versionCode 16
+        versionCode 17
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
