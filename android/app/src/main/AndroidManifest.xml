@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.viromedia.viromedia"
-    android:versionCode="16"
+    android:versionCode="18"
     android:versionName="1.0">
 
     <!-- Required for AR -->
@@ -40,8 +40,10 @@
         </activity>
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
         <activity android:name=".ViroSceneActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" android:enableVrMode="true"  android:resizeableActivity="false" android:theme="@style/VrActivityTheme">
-            ">
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:enableVrMode="true"
+            android:resizeableActivity="false"
+            android:theme="@style/VrActivityTheme">
             <meta-data android:name="com.google.android.vr.icon"
                 android:resource="@drawable/viro_button_foreground" />
             <meta-data android:name="com.google.android.vr.icon_background"
