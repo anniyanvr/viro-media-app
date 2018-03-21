@@ -1,0 +1,8 @@
+405c405
+< 
+---
+>     boolean enableCaching = false;
+411c411
+<       if (mDevSupportManager.hasUpToDateJSBundleInCache() &&
+---
+>       if (enableCaching && mDevSupportManager.hasUpToDateJSBundleInCache() &&
