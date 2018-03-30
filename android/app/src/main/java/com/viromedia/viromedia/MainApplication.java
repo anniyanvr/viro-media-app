@@ -10,6 +10,9 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
+
 import com.viromedia.bridge.ReactViroPackage;
 import com.facebook.soloader.SoLoader;
 
@@ -18,6 +21,8 @@ import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
 
+  private static GoogleAnalytics sAnalytics;
+  private static Tracker sTracker;
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
     @Override
     public boolean getUseDeveloperSupport() {
@@ -78,6 +83,20 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    sAnalytics = GoogleAnalytics.getInstance(this);
+  }
+
+  /**
+   * Gets the default {@link Tracker} for this {@link Application}.
+   * @return tracker
+   */
+  synchronized public Tracker getDefaultTracker() {
+    // To enable debug logging use: adb shell setprop log.tag.GAv4 DEBUG
+    if (sTracker == null) {
+      sTracker = sAnalytics.newTracker(R.xml.global_tracker);
+    }
+
+    return sTracker;
   }
 
   public ReactNativeHost getDebugReactNativeHost() {

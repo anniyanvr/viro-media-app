@@ -21,6 +21,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.Tracker;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.HitBuilders.EventBuilder;
+
 public class EnterTestbedActivity extends AppCompatActivity {
     public final static String EXTRA_IP_ADDRESS = "com.viromedia.IP_ADDRESS";
 
@@ -106,6 +110,15 @@ public class EnterTestbedActivity extends AppCompatActivity {
     }
 
     public void startTestBed(View view) {
+        MainApplication application = (MainApplication) getApplication();
+        Tracker tracker = application.getDefaultTracker();
+        tracker.setScreenName("TEST_BED_ANDROID");
+        tracker.send(new HitBuilders.EventBuilder()
+                .setCategory("ui_action")
+                .setAction("button_press")
+                .setLabel("go")
+                .build());
+
         Intent intent = new Intent(this, ViroTestBedViroActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String ipAddr = editText.getText().toString();

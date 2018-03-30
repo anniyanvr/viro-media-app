@@ -1384,6 +1384,15 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/GVRAudioSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/GVRSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/ViroKit\"",
+					"\"${PODS_ROOT}/Headers/Public/ViroReact\"",
+					node_nodules/React,
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/ViroMediaApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

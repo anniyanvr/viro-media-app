@@ -12,7 +12,7 @@
 #import <React/RCTRootView.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-
+#import <Google/Analytics.h>
 
 
 @implementation AppDelegate
@@ -52,6 +52,8 @@
 //  }
   [Fabric with:@[[Crashlytics class]]];
 
+  GAI *gai = [GAI sharedInstance];
+  [gai trackerWithTrackingId:@"UA-96545983-1"];
   return YES;
 }
 

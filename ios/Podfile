@@ -4,5 +4,6 @@ project './ViroMediaApp.xcodeproj'
   use_frameworks!
   pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
   pod 'ViroKit', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/'
+  pod 'Google/Analytics'
 end
 

@@ -64,13 +64,6 @@ static NSInteger const kBackButtonInsetLeft = 12;
   return YES;
 }
 
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-  if (self.sceneName && [self.sceneName caseInsensitiveCompare:@"AR Sample"] == NSOrderedSame) {
-    return (UIInterfaceOrientationMaskAll);
-  }
-    return (UIInterfaceOrientationMaskLandscapeRight);
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

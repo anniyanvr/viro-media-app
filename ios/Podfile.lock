@@ -2,8 +2,24 @@ PODS:
   - AWSCore (2.6.12)
   - AWSDynamoDB (2.6.12):
     - AWSCore (= 2.6.12)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - Google/Analytics (3.1.0):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/Core (3.1.0):
+    - FirebaseAnalytics (~> 3.2)
+  - GoogleAnalytics (3.17.0)
   - GoogleToolboxForMac/Defines (2.1.0)
   - GoogleToolboxForMac/Logger (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GTMSessionFetcher/Core (1.1.6)
   - GVRAudioSDK (1.120.0)
@@ -17,6 +33,7 @@ PODS:
   - ViroReact (1.0)
 
 DEPENDENCIES:
+  - Google/Analytics
   - ViroKit (from `../node_modules/react-viro/ios/dist/ViroRenderer/`)
   - ViroReact (from `../node_modules/react-viro/ios/`)
 
@@ -29,6 +46,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AWSCore: d0d6e4f6831754aaf98058d2306a016ae71510fe
   AWSDynamoDB: a1626a8e025a12fa71723da8eee0c1ff51da5dc0
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  Google: 98da4b1a60ed0beb80a290387a28333406a1eb90
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
   GVRAudioSDK: 302f0a8f190d855868ea07f246ce4f9b44c392ae
@@ -36,6 +58,6 @@ SPEC CHECKSUMS:
   ViroKit: 759e65a21a70c26d75890507e218b99ce4ce99d0
   ViroReact: 7ec32276dcd1883662b4587eaedfff67f7fc3625
 
-PODFILE CHECKSUM: c4d69423810202a03a090b5fcb5f6628c2470a2c
+PODFILE CHECKSUM: 96df928ed96d7e388550113c7cdeb8850acc391d
 
 COCOAPODS: 1.3.1

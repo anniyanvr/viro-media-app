@@ -9,10 +9,11 @@
 #import "TestbedEntryViewController.h"
 #import "SamplesTableViewHeader.h"
 #import "ViroSceneViewController.h"
+#import <Google/Analytics.h>
 
 static NSString *const kInvalidEndpointMessage = @"[%@] is an invalid endpoint! Please enter an IP Address between 0.0.0.0 and 255.255.255.255 or a ngrok endpoint of the form 'xxxxx.ngrok.io'";
 
-static NSString *const kVersionText = @"React-Viro v2.4.0";
+static NSString *const kVersionText = @"React-Viro v2.5.0";
 static NSString *const kReleaseNotes = @"Release Notes";
 
 // a validendpoint starts with `https://`.
@@ -107,6 +108,13 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
 - (void)enterViroTestbed {
     // dismiss keyboard
     [self.view endEditing:YES];
+  
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:@"TEST_BED_IOS"];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"ui_action"
+                                                          action:@"button_press"
+                                                           label:@"go"
+                                                           value:[NSNumber numberWithInt:1]] build]];
 
     // If endpoint is a valid IP, then store it and enter the Viro scene.
     NSString *endpoint = [self getValidIp:self.endpointTextField.text];
@@ -115,6 +123,11 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"viro_action"
+                                                            action:@"test_bed_load"
+                                                             label:@"ip"
+                                                             value:[NSNumber numberWithInt:1]] build]];
+
         [self pushSceneControllerWithIp:endpoint];
         return;
     }
@@ -126,6 +139,10 @@ static NSString *const kLastEndpointKey = @"TEST_BED_LAST_ENDPOINT";
         self.errorText.text = @"";
         // store the last endpoint in NSUserDefaults
         [[NSUserDefaults standardUserDefaults] setValue:self.endpointTextField.text forKey:kLastEndpointKey];
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"viro_action"
+                                                            action:@"test_bed_load"
+                                                             label:@"ngrok"
+                                                             value:[NSNumber numberWithInt:1]] build]];
         [self pushSceneControllerWithNgrok:endpoint];
         return;
     }

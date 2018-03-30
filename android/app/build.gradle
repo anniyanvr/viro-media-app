@@ -101,7 +101,8 @@ import com.android.build.OutputFile
 
 project.ext.react = [
         bundleAssetName: "index.bundle",
-        entryFile: "index.js"
+        entryFile: "index.js",
+        nodeExecutableAndArgs : ["/usr/local/bin/node"]
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -131,7 +132,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 25
         group "com.viromedia.react"
-        versionCode 18
+        versionCode 19
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
@@ -198,13 +199,14 @@ dependencies {
     compile project(':react_viro')
     compile project(':arcore_client')
     compile project(':viro_renderer')
-    compile 'com.google.android.exoplayer:exoplayer:r2.2.0'
+    compile 'com.google.android.exoplayer:exoplayer:2.7.1'
     compile 'com.amazonaws:aws-android-sdk-core:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-cognito:2.2.+'
     compile 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.+'
     compile 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
+    compile 'com.google.android.gms:play-services-analytics:10.2.4'
     compile('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
         transitive = true;
     }
