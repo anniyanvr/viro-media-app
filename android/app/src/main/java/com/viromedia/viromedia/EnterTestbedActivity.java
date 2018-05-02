@@ -13,6 +13,7 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -27,6 +28,7 @@ import com.google.android.gms.analytics.HitBuilders.EventBuilder;
 
 public class EnterTestbedActivity extends AppCompatActivity {
     public final static String EXTRA_IP_ADDRESS = "com.viromedia.IP_ADDRESS";
+    public static final String HOST_PORT = ":8081";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class EnterTestbedActivity extends AppCompatActivity {
 
         EditText endpointText = (EditText) findViewById(R.id.edit_message);
         if (!debugHttpHost.isEmpty()) {
-            endpointText.setText(debugHttpHost.split(ViroTestBedViroActivity.HOST_PORT)[0]);
+            endpointText.setText(debugHttpHost.split(EnterTestbedActivity.HOST_PORT)[0]);
         }
 
         ImageButton back_btn = (ImageButton) findViewById(R.id.back_btn);
@@ -123,10 +125,45 @@ public class EnterTestbedActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String ipAddr = editText.getText().toString();
         if (ipAddr != null && !ipAddr.trim().isEmpty()) {
-
+            // We store the shared preferences value 'debug_http_host' here before the ReactActivity launches.
+            // The ViroTestBedViroActivity which inherits from ReactActivity will use this value in it's onCreate.
+            SharedPreferences preferences =
+                    PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            String ipHost = getHttpHost(ipAddr);
+            // commit the value to ensure the ReactActivity gets the proper server setting.
+            preferences.edit().putString("debug_http_host", getHttpHost(ipAddr)).commit();
             intent.putExtra(EXTRA_IP_ADDRESS, ipAddr.trim());
             startActivity(intent, new Bundle());
         }
+    }
+
+    private String getHttpHost(String ipOrHost) {
+        if (isIp(ipOrHost)) {
+            return ipOrHost + HOST_PORT;
+        } else {
+            // at this point this is a fully qualified name (ie. ngrok endpoint)
+            return ipOrHost;
+        }
+    }
+
+    private boolean isIp(String ipOrHost) {
+        // split takes a regex, so we need to escape any periods as they stand for all characters
+        String[] octets = ipOrHost.split("\\.");
+        if (octets.length != 4) {
+            return false;
+        }
+        for (String octet: octets) {
+            int intOctet = 0;
+            try {
+                intOctet = Integer.valueOf(octet);
+            } catch(Exception e) {
+                return false;
+            }
+            if (intOctet < 0 || intOctet > 255) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
