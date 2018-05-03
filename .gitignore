@@ -70,3 +70,6 @@ android/ngrokendpoint.txt
 #iOS/PODs
 ios/Pods
 
+package-lock.json
+yarn.lock
+
