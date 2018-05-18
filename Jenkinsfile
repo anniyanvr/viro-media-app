@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('gradle_clean') {
-      steps {
-        sh '''cd android
-fastlane clean'''
-      }
-    }
     stage('node_modules (clean install)') {
       steps {
         sh '''cd android
