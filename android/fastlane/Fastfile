@@ -15,25 +15,36 @@ fastlane_version "2.66.2"
 
 default_platform :android
 # Import ViroRenderer's fastfile
-import "../../../react-viro/android/fastlane/Fastfile"
 
 platform :android do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
   end
+  lane :clean do
+    gradle(task:"clean")
+  end
 
   desc "Build dependencies and then build test bed app"
-  lane :release do
-    Dir.chdir("../../../react-viro/android/") do
-      sh("fastlane release_react_bridge")
-    end
+  lane :clean_npm_install do
     Dir.chdir("../../") do
       sh("rm -rf node_modules")
       sh("npm install ../react-viro/react-viro-*.tgz")
       sh("npm install") 
-      sh("bash applyPatch.sh")
     end
     gradle(task:"assembleGvrRelease")
+  end
+
+  lane :apply_patch do
+    sh("bash applyPatch.sh")
+  end
+
+  lane :gvr_release do
+    gradle(task:"assembleGvrRelease")
+  end
+  
+  lane :upload_s3 do
+    sh("cp app/build/outputs/apk/gvr/release/app-gvr-release.apk ~/tmp/s3_artifacts/viro-media-app-gvr-release.apk")
+    
   end
   # You can define as many lanes as you want
 
