@@ -4,8 +4,7 @@ pipeline {
     stage('initial_setup') {
       steps {
         sh '''cd android
-        fastlane save_git_log
-        fastlane clean_app'''
+        fastlane save_git_log'''
       }
     }
     stage('node_modules (clean install)') {
@@ -19,6 +18,7 @@ npm install
     stage('gvr_release_apk') {
       steps {
         sh '''cd android
+fastlane clean_app
 fastlane gvr_release'''
       }
     }
