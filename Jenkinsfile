@@ -12,7 +12,7 @@ pipeline {
         sh '''rm -rf node_modules
 npm install $TGZ_LOC
 npm install
-./apply_patch'''
+./applyPatch.sh'''
       }
     }
     stage('gvr_release_apk') {
