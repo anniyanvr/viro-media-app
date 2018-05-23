@@ -17,20 +17,49 @@ fastlane_version "2.66.2"
 default_platform :ios
 platform :ios do
   before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    # carthage
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"    # carthage
   end
 
+def on_error(exception)
+       slack(
+           message: ":thunder_cloud_and_rain: Build Pipeline failed!",
+           success: false,
+           default_payloads: [], #Pass an empty array to suppress all the default payloads.
+           payload: {
+            "Git Repository:" =>  "viro-media-app/master",
+            "Fastlane Lane:" => ENV["FASTLANE_LANE_NAME"],
+            "Detailed Logs:" => "<https://virobuilds.ngrok.io/blue/organizations/jenkins/react-viro/activity/|Test Bed App Pipeline>",
+            "Exception:" => "```#{exception}```"
+           },
+           use_webhook_configured_username_and_icon: true
+       )
+  end
   desc "Build test bed app"
-  lane :release do
-#    Dir.chdir("../../../react-viro/Examples/ios/ViroExample") do
-#      release_react_viro_lib
-#    end 
-    # Clean ViroMediaApp
-    sh("xcodebuild clean -workspace ViroMediaApp.xcworkspace/ -scheme ViroMediaApp -configuration Release | xcpretty -c")
+  lane :ios_release do
+    sh("pod install")
+    begin
+        increment_build_number(
+        build_number: latest_testflight_build_number + 1,
+        xcodeproj: "./ViroMediaApp.xcodeproj"
+      )
+      cert
+      sigh(force: true)
+      gym(scheme: "ViroMediaApp",
+                workspace: "./ViroMediaApp.xcworkspace",
+                configuration: "Release",
+                clean: true,
+                output_directory: "./build",
+                output_name: "ViroMediaApp.ipa") 
+#       pilot(username: "manish@viromedia.com",
+#             ipa: "./build/ViroMediaApp.ipa",
+#             skip_waiting_for_build_processing: true)
+    rescue => exception
+           on_error(exception)
+    end
 
-    # Build ViroMediaApp
-    sh("xcodebuild -workspace ViroMediaApp.xcworkspace/ -scheme ViroMediaApp -configuration Release | xcpretty -c")
+    rescue => exception
+           on_error(exception)
+    end
   end
   # You can define as many lanes as you want
 
