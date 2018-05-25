@@ -15,7 +15,7 @@
     <string name="viro_media_testbed_steps">"1. Run 'npm start' at your project's root directory.\n2. Ensure your device and development machine are on the same WiFi network.\n3. Enter your development machine's IP address or ngrok endpoint below."</string>
     <string name="edit_testbed_message">0.0.0.0 or xxxxxx.ngrok.io</string>
     <string name="clear_cache_message">Clear App Cache</string>
-    <string name="viro_version">React-Viro v2.6.0</string>
+    <string name="viro_version">React-Viro v2.7.1</string>
     <string name="previous_endpoint">Previous Endpoint:</string>
     <string name="vr_enable_mode">Do you have a VR Headset?</string>
     <string name="release_notes"><a href="https://docs.viromedia.com/docs/releases">Release Notes</a></string>
