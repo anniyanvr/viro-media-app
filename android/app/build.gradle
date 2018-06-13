@@ -194,7 +194,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:25.0.0'
-    compile project(':ReactAndroid')
+    compile "com.facebook.react:react-native:+"
     compile project(':gvr_common')
     compile project(':react_viro')
     compile project(':arcore_client')
@@ -219,6 +219,3 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-configurations.all {
-    exclude group: 'com.facebook.react', module: 'react-native'
-}
