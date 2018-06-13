@@ -7,18 +7,9 @@ pipeline {
         fastlane save_git_log'''
       }
     }
-    stage('node_modules (clean install)') {
-      steps {
-        sh '''rm -rf node_modules
-npm install $TGZ_LOC
-npm install
-./applyPatch.sh'''
-      }
-    }
     stage('gvr_release_apk') {
       steps {
         sh '''cd android
-fastlane clean_app
 fastlane gvr_release'''
       }
     }

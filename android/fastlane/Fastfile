@@ -18,8 +18,7 @@ default_platform :android
 
 platform :android do
   before_all do
-    #ENV["SLACK_URL"] = "***REMOVED***"
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    TGZ_VERSION_NUMBER = sh("basename /var/tmp/build_intermediates/s3_artifacts/react-viro-*.tgz .tgz | cut -d '-' -f 3 | tr -d '\n'")
     BUILD_INTERMEDIATES = "/var/tmp/build_intermediates/"
     GIT_REPO_BRANCH = "viro-media-app/master"
     S3_BASE_URL = "https://s3-us-west-2.amazonaws.com/viro-builds/"
@@ -56,8 +55,23 @@ platform :android do
 
   lane :gvr_release do
     begin
-      gradle(task:"assembleGvrRelease")
-      sh("cp ../app/build/outputs/apk/gvr/release/app-gvr-release.apk #{BUILD_INTERMEDIATES}s3_artifacts/test-bed-app-gvr-release.apk")
+      Dir.chdir("../../") do
+        sh("sed -i '' -e 's/\"react-viro\":.*/\"react-viro\": \"#{TGZ_VERSION_NUMBER}\"/' package.json")
+        sh("rm -rf node_modules")
+        sh("npm install #{BUILD_INTERMEDIATES}s3_artifacts/react-viro-#{TGZ_VERSION_NUMBER}.tgz")
+        # # The > /dev/null redirection used below is for this issue
+        # # https://github.com/fastlane/fastlane/issues/11041
+        sh("npm install > /dev/null") 
+        sh("./applyPatch.sh")
+        sh("sed -i '' 's/<string name=\"viro_version\">React-Viro v.*.</<string name=\"viro_version\">React-Viro v#{TGZ_VERSION_NUMBER}</g' android/app/src/main/res/values/strings.xml")
+        Dir.chdir("android/app/") do
+          # sh("./gradlew assembleGvrRelease")
+          sh("cp build/outputs/apk/gvr/release/app-gvr-release.apk #{BUILD_INTERMEDIATES}s3_artifacts/viro-media-testbed.apk")
+        end
+      end
+      
+#      gradle(task:"assembleGvrRelease")
+#      sh("cp ../app/build/outputs/apk/gvr/release/app-gvr-release.apk #{BUILD_INTERMEDIATES}s3_artifacts/test-bed-app-gvr-release.apk")
     rescue => exception
       on_error(exception)
     end
