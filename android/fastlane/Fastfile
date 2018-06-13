@@ -65,7 +65,7 @@ platform :android do
         sh("./applyPatch.sh")
         sh("sed -i '' 's/<string name=\"viro_version\">React-Viro v.*.</<string name=\"viro_version\">React-Viro v#{TGZ_VERSION_NUMBER}</g' android/app/src/main/res/values/strings.xml")
         Dir.chdir("android/app/") do
-          # sh("./gradlew assembleGvrRelease")
+          sh("./gradlew assembleGvrRelease")
           sh("cp build/outputs/apk/gvr/release/app-gvr-release.apk #{BUILD_INTERMEDIATES}s3_artifacts/viro-media-testbed.apk")
         end
       end
