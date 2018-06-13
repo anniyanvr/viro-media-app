@@ -143,9 +143,9 @@ android {
     signingConfigs {
         release {
             storeFile file(TEST_BED_APP_RELEASE_STORE_FILE)
-            storePassword pass
+            storePassword '***REMOVED***'
             keyAlias TEST_BED_APP_RELEASE_KEY_ALIAS
-            keyPassword pass
+            keyPassword '***REMOVED***'
         }
     }
     splits {
