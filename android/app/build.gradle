@@ -132,7 +132,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 25
         group "com.viromedia.react"
-        versionCode 27
+        versionCode 28
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
