@@ -61,7 +61,10 @@
             android:noHistory="true"
             android:screenOrientation="portrait" />
         <activity android:name=".ViroTestBedViroActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize" >
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+            android:enableVrMode="true"
+            android:resizeableActivity="false"
+            android:theme="@style/VrActivityTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="com.google.intent.category.DAYDREAM" />
