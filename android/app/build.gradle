@@ -124,8 +124,8 @@ def enableProguardInReleaseBuilds = false
 
 android {
     flavorDimensions "platform"
-    compileSdkVersion 26
-    buildToolsVersion "26.0.3"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "com.viromedia.viromedia"
@@ -193,7 +193,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation project(':ReactAndroid')
     implementation project(':gvr_common')
     implementation project(':react_viro')
