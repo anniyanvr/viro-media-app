@@ -124,13 +124,13 @@ def enableProguardInReleaseBuilds = false
 
 android {
     flavorDimensions "platform"
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
 
     defaultConfig {
         applicationId "com.viromedia.viromedia"
         minSdkVersion 21
-        targetSdkVersion 26
+        targetSdkVersion 28
         group "com.viromedia.react"
         versionCode 32
         versionName "1.0"
@@ -193,20 +193,22 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation project(':ReactAndroid')
     implementation project(':gvr_common')
     implementation project(':react_viro')
     implementation project(':arcore_client')
     implementation project(':viro_renderer')
     implementation 'com.google.android.exoplayer:exoplayer:2.7.1'
-    implementation 'com.amazonaws:aws-android-sdk-core:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-ddb:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-cognito:2.2.+'
-    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.+'
+    implementation 'com.amazonaws:aws-android-sdk-core:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-ddb:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-ddb-mapper:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.7.7'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.7.7'
     implementation 'com.google.protobuf.nano:protobuf-javanano:3.0.0-alpha-7'
-    implementation 'com.google.android.gms:play-services-analytics:10.2.4'
+    implementation('com.google.android.gms:play-services-analytics:10.2.4') {
+        exclude module: 'support-v4'
+    }
     implementation('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
         transitive = true;
     }
