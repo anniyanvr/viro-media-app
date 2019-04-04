@@ -1,14 +1,13 @@
-364c364,365
+369c369,370
 <       if (mDevSupportManager.hasUpToDateJSBundleInCache() &&
 ---
 >       boolean enableCaching = false;
 >       if (enableCaching && mDevSupportManager.hasUpToDateJSBundleInCache() &&
-382a384,385
->                           mDevSupportManager.showNewJavaError("Error connecting to package server", new RuntimeException("Error connecting to package server.")
->                           );
-384,385c387,388
-<                           devSettings.setRemoteJSDebugEnabled(false);
-<                           recreateReactContextInBackgroundFromBundleLoader();
+391a393
+>                             mDevSupportManager.showNewJavaError("Error connecting to package server", new RuntimeException("Error connecting to package server."));
+393,394c395,396
+<                             devSettings.setRemoteJSDebugEnabled(false);
+<                             recreateReactContextInBackgroundFromBundleLoader();
 ---
->                           //devSettings.setRemoteJSDebugEnabled(false);
->                           //recreateReactContextInBackgroundFromBundleLoader();
+>                             //devSettings.setRemoteJSDebugEnabled(false);
+>                             //recreateReactContextInBackgroundFromBundleLoader();
