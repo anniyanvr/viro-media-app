@@ -22,7 +22,7 @@ module.exports = {
   },
 
   getAssetExts() {
-    return ["obj", "mtl", "JPG", "vrx"];
+    return ["hdr","obj", "mtl", "JPG", "vrx", "mp4","png"];
   },
 
   _getRoots() {
