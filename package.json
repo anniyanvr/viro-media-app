@@ -9,14 +9,14 @@
 	},
 	"dependencies": {
 		"react": "16.8.3",
-		"react-native": "0.59.3",
-		"react-viro": "file:../react-viro/react-viro-2.16.0.tgz"
+		"react-native": "0.59.9",
+		"react-viro": "file:../../tmp-workspace/viro/react-viro-2.17.0.tgz"
 	},
 	"devDependencies": {
-		"babel-jest": "23.6.0",
-		"metro-react-native-babel-preset": "0.51.0",
-		"jest": "23.6.0",
-		"react-test-renderer": "16.6.1"
+		"babel-jest": "^24.8.0",
+		"metro-react-native-babel-preset": "^0.54.1",
+		"jest": "^24.8.0",
+		"react-test-renderer": "16.8.3"
 	},
 	"jest": {
 		"preset": "react-native"
